@@ -5,7 +5,7 @@ import { MdOutlineWorkspacePremium, MdOutlineStorefront } from "react-icons/md";
 import { RiVipCrownLine } from "react-icons/ri";
 import { HiOutlineBuildingOffice } from "react-icons/hi2";
 import { TbWorld } from "react-icons/tb";
-import { FiPlus, FiMinus, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiChevronDown } from "react-icons/fi";
 import { FaHandshake, FaRocket } from "react-icons/fa6";
 
 /* ─── Intersection observer hook ─── */
@@ -538,7 +538,7 @@ function FAQSection() {
   const [ref, inView] = useInView(0.1);
   return (
     <section
-      className="py-20 md:py-24 bg-[#1a1a2e] relative overflow-hidden"
+      className="py-20 md:py-24 bg-[#0a0a0a] relative overflow-hidden"
       ref={ref}
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 relative z-10">
@@ -556,7 +556,7 @@ function FAQSection() {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className={`rounded-xl border transition-all duration-300 will-change-transform ${open === i ? "border-[#d7193f] bg-[#d7193f]/5 shadow-sm" : "border-white/10 bg-[#0f0f1a] hover:border-[#d7193f]/30"}`}
+              className={`rounded-xl border transition-all duration-300 will-change-transform ${open === i ? "border-[#d7193f] bg-gradient-to-br from-[#d7193f]/12 to-transparent shadow-[0_8px_32px_rgba(215,25,63,0.15)]" : "border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-transparent hover:border-[#d7193f]/40 hover:from-[#d7193f]/12 hover:to-transparent"}`}
               style={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? "translateX(0)" : "translateX(-20px)",
@@ -575,7 +575,7 @@ function FAQSection() {
                 <span
                   className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${open === i ? "bg-[#d7193f] text-white" : "bg-[#d7193f]/10 text-[#d7193f] border border-[#d7193f]/20"}`}
                 >
-                  {open === i ? <FiMinus size={16} /> : <FiPlus size={16} />}
+                  <FiChevronDown size={16} className={`transition-transform duration-300 ${open === i ? "rotate-180" : "rotate-0"}`} />
                 </span>
               </button>
               <div

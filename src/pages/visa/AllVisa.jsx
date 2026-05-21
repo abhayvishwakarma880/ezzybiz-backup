@@ -277,7 +277,7 @@ export default function AllVisa() {
         </div>
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="flex items-center justify-between mb-6 -mt-5 ml-6">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
           <div className="text-sm text-gray-500 flex items-center gap-2">
             <Link
               to="/"

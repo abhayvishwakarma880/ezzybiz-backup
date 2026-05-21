@@ -7,6 +7,7 @@ import {
   LuHeadphones as Headphones,
   LuGlobe as Globe,
 } from "react-icons/lu";
+import whyChoose from '../../assets/whyChoose.png'
 
 const FEATURES = [
   {
@@ -273,7 +274,7 @@ export default function WhyChooseUs() {
               {/* whyChoose Image */}
               <div className="rounded-xl overflow-hidden flex-1">
                 <img
-                  src="/src/assets/whyChoose.png"
+                  src={whyChoose}
                   alt="Why Choose EzzyBiz"
                   className="w-full h-full object-cover rounded-xl"
                 />

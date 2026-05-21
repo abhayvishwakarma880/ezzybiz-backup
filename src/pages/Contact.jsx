@@ -333,14 +333,14 @@ export default function Contact() {
               step of your business journey.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={scrollToForm} className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 cursor-pointer">
                 Book Free Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <a href="tel:+971527069469" className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-[#d7193f] hover:shadow-md no-underline cursor-pointer">
                 <MessageCircle size={14} /> Talk To Expert
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -646,7 +646,7 @@ export default function Contact() {
       </section>
 
       {/* ========== FINAL CTA SECTION ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      {/* <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={ctaRef}
@@ -677,7 +677,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

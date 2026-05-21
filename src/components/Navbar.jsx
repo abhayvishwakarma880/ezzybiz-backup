@@ -157,7 +157,7 @@ export default function Navbar() {
             
 
             {/* Email + Socials */}
-            <div className="flex border items-center justify-between md:w-auto md:justify-end gap-[18px] shrink-0">
+            <div className="flex items-center justify-between md:w-auto md:justify-end gap-[18px] shrink-0">
               
 
               
