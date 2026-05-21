@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { FiCheckCircle, FiFileText, FiGlobe, FiMessageSquare } from "react-icons/fi";
 import {
   LuMessageCircle as MessageCircle,
   LuArrowRight as ArrowRight,
@@ -13,42 +14,42 @@ import {
 const STEPS = [
   {
     number: "01",
-    icon: Headphones,
-    title: "Free Consultation",
+    icon: FiMessageSquare,
+    title: "Consultation",
     description:
-      "Discuss your business goals with our expert consultants and get the right guidance for mainland, free zone, or offshore company setup in Dubai.",
+      "Discuss your business goals with our expert consultants and get the right guidance for company setup, licensing, and future expansion in the UAE.",
     tag: "Start Here",
   },
   {
     number: "02",
-    icon: Building2,
-    title: "Choose Business Activity",
+    icon: FiFileText,
+    title: "Documentation",
     description:
-      "Select the ideal business activity, license type, and jurisdiction based on your business model and future growth plans.",
-    tag: "Strategy",
+      "Submit and verify all required documents for smooth business registration, approvals, and legal processing without delays",
+    tag: "PAPERWORK",
   },
   {
     number: "03",
-    icon: FileText,
-    title: "Documentation & Approval",
+    icon: FiCheckCircle,
+    title: "License Approval",
     description:
-      "Our team handles all legal documentation, government approvals, and registration procedures for a smooth company formation process.",
-    tag: "Legal",
+      "We handle the approval process and secure your business license from the relevant UAE authorities quickly and efficiently.",
+    tag: "LEGAL",
   },
   {
     number: "04",
-    icon: BadgeCheck,
-    title: "License & Visa Processing",
+    icon: FiGlobe,
+    title: "Visa Process",
     description:
-      "Receive your trade license and complete investor or employee visa processing with professional UAE compliance support.",
+      "Complete investor or employee visa processing with professional support for medical, Emirates ID, and immigration procedures.",
     tag: "Compliance",
   },
   {
     number: "05",
     icon: Rocket,
-    title: "Launch Your Business",
+    title: "Launch Business",
     description:
-      "Start operating your business in Dubai with complete corporate assistance including banking, PRO services, and tax support.",
+      "Start operating your business confidently with complete setup, banking assistance, and ongoing support for growth in Dubai.",
     tag: "Go Live",
   },
 ];
@@ -209,7 +210,7 @@ export default function BusinessSetupProcess() {
         <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-[100px] transform-gpu" />
         
         {/* Subtle grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(215,25,63,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(215,25,63,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(215,25,63,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(215,25,63,0.08)_1px,transparent_1px)] bg-[size:40px_40px]" />
         
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#d7193f]/20 to-transparent" />

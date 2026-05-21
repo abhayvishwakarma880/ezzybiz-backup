@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import {
   LuShieldCheck as ShieldCheck,
   LuZap as Zap,
@@ -7,8 +6,6 @@ import {
   LuBuilding2 as Building2,
   LuHeadphones as Headphones,
   LuGlobe as Globe,
-  LuArrowRight as ArrowRight,
-  LuMessageCircle as MessageCircle,
 } from "react-icons/lu";
 
 const FEATURES = [
@@ -273,60 +270,13 @@ export default function WhyChooseUs() {
                 ))}
               </div>
 
-              {/* Highlight Card */}
-              <div
-                className="relative rounded-xl p-5 overflow-hidden"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(215,25,63,0.12), rgba(215,25,63,0.04))",
-                  border: "1px solid rgba(215,25,63,0.2)",
-                }}
-              >
-                {/* Glow */}
-                <div
-                  className="absolute -top-10 -right-10 w-48 h-48 rounded-full pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(215,25,63,0.15), transparent 70%)",
-                  }}
+              {/* whyChoose Image */}
+              <div className="rounded-xl overflow-hidden flex-1">
+                <img
+                  src="/src/assets/whyChoose.png"
+                  alt="Why Choose EzzyBiz"
+                  className="w-full h-full object-cover rounded-xl"
                 />
-                <div className="relative z-10">
-                  {/* Quote mark */}
-                  <div
-                    className="text-[48px] leading-none text-[#d7193f] mb-1 opacity-30 select-none"
-                    style={{
-                      fontFamily: "'Outfit', sans-serif",
-                    }}
-                  >
-                    "
-                  </div>
-                  <p
-                    className="text-white text-[13.5px] leading-[1.7] mb-4 font-medium"
-                    style={{
-                      fontFamily: "'Outfit', sans-serif",
-                    }}
-                  >
-                    Helping entrepreneurs and global investors establish
-                    successful businesses in Dubai with confidence and
-                    compliance.
-                  </p>
-
-                  {/* CTA Button */}
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-[8px] h-[44px] px-5 bg-[#d7193f] text-white font-bold text-[11.5px] tracking-[0.07em] uppercase rounded-sm no-underline transition-all duration-300 hover:-translate-y-[2px] hover:bg-[#b8162f] hover:shadow-[0_10px_32px_rgba(215,25,63,0.38)]"
-                  >
-                    <MessageCircle size={14} />
-                    Book Free Consultation
-                  </Link>
-                </div>
-              </div>
-
-              {/* Feature Cards Grid (Last 2) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
-                {FEATURES.slice(4, 6).map((feature, idx) => (
-                  <FeatureCard key={idx + 4} {...feature} index={idx + 4} />
-                ))}
               </div>
 
               {/* Trust bar */}

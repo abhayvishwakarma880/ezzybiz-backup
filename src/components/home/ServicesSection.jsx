@@ -5,70 +5,54 @@ import {
   FiShield as ShieldCheck,
   FiDollarSign as BadgeDollarSign,
   FiFile as ReceiptText,
-  FiArrowRight as ArrowRight,
-  FiMessageCircle as MessageCircle,
 } from "react-icons/fi";
 import {
   MdBusiness as Building2,
   MdAccountBalance as Landmark,
-  MdPayments as Banknote,
 } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
 
 const SERVICES = [
   {
     icon: Building2,
     title: "Mainland Company Formation",
-    description:
-      "Start your mainland business in Dubai with complete support for trade licenses, approvals, legal documentation, and government registration. We simplify the entire setup process for fast business launch.",
+    description: "Trade licenses, approvals, and government registration for your Dubai mainland business.",
   },
   {
     icon: BriefcaseBusiness,
     title: "Free Zone Company Setup",
-    description:
-      "Launch your business in UAE free zones with tax-efficient solutions, 100% foreign ownership benefits, flexible office options, and streamlined company registration services.",
+    description: "100% foreign ownership, tax-efficient solutions, and streamlined free zone registration.",
   },
   {
     icon: Globe,
     title: "Offshore Company Formation",
-    description:
-      "Establish offshore companies for international business operations, asset protection, and global expansion with secure and compliant corporate structuring solutions.",
+    description: "Secure offshore structures for international operations, asset protection, and global expansion.",
   },
   {
     icon: FileCheck,
     title: "Business License Services",
-    description:
-      "Get expert assistance for obtaining, renewing, and modifying business licenses across mainland, free zone, and offshore jurisdictions in the UAE.",
+    description: "Expert help for obtaining, renewing, and modifying UAE business licenses across all jurisdictions.",
   },
   {
     icon: ShieldCheck,
     title: "PRO & Government Services",
-    description:
-      "Professional document clearing and government liaison services for visas, approvals, Emirates ID, labor cards, immigration processing, and regulatory compliance.",
+    description: "Document clearing, Emirates ID, labor cards, and immigration processing handled professionally.",
   },
   {
     icon: Landmark,
     title: "Investor & Employment Visa",
-    description:
-      "Complete visa processing services for investors, employees, partners, and family sponsorship with smooth UAE immigration support and documentation handling.",
+    description: "Complete visa processing for investors, employees, and family sponsorship in the UAE.",
   },
   {
     icon: BadgeDollarSign,
     title: "VAT Registration & Corporate Tax",
-    description:
-      "Ensure full UAE tax compliance with professional VAT registration, tax filing, corporate tax advisory, bookkeeping, and financial reporting services.",
+    description: "VAT registration, tax filing, corporate tax advisory, and financial reporting services.",
   },
   {
     icon: ReceiptText,
     title: "Trademark Registration",
-    description:
-      "Protect your brand identity in the UAE with complete trademark registration, intellectual property support, and legal documentation assistance.",
+    description: "Protect your brand with complete UAE trademark registration and IP documentation support.",
   },
-  // {
-  //   icon: Banknote,
-  //   title: "Bank Account Assistance",
-  //   description:
-  //     "Get support for opening corporate and business bank accounts in the UAE with proper documentation, compliance guidance, and banking consultation.",
-  // },
 ];
 
 function ServiceCard({ icon: Icon, title, description, index }) {
@@ -100,9 +84,20 @@ function ServiceCard({ icon: Icon, title, description, index }) {
         </h3>
 
         {/* Description */}
-        <p className="text-[#6b7280] text-[13px] leading-[1.7] mb-1 font-sans transition-colors duration-500 group-hover:text-white/70">
+        <p className="text-[#6b7280] text-[13px] leading-[1.7] mb-4 font-sans transition-colors duration-500 group-hover:text-white/70">
           {description}
         </p>
+
+        {/* WhatsApp Button */}
+        <a
+          href="https://wa.me/971523177073"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] text-[12px] font-semibold transition-all duration-300 group-hover:bg-[#25D366] group-hover:text-white group-hover:border-[#25D366] hover:shadow-[0_4px_16px_rgba(37,211,102,0.35)]"
+        >
+          <FaWhatsapp size={14} />
+          WhatsApp Us
+        </a>
       </div>
     </div>
   );

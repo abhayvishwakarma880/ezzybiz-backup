@@ -76,8 +76,8 @@ const articles = [
     category: 'Business Setup',
     gradient: 'from-blue-500 to-cyan-500',
     title: 'How to Start a Business in Dubai as a Foreign Investor',
-    desc: 'A complete guide covering company formation, licensing options, investor visas, and the key steps to legally establish your business in Dubai.',
-    readTime: '8 min read',
+    desc: 'A step-by-step guide on company formation, licensing, and investor visas for foreign entrepreneurs in Dubai.',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
     Icon: IconBusinessSetup,
   },
   {
@@ -85,8 +85,8 @@ const articles = [
     category: 'Company Formation',
     gradient: 'from-purple-500 to-pink-500',
     title: 'Mainland vs Free Zone Company Setup — Which is Right for You?',
-    desc: 'Understand the differences between mainland and free zone business setup in the UAE, including ownership, costs, and operational flexibility.',
-    readTime: '6 min read',
+    desc: 'Compare mainland and free zone structures across ownership rights, setup costs, and operational flexibility.',
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
     Icon: IconCompanyFormation,
   },
   {
@@ -94,8 +94,8 @@ const articles = [
     category: 'UAE Compliance',
     gradient: 'from-emerald-500 to-teal-500',
     title: 'Understanding VAT Registration Requirements in the UAE',
-    desc: 'Learn when VAT registration becomes mandatory, the required documentation, and how businesses can stay compliant with UAE regulations.',
-    readTime: '5 min read',
+    desc: 'Understand VAT thresholds, required documents, and how to keep your UAE business fully tax compliant.',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
     Icon: IconCompliance,
   },
   {
@@ -103,8 +103,8 @@ const articles = [
     category: 'Investor Visa',
     gradient: 'from-orange-500 to-red-500',
     title: 'Everything You Need to Know About UAE Investor Visas',
-    desc: 'Explore the benefits, eligibility criteria, processing steps, and documentation required for obtaining an investor visa in Dubai.',
-    readTime: '7 min read',
+    desc: 'Explore eligibility criteria, processing steps, and key documents needed to secure your UAE investor visa.',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
     Icon: IconInvestorVisa,
   },
   {
@@ -112,8 +112,8 @@ const articles = [
     category: 'Entrepreneurship',
     gradient: 'from-indigo-500 to-purple-500',
     title: 'Top Business Opportunities in Dubai for 2026',
-    desc: 'Discover fast-growing industries and profitable business opportunities for entrepreneurs planning to enter the UAE market.',
-    readTime: '9 min read',
+    desc: 'Discover the most profitable and fast-growing business sectors for entrepreneurs entering the UAE market in 2026.',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80',
     Icon: IconEntrepreneurship,
   },
   {
@@ -121,8 +121,8 @@ const articles = [
     category: 'Business Banking',
     gradient: 'from-rose-500 to-red-500',
     title: 'How to Open a Corporate Bank Account in Dubai',
-    desc: 'A practical overview of the banking process, required documents, and common challenges businesses face while opening a UAE corporate bank account.',
-    readTime: '6 min read',
+    desc: 'A practical guide to required documents, bank selection, and common challenges in opening a UAE corporate account.',
+    image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&q=80',
     Icon: IconBanking,
   },
 ];
@@ -161,70 +161,64 @@ export default function Articles() {
               key={art.id}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
-              className="relative bg-white border border-gray-200 rounded-2xl p-6 overflow-hidden cursor-pointer"
+              className="group relative rounded-2xl overflow-hidden cursor-pointer h-[320px]"
               style={{
                 opacity: inView ? 1 : 0,
-                transform: inView
-                  ? hovered === i ? 'translateY(-6px)' : 'translateY(0)'
-                  : 'translateY(24px)',
-                boxShadow: hovered === i
-                  ? '0 8px 32px rgba(215,25,63,0.10)'
-                  : '0 1px 3px rgba(0,0,0,0.06)',
-                borderColor: hovered === i ? 'rgba(215,25,63,0.4)' : '#e5e7eb',
-                transition: inView
-                  ? `opacity 0.6s ease ${i * 0.08}s, transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease, border-color 0.3s`
-                  : `opacity 0.6s ease ${i * 0.08}s, transform 0.6s ease ${i * 0.08}s`,
+                transform: inView ? 'translateY(0)' : 'translateY(24px)',
+                transition: `opacity 0.6s ease ${i * 0.08}s, transform 0.6s ease ${i * 0.08}s`,
               }}
             >
-              {/* Top row */}
-              <div className="flex items-center justify-between mb-4">
-                <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-r ${art.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 ${hovered === i ? 'scale-110' : ''}`}
-                >
-                  <art.Icon />
-                </div>
-                <span className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full">
-                  {art.readTime}
-                </span>
-              </div>
-
-              {/* Category */}
-              <span
-                className={`inline-block text-[11px] font-semibold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r ${art.gradient} mb-2`}
-              >
-                {art.category}
-              </span>
-
-              {/* Title */}
-              <h3 className="text-[#0f0f1a] font-bold text-[15px] leading-snug mb-2">
-                {art.title}
-              </h3>
-
-              {/* Desc */}
-              <p className="text-gray-500 text-[13px] leading-relaxed mb-5">
-                {art.desc}
-              </p>
-
-              {/* Read More */}
-              <div className="flex items-center gap-1.5">
-                <span
-                  className="text-[13px] font-semibold transition-colors"
-                  style={{ color: hovered === i ? '#b01030' : '#d7193f' }}
-                >
-                  Read More
-                </span>
-                <svg
-                  className={`w-4 h-4 text-[#d7193f] transition-transform duration-300 ${hovered === i ? 'translate-x-1' : ''}`}
-                  fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="2"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4" />
-                </svg>
-              </div>
-
-              {/* Bottom gradient bar */}
-              <div
-                className={`absolute bottom-0 left-0 h-[2px] bg-gradient-to-r ${art.gradient} transition-all duration-300 ${hovered === i ? 'w-full' : 'w-0'}`}
+              {/* Background Image */}
+              <img
+                src={art.image}
+                alt={art.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
+
+              {/* Static dark gradient — always visible at bottom for title */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+              {/* Black overlay — animates from bottom to top on hover */}
+              <div
+                className="absolute inset-x-0 bottom-0 bg-black/55 transition-all duration-500 ease-out"
+                style={{ height: hovered === i ? '100%' : '0%' }}
+              />
+
+              {/* Icon — top left, always visible */}
+              <div className={`absolute top-4 left-4 w-11 h-11 rounded-xl bg-gradient-to-r ${art.gradient} flex items-center justify-center shadow-lg z-10 transition-transform duration-300 group-hover:scale-110`}>
+                <art.Icon />
+              </div>
+
+              {/* Content — bottom, slides up on hover */}
+              <div
+                className="absolute inset-x-0 bottom-0 z-10 p-5 transition-all duration-500 ease-out"
+                style={{
+                  transform: hovered === i ? 'translateY(0)' : 'translateY(0)',
+                }}
+              >
+                {/* Category — always visible above title */}
+                <span className={`inline-block text-[10px] font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r ${art.gradient} mb-1`}>
+                  {art.category}
+                </span>
+
+                {/* Title — always visible */}
+                <h3 className="text-white font-bold text-[15px] leading-snug">
+                  {art.title}
+                </h3>
+
+                {/* Desc — only on hover, slides up */}
+                <p
+                  className="text-white/70 text-[12.5px] leading-relaxed overflow-hidden transition-all duration-500 ease-out"
+                  style={{
+                    maxHeight: hovered === i ? '80px' : '0px',
+                    opacity: hovered === i ? 1 : 0,
+                    marginTop: hovered === i ? '8px' : '0px',
+                    transform: hovered === i ? 'translateY(0)' : 'translateY(10px)',
+                  }}
+                >
+                  {art.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

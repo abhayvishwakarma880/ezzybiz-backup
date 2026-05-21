@@ -23,7 +23,7 @@ const serviceLinks = [
   { label: "RAK Free Zone", to: "/rakfreezone" },
   { label: "All visa service", to: "/allvisa" },
   { label: "Golden visa", to: "/goldenvisa" },
-  { label: "ejar", to: "/ejari" }
+  { label: "ejari", to: "/ejari" }
 ];
 
 const socialLinks = [
