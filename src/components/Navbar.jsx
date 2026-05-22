@@ -144,7 +144,7 @@ export default function Navbar() {
                 className="md:flex hidden items-center gap-[6px] text-[#d0d8e8] text-[12.5px] no-underline transition-colors duration-200 hover:text-[#f8a0b0]"
               >
                 <span className="text-[#C8102E]"><MailIcon /></span>
-                info@ezzybiz.ae
+                info@www.ezzy.biz
               </a>
             </div>
 

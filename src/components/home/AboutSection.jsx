@@ -86,7 +86,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] py-10 md:py-28 overflow-hidden font-['Inter',sans-serif]">
+    <section ref={sectionRef} className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] py-7 md:py-28 overflow-hidden font-['Inter',sans-serif]">
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
@@ -102,7 +102,7 @@ export default function AboutSection() {
           {/* LEFT COLUMN */}
           <div className="relative order-2 lg:order-1">
             <div
-              className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl"
+              className="relative rounded-3xl overflow-hidden aspect-[5/5] shadow-2xl"
               style={{
                 opacity: sectionInView ? 1 : 0,
                 transform: sectionInView ? "translateX(0)" : "translateX(-30px)",
@@ -115,27 +115,6 @@ export default function AboutSection() {
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#0f0f1a]/20 via-[#d7193f]/10 to-[#0f0f1a]/60" />
-              
-              {/* Image Label */}
-              <div className="absolute bottom-6 left-6 flex items-center gap-3 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#d7193f] to-[#b81236] flex items-center justify-center text-white text-xl">
-                  <RiBuildingLine />
-                </div>
-                <div className="text-white">
-                  <span className="text-[10px] tracking-wider uppercase opacity-70 block">Headquartered in</span>
-                  <strong className="text-sm font-semibold">Dubai, UAE</strong>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Stats Card */}
-            <div
-              ref={statsRef}
-              className="absolute -bottom-8 -right-4 lg:-right-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-gray-100 grid grid-cols-2 gap-5 min-w-[280px] lg:min-w-[340px] z-10"
-            >
-              {stats.map((s, i) => (
-                <StatItem key={i} value={s.value} label={s.label} index={i} inView={statsInView} />
-              ))}
             </div>
           </div>
 
@@ -195,55 +174,6 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-
-            {/* Vision & Mission */}
-            <div
-              className={`grid sm:grid-cols-2 gap-4 mb-10 transition-all duration-700 ${
-                sectionInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "0.55s" }}
-            >
-              {/* Vision Card */}
-              <div className="p-5 rounded-2xl bg-gradient-to-br from-[#0f0f1a] to-[#1a1a2e] border border-[#d7193f]/10 transition-all duration-300 hover:border-[#d7193f]/30 hover:-translate-y-1 group">
-                <div className="flex items-center gap-2 mb-3">
-                  <HiOutlineGlobeAlt className="text-[#d7193f] text-lg" />
-                  <h3 className="font-bold text-[#d7193f] text-base">Our Vision</h3>
-                </div>
-                <p className="text-[12.5px] text-gray-400 leading-relaxed">
-                  To become a trusted corporate partner for entrepreneurs and global businesses by delivering 
-                  professional, transparent, and growth-driven business solutions across the UAE.
-                </p>
-              </div>
-
-              {/* Mission Card */}
-              <div className="p-5 rounded-2xl bg-gradient-to-br from-[#0f0f1a] to-[#1a1a2e] border border-[#d7193f]/10 transition-all duration-300 hover:border-[#d7193f]/30 hover:-translate-y-1 group">
-                <div className="flex items-center gap-2 mb-3">
-                  <TbShieldCheck className="text-[#d7193f] text-lg" />
-                  <h3 className="font-bold text-[#d7193f] text-base">Our Mission</h3>
-                </div>
-                <p className="text-[12.5px] text-gray-400 leading-relaxed">
-                  Simplifying business setup and corporate compliance in Dubai through expert consultation, 
-                  efficient processes, and reliable end-to-end support for every client.
-                </p>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            {/* <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 ${
-                sectionInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "0.65s" }}
-            >
-              <button className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-6 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105">
-                Start Your Company
-                <LuArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 px-6 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-[#d7193f] hover:shadow-md">
-                <LuMessageCircle size={14} />
-                Talk To Our Experts
-              </button>
-            </div> */}
           </div>
         </div>
       </div>

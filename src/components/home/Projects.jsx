@@ -85,7 +85,7 @@ export default function Projects() {
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <h4 className="text-white font-bold text-sm mb-1">{s.title}</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">{s.desc}</p>
+                {/* <p className="text-gray-400 text-xs leading-relaxed">{s.desc}</p> */}
               </div>
             </div>
           ))}

@@ -163,9 +163,9 @@ export default function Footer() {
                 <div className="w-[34px] h-[34px] flex-shrink-0 border border-white/[0.08] rounded-[9px] flex items-center justify-center mt-0.5">
                   <MdOutlineMailOutline className="text-red-500 text-[15px]" />
                 </div>
-                <a href="mailto:info@ezzybiz.ae"
+                <a href="mailto:info@www.ezzy.biz"
                   className="text-white/40 text-[13px] pt-1 hover:text-white transition-colors duration-300">
-                  info@ezzybiz.ae
+                  info@www.ezzy.biz
                 </a>
               </div>
 

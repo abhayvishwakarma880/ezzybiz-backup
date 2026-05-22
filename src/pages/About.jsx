@@ -293,29 +293,31 @@ export default function About() {
   return (
     <section className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-16 md:pt-8 md:pb-10 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(215,25,63,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(215,25,63,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
-        </div>
+      <section className="relative pt-6 pb-16 md:pt-8 md:pb-10 overflow-hidden">
+        {/* Background Image */}
+        <img
+          src="/src/assets/aboutUs.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          aria-hidden="true"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
         {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5 relative z-10">
+          <div className="text-sm text-white/60 flex items-center gap-2">
             <Link
               to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
+              className="hover:text-white transition-colors no-underline text-white/60"
             >
               Home
             </Link>
-
-            <ChevronRight size={14} className="text-gray-400" />
-
-            <span className="text-[#d7193f] font-medium">About</span>
+            <ChevronRight size={14} className="text-white/40" />
+            <span className="text-red-500 font-medium">About</span>
           </div>
         </div>
 
-        <div className="max-w-[1280px]  mx-auto px-5 md:px-8 relative z-10">
+        <div className="max-w-7xl  mx-auto px-5 md:px-8 relative z-10">
           <div
             ref={heroRef}
             className={`text-center max-w-3xl mx-auto transition-all duration-600 ${
@@ -331,7 +333,7 @@ export default function About() {
               </span>
             </div>
 
-            <h1 className="font-sans text-[clamp(32px,5vw,52px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(32px,5vw,52px)] font-bold text-white leading-[1.2] mb-4">
               Trusted Business Setup
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">
@@ -339,7 +341,7 @@ export default function About() {
               </span>
             </h1>
 
-            <p className="text-[14px] md:text-[15px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[14px] md:text-[15px] leading-relaxed text-white/75 mb-8">
               EzzyBiz is a leading corporate service provider in Dubai, helping
               entrepreneurs, startups, and international investors establish and
               grow their businesses across the UAE. We simplify company
@@ -347,25 +349,6 @@ export default function About() {
               corporate compliance with professional guidance and reliable
               support.
             </p>
-
-            {/* <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                to="/contact"
-                className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-6 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 no-underline"
-              >
-                Book Free Consultation{" "}
-                <ArrowRight
-                  size={14}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </Link>
-              <a
-                href="tel:+971527069469"
-                className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 px-6 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-[#d7193f] hover:shadow-md no-underline cursor-pointer"
-              >
-                <MessageCircle size={14} /> Talk To Expert
-              </a>
-            </div> */}
           </div>
         </div>
       </section>
@@ -408,56 +391,48 @@ export default function About() {
                   right business structure and operational support based on
                   their goals.
                 </p>
-                <p>
-                  From company registration and trade licensing to visa
-                  processing, VAT services, PRO support, and business banking
-                  assistance, EzzyBiz delivers end-to-end corporate solutions
-                  with transparency, professionalism, and efficiency.
-                </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              {STATS.map((stat, idx) => (
-                <StatCard key={idx} stat={stat} index={idx} />
-              ))}
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://www.pwc.com/m1/en/publications/images-new/creating-an-institution-fit-for-your-esg-aspirations-hero.png"
+                alt="EzzyBiz Corporate Services"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ========== VISION & MISSION ========== */}
-      <section className="py-16 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
+      <section className="py-16 bg-[#0a0a0a]">
+        {/* dot grid */}
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative">
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
           <div
             ref={visionRef}
-            className={`grid md:grid-cols-2 gap-8 transition-all duration-600 ${
-              visionVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
+            className={`grid md:grid-cols-2 gap-8 relative z-10 transition-all duration-600 ${
+              visionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4">
+            <div className="p-8 rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-transparent hover:border-[#d7193f]/40 hover:from-[#d7193f]/12 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-[#d7193f]/10 border border-[#d7193f]/20 flex items-center justify-center mb-4">
                 <Globe size={22} className="text-[#d7193f]" />
               </div>
-              <h3 className="text-xl font-bold text-[#0f0f1a] mb-3 font-sans">
-                Our Vision
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold text-white mb-3 font-sans">Our Vision</h3>
+              <p className="text-white/50 text-sm leading-relaxed">
                 To become a trusted corporate partner for entrepreneurs and
                 international businesses by delivering seamless business setup
                 and professional corporate solutions across the UAE.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4">
+            <div className="p-8 rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-transparent hover:border-[#d7193f]/40 hover:from-[#d7193f]/12 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-[#d7193f]/10 border border-[#d7193f]/20 flex items-center justify-center mb-4">
                 <Award size={22} className="text-[#d7193f]" />
               </div>
-              <h3 className="text-xl font-bold text-[#0f0f1a] mb-3 font-sans">
-                Our Mission
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold text-white mb-3 font-sans">Our Mission</h3>
+              <p className="text-white/50 text-sm leading-relaxed">
                 Our mission is to simplify company formation and business
                 operations in Dubai through expert consultation, transparent
                 processes, and reliable end-to-end support services.
