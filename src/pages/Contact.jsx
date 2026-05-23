@@ -286,7 +286,13 @@ export default function Contact() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80"
+          alt="Dubai business contact background"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -294,18 +300,13 @@ export default function Contact() {
         </div>
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="flex items-center justify-between mb-6 -mt-5 ml-6">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
-            <Link
-              to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
-            >
+        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
+          <div className="text-sm text-white flex items-center gap-2">
+            <Link to="/" className="hover:text-[#fca5a5] transition-colors no-underline text-white">
               Home
             </Link>
-
-            <ChevronRight size={14} className="text-gray-400" />
-
-            <span className="text-[#d7193f] font-medium">Contact Us</span>
+            <ChevronRight size={14} className="text-white/70" />
+            <span className="text-[#fca5a5] font-medium">Contact Us</span>
           </div>
         </div>
 
@@ -316,31 +317,22 @@ export default function Contact() {
               heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-[#d7193f]/5 backdrop-blur-sm border border-[#d7193f]/10 rounded-full px-4 py-1.5 mb-5">
-              <MessageCircle size={12} className="text-[#d7193f]" />
-              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-[#d7193f]">CONTACT EZZYBIZ</span>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-5">
+              <MessageCircle size={12} className="text-white" />
+              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-white">CONTACT EZZYBIZ</span>
             </div>
 
-            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-white leading-[1.2] mb-4">
               Get In Touch With Our
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">Business Setup Experts</span>
+              <span className="text-white">Business Setup Experts</span>
             </h1>
 
-            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-200 mb-8">
               Connect with EzzyBiz for professional business setup, visa services, VAT support, banking assistance, 
               and corporate solutions across Dubai and the UAE. Our consultants are ready to guide you through every 
               step of your business journey.
             </p>
-
-            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={scrollToForm} className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 cursor-pointer">
-                Book Free Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <a href="tel:+971527069469" className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-[#d7193f] hover:shadow-md no-underline cursor-pointer">
-                <MessageCircle size={14} /> Talk To Expert
-              </a>
-            </div> */}
           </div>
         </div>
       </section>

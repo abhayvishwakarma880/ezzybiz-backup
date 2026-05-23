@@ -22,6 +22,10 @@ import {
 
 import { FiCheckCircle as CheckCircle2 } from "react-icons/fi";
 
+import aboutUs from '../assets/aboutUs.png';
+import whyChoose from '../assets/whyChoose.png';
+import he from '../assets/he.png';
+
 const STATS = [
   { number: "500+", label: "Businesses Successfully Setup", icon: Briefcase },
   { number: "10+", label: "Years Of Industry Experience", icon: Calendar },
@@ -196,15 +200,15 @@ function ServiceCard({ service, index }) {
   return (
     <div
       ref={ref}
-      className={`group flex items-center gap-3 p-3 rounded-lg bg-gray-50/50 border border-gray-100 transition-all duration-300 hover:bg-white hover:border-[#d7193f]/20 hover:shadow-sm ${
+      className={`group flex items-center gap-4 p-4 rounded-xl border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-transparent transition-all duration-300 hover:border-[#d7193f]/40 hover:from-[#d7193f]/10 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
-      style={{ transitionDelay: `${index * 50}ms` }}
+      style={{ transitionDelay: `${index * 60}ms` }}
     >
-      <div className="w-7 h-7 rounded-md bg-[#d7193f]/5 flex items-center justify-center group-hover:bg-[#d7193f]/10 transition-colors">
-        <Icon size={13} className="text-[#d7193f]" />
+      <div className="w-9 h-9 rounded-lg bg-[#d7193f]/10 border border-[#d7193f]/20 flex items-center justify-center shrink-0 group-hover:bg-[#d7193f]/20 transition-colors">
+        <Icon size={15} className="text-[#d7193f]" />
       </div>
-      <span className="text-sm text-gray-700 group-hover:text-[#d7193f] transition-colors">
+      <span className="text-sm text-white/70 group-hover:text-white transition-colors font-medium">
         {service.name}
       </span>
     </div>
@@ -296,7 +300,7 @@ export default function About() {
       <section className="relative pt-6 pb-16 md:pt-8 md:pb-10 overflow-hidden">
         {/* Background Image */}
         <img
-          src="/src/assets/aboutUs.png"
+          src={aboutUs}
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-center"
           aria-hidden="true"
@@ -463,42 +467,65 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            {WHY_CHOOSE.map((item, idx) => (
-              <WhyChooseCard key={idx} item={item} index={idx} />
-            ))}
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+            {/* Left — Image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src='https://rakez.com/Upload/BlogManager/638502684896596537.jpg'
+                alt="Why Choose EzzyBiz"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Right — Cards */}
+            <div>
+              <div className="grid gap-4">
+                {WHY_CHOOSE.map((item, idx) => (
+                  <WhyChooseCard key={idx} item={item} index={idx} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ========== SERVICES OVERVIEW ========== */}
-      <section className="py-16 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
+      <section className="py-16 bg-[#0a0a0a] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
+
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <div className="w-8 h-[2px] bg-[#d7193f]/60" />
+              <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">OUR SERVICES</span>
+              <div className="w-8 h-[2px] bg-[#d7193f]/60" />
+            </div>
+            <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
+              What We Do For Your Business
+            </h2>
+          </div>
+
           <div
             ref={servicesRef}
-            className={`transition-all duration-600 ${
-              servicesVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
+            className={`grid md:grid-cols-2 gap-10 md:gap-14 items-center transition-all duration-600 ${
+              servicesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-3">
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">
-                  OUR SERVICES
-                </span>
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
-                Complete Business Setup Solutions In Dubai
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {/* Left — Service Cards */}
+            <div className="grid grid-cols-2 gap-3">
               {SERVICES.map((service, idx) => (
                 <ServiceCard key={idx} service={service} index={idx} />
               ))}
+            </div>
+
+            {/* Right — Image */}
+            <div className="relative rounded-2xl overflow-hidden h-[340px]">
+              <img
+                src={he}
+                alt="EzzyBiz Business Setup Services Dubai"
+                className="w-full h-full object-fill object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
           </div>
         </div>

@@ -38,31 +38,37 @@ const VISA_TYPES = [
     icon: Briefcase,
     title: "Investor Visa",
     description: "Investor visas for entrepreneurs and business owners establishing companies in mainland and free zone jurisdictions across the UAE.",
+    image: "https://dynasty-uae.com/wp-content/uploads/2024/06/investorskaya-viza-v-oae.webp",
   },
   {
     icon: Users,
     title: "Employment Visa",
     description: "Professional employment visa processing services for companies hiring employees and skilled professionals in the UAE.",
+    image: "https://avatars.mds.yandex.net/i?id=eff3e6e24f3a54e8c07631504b7e42ddfb253319-5859525-images-thumbs&n=13",
   },
   {
     icon: Home,
     title: "Family Visa",
     description: "Family sponsorship and residence visa assistance for spouses, children, and dependent family members in the UAE.",
+    image: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1PC0Jd.img?w=1200&h=675&m=4&q=60",
   },
   {
     icon: Award,
     title: "Golden Visa",
     description: "Long-term UAE Golden Visa assistance for eligible investors, entrepreneurs, professionals, and skilled individuals.",
+    image: "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202507/686f30d9978db-uae-has-denied-claims-that-it-is-offering-golden-visa-for-lifetime-101737536-16x9.jpeg",
   },
   {
     icon: Globe,
     title: "Freelance Visa",
     description: "Freelance visa solutions for independent professionals, digital creators, consultants, and remote workers in Dubai.",
+    image: "https://www.smartadvisorsgroup.com/wp-content/uploads/%D0%A4%D1%80%D0%B8%D0%BB%D0%B0%D0%BD%D1%81.png",
   },
   {
     icon: HandShake,
     title: "Partner Visa",
     description: "Partner visa processing services for shareholders and partners involved in UAE business operations and company ownership.",
+    image: "https://grindtime.space/media/5ngartbm/work-visa.png?anchor=center&mode=crop&width=860&height=785&rnd=133860841739500000",
   },
 ];
 
@@ -161,37 +167,51 @@ function VisaTypeCard({ visa, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
+      className={`group relative overflow-hidden rounded-xl border border-gray-100 shadow-sm transition-all duration-500 min-h-[260px] hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#d7193f]/15">
-        <Icon size={22} className="text-[#d7193f]" />
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${visa.image})` }}
+      />
+      <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/0" />
+
+      <div className="relative z-10 p-6 flex flex-col justify-between h-full">
+        <div className="w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110">
+          <Icon size={22} className="text-[#d7193f]" />
+        </div>
+        <div className="mt-auto">
+          <div className="rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 p-3">
+            <h3 className="font-semibold text-white text-lg">{visa.title}</h3>
+          </div>
+        </div>
       </div>
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{visa.title}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{visa.description}</p>
     </div>
   );
 }
 
-function BenefitCard({ benefit, index }) {
+function BenefitCard({ benefit, index, variant = "light" }) {
   const [ref, visible] = useIntersectionObserver();
   const Icon = benefit.icon;
+  const isDark = variant === "dark";
 
   return (
     <div
       ref={ref}
-      className={`group p-5 rounded-xl bg-gradient-to-br from-[#fef8f9] to-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-md hover:border-[#d7193f]/10 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className={`group p-5 rounded-xl transition-all duration-500 ${
+        isDark
+          ? "bg-slate-900/95 border border-slate-700 shadow-lg shadow-slate-950/20 hover:bg-slate-800"
+          : "bg-gradient-to-br from-[#fef8f9] to-white border border-gray-100 shadow-sm hover:shadow-md hover:border-[#d7193f]/10"
+      } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="w-10 h-10 rounded-lg bg-[#d7193f]/5 flex items-center justify-center mb-3">
+      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${isDark ? "bg-[#d7193f]/15" : "bg-[#d7193f]/5"}`}>
         <Icon size={18} className="text-[#d7193f]" />
       </div>
-      <h3 className="font-semibold text-gray-800 text-sm mb-1">{benefit.title}</h3>
-      <p className="text-gray-500 text-xs leading-relaxed">{benefit.description}</p>
+      <h3 className={`font-semibold text-sm mb-1 ${isDark ? "text-white" : "text-gray-800"}`}>{benefit.title}</h3>
+      <p className={`leading-relaxed text-xs ${isDark ? "text-slate-300" : "text-gray-500"}`}>{benefit.description}</p>
     </div>
   );
 }
@@ -269,7 +289,14 @@ export default function AllVisa() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+        <img
+          src="https://www.khaleejfeed.com/wp-content/uploads/2023/12/How-to-check-visit-visa-status-Dubai.jpg"
+          alt="UAE visa services"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
+
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -277,40 +304,35 @@ export default function AllVisa() {
         </div>
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
+        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
+          <div className="text-sm text-white flex items-center gap-2">
             <Link
               to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
+              className="hover:text-[#fca5a5] transition-colors no-underline"
             >
               Home
             </Link>
 
-            <ChevronRight size={14} className="text-gray-400" />
+            <ChevronRight size={14} className="text-white/70" />
 
-            <span className="text-[#d7193f] font-medium">Visa Services</span>
+            <span className="text-[#fca5a5] font-medium">Visa Services</span>
           </div>
         </div>
 
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={heroRef}
             className={`text-center max-w-3xl mx-auto transition-all duration-600 ${
               heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-[#d7193f]/5 backdrop-blur-sm border border-[#d7193f]/10 rounded-full px-4 py-1.5 mb-5">
-              <FaPassport size={12} className="text-[#d7193f]" />
-              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-[#d7193f]">UAE VISA SERVICES</span>
-            </div>
-
-            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-white leading-[1.2] mb-4">
               Professional UAE
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">Visa Services In Dubai</span>
+              <span className="text-white bg-clip-text">Visa Services In Dubai</span>
             </h1>
 
-            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-300 mb-8">
               EzzyBiz provides reliable UAE visa services for entrepreneurs, investors, business owners, employees, 
               and families across Dubai and the UAE. Our experts simplify the visa application process with complete 
               documentation, approvals, and immigration support for smooth and hassle-free processing.
@@ -333,32 +355,42 @@ export default function AllVisa() {
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={introRef}
-            className={`max-w-3xl mx-auto text-center transition-all duration-600 ${
+            className={`grid items-center gap-10 md:grid-cols-2 transition-all duration-600 ${
               introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 mb-4 justify-center">
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">ALL VISA SERVICES</span>
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+            <div>
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">ALL VISA SERVICES</span>
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+              </div>
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
+                Complete UAE Visa & Immigration Solutions
+              </h2>
+              <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
+                <p>
+                  The UAE offers multiple visa options for entrepreneurs, investors, professionals, employees, and families 
+                  looking to live, work, or establish businesses in Dubai and across the Emirates. Choosing the right visa 
+                  category and completing the required procedures correctly is essential for smooth approval and compliance.
+                </p>
+                <p>
+                  EzzyBiz provides end-to-end visa assistance including investor visas, employment visas, family sponsorship, 
+                  Golden Visa support, Emirates ID processing, medical testing coordination, and immigration documentation services.
+                </p>
+                <p>
+                  Our experienced consultants guide clients through every stage of the UAE visa process with professional support, 
+                  transparent communication, and reliable corporate assistance.
+                </p>
+              </div>
             </div>
-            <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
-              Complete UAE Visa & Immigration Solutions
-            </h2>
-            <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed text-left">
-              <p>
-                The UAE offers multiple visa options for entrepreneurs, investors, professionals, employees, and families 
-                looking to live, work, or establish businesses in Dubai and across the Emirates. Choosing the right visa 
-                category and completing the required procedures correctly is essential for smooth approval and compliance.
-              </p>
-              <p>
-                EzzyBiz provides end-to-end visa assistance including investor visas, employment visas, family sponsorship, 
-                Golden Visa support, Emirates ID processing, medical testing coordination, and immigration documentation services.
-              </p>
-              <p>
-                Our experienced consultants guide clients through every stage of the UAE visa process with professional support, 
-                transparent communication, and reliable corporate assistance.
-              </p>
+
+            <div className="rounded-3xl overflow-hidden shadow-xl">
+              <img
+                src="https://abrc.ae/assets/galleries/261/uae-visa-garant.jpg"
+                alt="UAE visa services in Dubai"
+                className="w-full h-full min-h-[260px] object-fill object-center"
+              />
             </div>
           </div>
         </div>
@@ -394,7 +426,7 @@ export default function AllVisa() {
       </section>
 
       {/* ========== BENEFITS SECTION ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-slate-950 text-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={benefitsRef}
@@ -405,17 +437,17 @@ export default function AllVisa() {
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-3 justify-center">
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY UAE VISA</span>
+                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#fca5a5]">WHY UAE VISA</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Benefits Of UAE Residency & Visa Services
               </h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {BENEFITS.map((benefit, idx) => (
-                <BenefitCard key={idx} benefit={benefit} index={idx} />
+                <BenefitCard key={idx} benefit={benefit} index={idx} variant="dark" />
               ))}
             </div>
           </div>
@@ -452,7 +484,7 @@ export default function AllVisa() {
       </section>
 
       {/* ========== WHY CHOOSE EZZYBIZ ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-slate-950 text-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={whyRef}
@@ -463,27 +495,37 @@ export default function AllVisa() {
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-3 justify-center">
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EZZYBIZ</span>
+                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#fca5a5]">WHY EZZYBIZ</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Why Choose EzzyBiz For UAE Visa Services
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {WHY_CHOOSE.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={`flex items-center gap-3 p-4 rounded-lg bg-gray-50/50 border border-gray-100 transition-all duration-300 hover:bg-white hover:border-[#d7193f]/20 hover:shadow-sm ${
-                    whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
-                  style={{ transitionDelay: `${idx * 60}ms` }}
-                >
-                  <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
-                  <span className="text-sm text-gray-700">{item}</span>
-                </div>
-              ))}
+            <div className="grid gap-8 md:grid-cols-2 items-start">
+              <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
+                {WHY_CHOOSE.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex items-center gap-3 p-4 rounded-xl bg-slate-900/90 border border-slate-700 transition-all duration-300 hover:bg-slate-800 hover:border-[#d7193f]/20 hover:shadow-lg hover:shadow-slate-950/30 ${
+                      whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    }`}
+                    style={{ transitionDelay: `${idx * 60}ms` }}
+                  >
+                    <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
+                    <span className="text-sm text-slate-200">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-800 h-[220px] md:h-[240px]">
+                <img
+                  src="https://mindmineglobal.com/wp-content/uploads/2023/12/documents-required-for-canada-visitor-visa-Canada-tourist-visa-refusal-rate-is-on-the-rise.jpg"
+                  alt="Visa documents overview"
+                  className="w-full h-full object-fill object-center"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FiClock, FiPhone, FiMail, FiChevronDown, FiMenu, FiX, FiMessageSquare } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   {
     label: "Company Setup",
@@ -40,7 +40,7 @@ const InstagramIcon = () => <FaInstagram size={15} />;
 const LinkedInIcon = () => <FaLinkedinIn size={15} />;
 const YouTubeIcon = () => <FaYoutube size={15} />;
 
-function DropdownMenu({ items, isOpen }) {
+function DropdownMenu({ items, isOpen, pathname }) {
   return (
     <div
       className={`
@@ -61,10 +61,11 @@ function DropdownMenu({ items, isOpen }) {
           to={item.href || "#"}
           className={`
             flex items-center gap-[10px] px-5 py-[11px]
-            text-[#1a1a2e] no-underline text-[13.5px] font-medium tracking-[0.02em] font-serif
+            no-underline text-[13.5px] font-medium tracking-[0.02em] font-serif
             transition-all duration-[180ms] ease-in-out
             hover:bg-[#fdf0f2] hover:text-[#C8102E] hover:pl-[26px]
             ${i < items.length - 1 ? "border-b border-[#f0f0f0]" : ""}
+            ${pathname === item.href ? "text-[#C8102E] bg-[#fdf0f2] pl-[26px]" : "text-[#1a1a2e]"}
           `}
         >
           <span className="w-[5px] h-[5px] rounded-full bg-[#C8102E] shrink-0" />
@@ -76,6 +77,7 @@ function DropdownMenu({ items, isOpen }) {
 }
 
 export default function Navbar() {
+  const { pathname } = useLocation();
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(null);
@@ -111,6 +113,7 @@ export default function Navbar() {
           transition: width 0.25s ease;
         }
         .nav-underline:hover::after { width: 100%; }
+        .nav-active::after { width: 100%; }
 
         @keyframes navSlideDown {
           from { transform: translateY(-100%); }
@@ -224,8 +227,14 @@ export default function Navbar() {
                 >
                   <Link
                     to={item.href || "#"}
-                    className={`flex items-center gap-1 px-3 py-2 text-[#1a1a2e] no-underline text-[13.5px] font-semibold tracking-[0.02em] whitespace-nowrap transition-colors duration-200 hover:text-[#C8102E] ${
+                    className={`flex items-center gap-1 px-3 py-2 no-underline text-[13.5px] font-semibold tracking-[0.02em] whitespace-nowrap transition-colors duration-200 hover:text-[#C8102E] ${
                       !item.dropdown ? "nav-underline" : ""
+                    } ${
+                      !item.dropdown && pathname === item.href
+                        ? "text-[#C8102E] nav-active"
+                        : item.dropdown && item.dropdown.some(d => d.href === pathname)
+                        ? "text-[#C8102E]"
+                        : "text-[#1a1a2e]"
                     }`}
                   >
                     {item.label}
@@ -240,7 +249,7 @@ export default function Navbar() {
                     )}
                   </Link>
                   {item.dropdown && (
-                    <DropdownMenu items={item.dropdown} isOpen={activeDropdown === idx} />
+                    <DropdownMenu items={item.dropdown} isOpen={activeDropdown === idx} pathname={pathname} />
                   )}
                 </div>
               ))}

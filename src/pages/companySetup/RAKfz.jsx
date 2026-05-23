@@ -39,31 +39,37 @@ const BENEFITS = [
     icon: Globe,
     title: "100% Foreign Ownership",
     description: "Maintain complete ownership of your company without requiring a local sponsor or UAE national partner.",
+    image: "https://prodtfgstrg.blob.core.windows.net/media/5653408/corporate-internal-stock-team-having-meetings.jpg",
   },
   {
     icon: DollarSign,
     title: "Affordable Business Setup",
     description: "RAK Free Zone offers cost-effective business setup solutions suitable for startups, SMEs, and international investors.",
+    image: "https://pbs.twimg.com/profile_images/1849496692615249920/OxVdlUfc_400x400.jpg",
   },
   {
     icon: MapPin,
     title: "Strategic Business Location",
     description: "Benefit from excellent connectivity to UAE ports, airports, regional markets, and international trade routes.",
+    image: "https://www.flyingcolour.net/static/assets/images/11.png",
   },
   {
     icon: Zap,
     title: "Fast Company Registration",
     description: "Enjoy simplified company formation procedures and efficient trade license approvals for smooth business setup.",
+    image: "https://sponsorcontent.cnn.com/edition/2022/dubai/card34.jpg",
   },
   {
     icon: Building,
     title: "Flexible Office Solutions",
     description: "Choose from flexi desks, offices, warehouses, and industrial facilities based on your business requirements.",
+    image: "https://i.pinimg.com/736x/4f/5a/2a/4f5a2a27a6db6238806ba41f88ffb974.jpg",
   },
   {
     icon: Users,
     title: "Investor Visa Eligibility",
     description: "Apply for investor and employee visas with complete UAE immigration and visa processing support services.",
+    image: "https://globalcanda.com/wp-content/uploads/2024/01/667.5.jpg",
   },
 ];
 
@@ -142,16 +148,24 @@ function BenefitCard({ benefit, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
+      className={`group relative rounded-xl overflow-hidden h-[220px] transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#d7193f]/15">
-        <Icon size={22} className="text-[#d7193f]" />
+      <img
+        src={benefit.image}
+        alt={benefit.title}
+        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+      <div className="absolute inset-0 flex flex-col justify-end p-5">
+        <div className="w-9 h-9 rounded-lg bg-[#d7193f]/80 flex items-center justify-center mb-3">
+          <Icon size={16} className="text-white" />
+        </div>
+        <h3 className="font-semibold text-white text-base mb-1">{benefit.title}</h3>
+        <p className="text-white/70 text-xs leading-relaxed">{benefit.description}</p>
       </div>
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{benefit.title}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{benefit.description}</p>
     </div>
   );
 }
@@ -249,7 +263,14 @@ export default function RAKFZ() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+        <img
+          src="https://www.gbsei.com/wp-content/uploads/2025/02/Business-set-up-in-DAFZA.png"
+          alt="Ras Al Khaimah Free Zone business setup"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
+
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -257,40 +278,36 @@ export default function RAKFZ() {
         </div>
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
+        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
+          <div className="text-sm text-white flex items-center gap-2">
             <Link
               to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
+              className="hover:text-[#fca5a5] transition-colors no-underline"
             >
               Home
             </Link>
 
-            <ChevronRight size={14} className="text-gray-400" />
+            <ChevronRight size={14} className="text-white/70" />
 
-            <span className="text-[#d7193f] font-medium">RAK Free Zone</span>
+            <span className="text-[#fca5a5] font-medium">RAK Free Zone</span>
           </div>
         </div>
 
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={heroRef}
             className={`text-center max-w-3xl mx-auto transition-all duration-600 ${
               heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
-          >
-            <div className="inline-flex items-center gap-2 bg-[#d7193f]/5 backdrop-blur-sm border border-[#d7193f]/10 rounded-full px-4 py-1.5 mb-5">
-              <CheckCircle2 size={12} className="text-[#d7193f]" />
-              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-[#d7193f]">RAK FREE ZONE SETUP</span>
-            </div>
+          > 
 
-            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-white leading-[1.2] mb-4">
               RAK Free Zone
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">Company Formation Services</span>
+              <span className="text-white bg-clip-text">Company Formation Services</span>
             </h1>
 
-            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-200 mb-8">
               Establish your business in Ras Al Khaimah Free Zone with cost-effective company formation solutions, 
               investor-friendly regulations, and complete corporate support. EzzyBiz helps entrepreneurs, startups, 
               and global investors launch and grow their businesses across the UAE with smooth registration and 
@@ -301,7 +318,7 @@ export default function RAKFZ() {
               <Link to="/contact" className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 no-underline">
                 Start Your Company <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/contact" className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-[#d7193f] hover:shadow-md no-underline">
+              <Link to="/contact" className="flex items-center justify-center gap-2 border border-white/30 bg-white/10 text-white px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-white hover:shadow-md no-underline">
                 <MessageCircle size={14} /> Book Free Consultation
               </Link>
             </div>
@@ -314,32 +331,38 @@ export default function RAKFZ() {
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={introRef}
-            className={`max-w-3xl mx-auto text-center transition-all duration-600 ${
+            className={`grid items-center gap-10 md:grid-cols-2 transition-all duration-600 ${
               introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 mb-4 justify-center">
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">RAK FREE ZONE</span>
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+            <div>
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">RAK FREE ZONE</span>
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+              </div>
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
+                What Is RAK Free Zone Company Formation?
+              </h2>
+              <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed text-left">
+                <p>
+                  RAK Free Zone company formation allows entrepreneurs and international investors to establish businesses 
+                  in one of the UAE's most business-friendly and cost-effective free zones. Ras Al Khaimah offers flexible 
+                  setup solutions, modern infrastructure, and simplified regulations for startups, SMEs, and international companies.
+                </p>
+                <p>
+                  RAK Free Zone is strategically located with strong access to UAE ports, airports, and international trade 
+                  routes, making it an ideal destination for trading, manufacturing, logistics, consultancy, and service-based businesses.
+                </p>
+              </div>
             </div>
-            <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
-              What Is RAK Free Zone Company Formation?
-            </h2>
-            <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed text-left">
-              <p>
-                RAK Free Zone company formation allows entrepreneurs and international investors to establish businesses 
-                in one of the UAE's most business-friendly and cost-effective free zones. Ras Al Khaimah offers flexible 
-                setup solutions, modern infrastructure, and simplified regulations for startups, SMEs, and international companies.
-              </p>
-              <p>
-                RAK Free Zone is strategically located with strong access to UAE ports, airports, and international trade 
-                routes, making it an ideal destination for trading, manufacturing, logistics, consultancy, and service-based businesses.
-              </p>
-              <p>
-                EzzyBiz provides complete assistance for RAK Free Zone company setup including business activity selection, 
-                trade license registration, visa processing, office solutions, banking support, and UAE corporate compliance services.
-              </p>
+
+            <div className="rounded-3xl overflow-hidden shadow-xl">
+              <img
+                src="https://www.creativezone.ae/wp-content/uploads/rak-free-zone-company-setup-guide-5c175fc4c95d4.jpg"
+                alt="RAK Free Zone company setup guide"
+                className="w-full h-full min-h-[360px] object-fill object-center"
+              />
             </div>
           </div>
         </div>
@@ -403,37 +426,8 @@ export default function RAKFZ() {
         </div>
       </section>
 
-      {/* ========== PROCESS SECTION ========== */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[1000px] mx-auto px-5 md:px-8">
-          <div
-            ref={processRef}
-            className={`transition-all duration-600 ${
-              processVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-3 justify-center">
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">SETUP PROCESS</span>
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
-                RAK Free Zone Company Setup Process
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-x-12 gap-y-2">
-              {PROCESS_STEPS.map((step, idx) => (
-                <ProcessStep key={idx} step={step} index={idx} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ========== WHY CHOOSE EZZYBIZ ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-slate-950 text-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={whyRef}
@@ -447,7 +441,7 @@ export default function RAKFZ() {
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EZZYBIZ</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Why Choose EzzyBiz For RAK Free Zone Setup
               </h2>
             </div>
@@ -456,13 +450,13 @@ export default function RAKFZ() {
               {WHY_CHOOSE.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center gap-3 p-4 rounded-lg bg-gray-50/50 border border-gray-100 transition-all duration-300 hover:bg-white hover:border-[#d7193f]/20 hover:shadow-sm ${
+                  className={`flex items-center gap-3 p-5 rounded-3xl bg-slate-900/90 border border-white/10 transition-all duration-300 hover:bg-slate-900 hover:shadow-lg hover:shadow-[#d7193f]/20 ${
                     whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${idx * 60}ms` }}
                 >
                   <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <span className="text-sm text-slate-100">{item}</span>
                 </div>
               ))}
             </div>

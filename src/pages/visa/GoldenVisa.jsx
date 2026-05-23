@@ -42,31 +42,37 @@ const ELIGIBILITY_CATEGORIES = [
     icon: Crown,
     title: "Investors",
     description: "Real estate investors and business investors meeting UAE investment requirements may qualify for long-term Golden Visa residency.",
+    image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Briefcase,
     title: "Entrepreneurs",
     description: "Startup founders, business owners, and innovative entrepreneurs with successful projects may be eligible for the Golden Visa program.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Users,
     title: "Skilled Professionals",
     description: "Highly qualified professionals in healthcare, engineering, technology, education, finance, and other specialized sectors can apply under eligible categories.",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Microscope,
     title: "Scientists & Researchers",
     description: "Researchers and scientists contributing to innovation and advanced sectors may qualify for UAE Golden Visa residency.",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: GraduationCap,
     title: "Outstanding Students",
     description: "High-achieving students and graduates from recognized institutions may qualify under academic excellence categories.",
+    image: "https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Palette,
     title: "Creative Talent & Specialists",
     description: "Creative professionals, innovators, digital creators, and individuals with exceptional talents may be eligible for long-term residency.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
@@ -139,6 +145,8 @@ const FAQS = [
   },
 ];
 
+const ELIGIBILITY_BG = "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1OAtMl.img?w=1200&h=900&m=4&q=65";
+
 function useIntersectionObserver(options = {}) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -165,16 +173,26 @@ function EligibilityCard({ category, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
+      className={`group relative overflow-hidden rounded-xl border border-white/15 shadow-xl shadow-slate-950/10 transition-all duration-500 hover:shadow-2xl hover:shadow-[#d7193f]/15 hover:shadow-[0_18px_40px_rgba(215,25,63,0.16)] hover:-translate-y-1 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
-      style={{ transitionDelay: `${index * 80}ms` }}
+      style={{
+        transitionDelay: `${index * 80}ms`,
+        backgroundImage: `url(${category.image || ELIGIBILITY_BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#d7193f]/15">
-        <Icon size={22} className="text-[#d7193f]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-colors duration-300 group-hover:from-black/20 group-hover:via-black/10 group-hover:to-transparent" />
+      <div className="relative z-10 p-6 min-h-[340px] flex flex-col justify-between">
+        <div className="w-12 h-12 rounded-xl bg-white/15 backdrop-blur-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110">
+          <Icon size={22} className="text-white" />
+        </div>
+        <div>
+          <h3 className="font-semibold text-white text-lg mb-2">{category.title}</h3>
+          <p className="text-slate-200 text-sm leading-relaxed">{category.description}</p>
+        </div>
       </div>
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{category.title}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{category.description}</p>
     </div>
   );
 }
@@ -186,16 +204,16 @@ function BenefitCard({ benefit, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-5 rounded-xl bg-gradient-to-br from-[#fef8f9] to-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-md hover:border-[#d7193f]/10 ${
+      className={`group p-5 rounded-xl bg-gradient-to-br from-[#0b1220] to-[#0f1724] border border-white/10 shadow-lg transition-all duration-500 hover:shadow-2xl hover:shadow-[0_18px_40px_rgba(215,25,63,0.18)] hover:border-white/20 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="w-10 h-10 rounded-lg bg-[#d7193f]/5 flex items-center justify-center mb-3">
-        <Icon size={18} className="text-[#d7193f]" />
+      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#d7193f] to-[#b81236] flex items-center justify-center mb-3 shadow-md">
+        <Icon size={18} className="text-white" />
       </div>
-      <h3 className="font-semibold text-gray-800 text-sm mb-1">{benefit.title}</h3>
-      <p className="text-gray-500 text-xs leading-relaxed">{benefit.description}</p>
+      <h3 className="font-semibold text-white text-sm mb-1">{benefit.title}</h3>
+      <p className="text-slate-300 text-xs leading-relaxed">{benefit.description}</p>
     </div>
   );
 }
@@ -273,7 +291,14 @@ export default function GoldenVisa() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+        <img
+          src="https://www.satgurutravel.ae/wp-content/uploads/2023/11/rgJkzKRk-dubai-uae-636x426.jpg"
+          alt="Dubai UAE Golden Visa background"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -281,18 +306,18 @@ export default function GoldenVisa() {
         </div>
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
+        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
+          <div className="text-sm text-white flex items-center gap-2">
             <Link
               to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
+              className="hover:text-[#fca5a5] transition-colors no-underline text-white"
             >
               Home
             </Link>
 
-            <ChevronRight size={14} className="text-gray-400" />
+            <ChevronRight size={14} className="text-white/70" />
 
-            <span className="text-[#d7193f] font-medium">Golden Visa</span>
+            <span className="text-[#fca5a5] font-medium">Golden Visa</span>
           </div>
         </div>
 
@@ -303,18 +328,14 @@ export default function GoldenVisa() {
               heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-[#d7193f]/5 backdrop-blur-sm border border-[#d7193f]/10 rounded-full px-4 py-1.5 mb-5">
-              <Crown size={12} className="text-[#d7193f]" />
-              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-[#d7193f]">UAE GOLDEN VISA</span>
-            </div>
 
-            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-white leading-[1.2] mb-4">
               UAE Golden Visa
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">Services In Dubai</span>
+              <span className="text-white bg-clip-text">Services In Dubai</span>
             </h1>
 
-            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-300 mb-8">
               Secure long-term residency in the UAE with professional Golden Visa assistance from EzzyBiz. 
               We help investors, entrepreneurs, skilled professionals, business owners, and talented individuals 
               navigate the UAE Golden Visa process with complete documentation and immigration support.
@@ -337,35 +358,45 @@ export default function GoldenVisa() {
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={introRef}
-            className={`max-w-3xl mx-auto text-center transition-all duration-600 ${
+            className={`grid items-center gap-10 md:grid-cols-2 transition-all duration-600 ${
               introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 mb-4 justify-center">
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">GOLDEN VISA UAE</span>
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+            <div>
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">GOLDEN VISA UAE</span>
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+              </div>
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
+                What Is The UAE Golden Visa?
+              </h2>
+              <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
+                <p>
+                  The UAE Golden Visa is a long-term residency program introduced to attract investors, entrepreneurs, 
+                  skilled professionals, scientists, innovators, and talented individuals from around the world. The 
+                  program provides eligible applicants with extended residency options in the UAE while supporting 
+                  business growth and economic development.
+                </p>
+                <p>
+                  Golden Visa holders can live, work, study, and invest in the UAE while enjoying long-term residency 
+                  benefits, business opportunities, and family sponsorship options. The visa is designed to support 
+                  individuals who contribute to the UAE's innovation, investment, and professional sectors.
+                </p>
+                <p>
+                  EzzyBiz provides complete Golden Visa assistance including eligibility assessment, documentation 
+                  preparation, application processing, immigration coordination, Emirates ID support, and professional 
+                  consultation throughout the process.
+                </p>
+              </div>
             </div>
-            <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
-              What Is The UAE Golden Visa?
-            </h2>
-            <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed text-left">
-              <p>
-                The UAE Golden Visa is a long-term residency program introduced to attract investors, entrepreneurs, 
-                skilled professionals, scientists, innovators, and talented individuals from around the world. The 
-                program provides eligible applicants with extended residency options in the UAE while supporting 
-                business growth and economic development.
-              </p>
-              <p>
-                Golden Visa holders can live, work, study, and invest in the UAE while enjoying long-term residency 
-                benefits, business opportunities, and family sponsorship options. The visa is designed to support 
-                individuals who contribute to the UAE's innovation, investment, and professional sectors.
-              </p>
-              <p>
-                EzzyBiz provides complete Golden Visa assistance including eligibility assessment, documentation 
-                preparation, application processing, immigration coordination, Emirates ID support, and professional 
-                consultation throughout the process.
-              </p>
+
+            <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+              <img
+                src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1OAtMl.img?w=1200&h=900&m=4&q=65"
+                alt="Golden Visa UAE introduction"
+                className="w-full h-full min-h-[280px] object-cover object-center"
+              />
             </div>
           </div>
         </div>
@@ -401,7 +432,7 @@ export default function GoldenVisa() {
       </section>
 
       {/* ========== BENEFITS SECTION ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-[#071029]">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={benefitsRef}
@@ -415,7 +446,7 @@ export default function GoldenVisa() {
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">KEY BENEFITS</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Benefits Of UAE Golden Visa
               </h2>
             </div>
@@ -459,7 +490,7 @@ export default function GoldenVisa() {
       </section>
 
       {/* ========== WHY CHOOSE EZZYBIZ ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-black">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={whyRef}
@@ -473,7 +504,7 @@ export default function GoldenVisa() {
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EZZYBIZ</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Why Choose EzzyBiz For Golden Visa Services
               </h2>
             </div>
@@ -482,13 +513,13 @@ export default function GoldenVisa() {
               {WHY_CHOOSE.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center gap-3 p-4 rounded-lg bg-gray-50/50 border border-gray-100 transition-all duration-300 hover:bg-white hover:border-[#d7193f]/20 hover:shadow-sm ${
+                  className={`flex items-center gap-3 p-4 rounded-lg bg-black/80 border border-white/10 transition-all duration-300 hover:bg-black hover:border-[#d7193f]/20 hover:shadow-[0_12px_30px_rgba(215,25,63,0.16)] ${
                     whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${idx * 60}ms` }}
                 >
                   <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <span className="text-sm text-slate-300">{item}</span>
                 </div>
               ))}
             </div>

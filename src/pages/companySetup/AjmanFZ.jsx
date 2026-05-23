@@ -39,31 +39,37 @@ const BENEFITS = [
     icon: Globe,
     title: "100% Foreign Ownership",
     description: "Maintain complete ownership of your business without requiring a local sponsor or UAE national partner.",
+    image: "https://prodtfgstrg.blob.core.windows.net/media/5653408/corporate-internal-stock-team-having-meetings.jpg",
   },
   {
     icon: DollarSign,
     title: "Affordable Business Setup",
     description: "Ajman Free Zone offers cost-effective company formation packages suitable for startups and growing businesses.",
+    image: "https://pbs.twimg.com/profile_images/1849496692615249920/OxVdlUfc_400x400.jpg",
   },
   {
     icon: Zap,
     title: "Fast Company Registration",
     description: "Benefit from simplified registration procedures and quick trade license approvals for smooth business setup.",
+    image: "https://www.flyingcolour.net/static/assets/images/11.png",
   },
   {
     icon: MapPin,
     title: "Strategic UAE Location",
     description: "Ajman provides easy connectivity to Dubai, Sharjah, seaports, airports, and regional business markets.",
+    image: "https://sponsorcontent.cnn.com/edition/2022/dubai/card34.jpg",
   },
   {
     icon: Building,
     title: "Flexible Office Solutions",
     description: "Choose from flexi desks, shared offices, warehouses, and commercial workspaces based on your business needs.",
+    image: "https://i.pinimg.com/736x/4f/5a/2a/4f5a2a27a6db6238806ba41f88ffb974.jpg",
   },
   {
     icon: Users,
     title: "Investor Visa Eligibility",
     description: "Apply for investor and employee visas with complete immigration and visa processing support services.",
+    image: "https://globalcanda.com/wp-content/uploads/2024/01/667.5.jpg",
   },
 ];
 
@@ -142,16 +148,24 @@ function BenefitCard({ benefit, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
+      className={`group relative rounded-xl overflow-hidden h-[220px] transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#d7193f]/15">
-        <Icon size={22} className="text-[#d7193f]" />
+      <img
+        src={benefit.image}
+        alt={benefit.title}
+        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+      <div className="absolute inset-0 flex flex-col justify-end p-5">
+        <div className="w-9 h-9 rounded-lg bg-[#d7193f]/80 flex items-center justify-center mb-3">
+          <Icon size={16} className="text-white" />
+        </div>
+        <h3 className="font-semibold text-white text-base mb-1">{benefit.title}</h3>
+        <p className="text-white/70 text-xs leading-relaxed">{benefit.description}</p>
       </div>
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{benefit.title}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{benefit.description}</p>
     </div>
   );
 }
@@ -249,7 +263,13 @@ export default function AjmanFZ() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+        <img
+          src="https://relocate-uae.com/wp-content/uploads/2022/07/ajman-media-city-free-zone-3.jpg"
+          alt="Ajman Free Zone"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -257,18 +277,18 @@ export default function AjmanFZ() {
         </div>
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
+        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
+          <div className="text-sm text-white flex items-center gap-2">
             <Link
               to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
+              className="hover:text-[#fca5a5] transition-colors no-underline"
             >
               Home
             </Link>
 
-            <ChevronRight size={14} className="text-gray-400" />
+            <ChevronRight size={14} className="text-white/70" />
 
-            <span className="text-[#d7193f] font-medium">Ajman Free Zone</span>
+            <span className="text-[#fca5a5] font-medium">Ajman Free Zone</span>
           </div>
         </div>
 
@@ -279,18 +299,14 @@ export default function AjmanFZ() {
               heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-[#d7193f]/5 backdrop-blur-sm border border-[#d7193f]/10 rounded-full px-4 py-1.5 mb-5">
-              <CheckCircle2 size={12} className="text-[#d7193f]" />
-              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-[#d7193f]">AJMAN FREE ZONE SETUP</span>
-            </div>
 
-            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-white leading-[1.2] mb-4">
               Ajman Free Zone
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">Company Formation Services</span>
+              <span className="text-white bg-clip-text">Company Formation Services</span>
             </h1>
 
-            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-200 mb-8">
               Start your business in Ajman Free Zone with affordable company formation solutions, simplified registration 
               procedures, and complete corporate support. EzzyBiz helps entrepreneurs, startups, and international investors 
               establish and grow their businesses across the UAE with smooth setup and compliance assistance.
@@ -313,34 +329,39 @@ export default function AjmanFZ() {
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={introRef}
-            className={`max-w-3xl mx-auto text-center transition-all duration-600 ${
+            className={`grid md:grid-cols-2 gap-10 items-center transition-all duration-600 ${
               introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 mb-4 justify-center">
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">AJMAN FREE ZONE</span>
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+            <div>
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">AJMAN FREE ZONE</span>
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+              </div>
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
+                What Is Ajman Free Zone Company Formation?
+              </h2>
+              <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
+                <p>
+                  Ajman Free Zone company formation allows entrepreneurs and investors to establish businesses in one of the 
+                  UAE's most affordable and business-friendly free zones. Known for its cost-effective setup packages and 
+                  strategic location, Ajman Free Zone supports startups, SMEs, and international companies across multiple industries.
+                </p>
+                <p>
+                  Ajman Free Zone provides modern infrastructure, flexible office solutions, investor-friendly regulations, 
+                  and efficient licensing procedures for businesses looking to expand in the UAE market. It is an ideal 
+                  destination for trading, e-commerce, consulting, and service-based businesses.
+                </p>
+              </div>
             </div>
-            <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
-              What Is Ajman Free Zone Company Formation?
-            </h2>
-            <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed text-left">
-              <p>
-                Ajman Free Zone company formation allows entrepreneurs and investors to establish businesses in one of the 
-                UAE's most affordable and business-friendly free zones. Known for its cost-effective setup packages and 
-                strategic location, Ajman Free Zone supports startups, SMEs, and international companies across multiple industries.
-              </p>
-              <p>
-                Ajman Free Zone provides modern infrastructure, flexible office solutions, investor-friendly regulations, 
-                and efficient licensing procedures for businesses looking to expand in the UAE market. It is an ideal 
-                destination for trading, e-commerce, consulting, and service-based businesses.
-              </p>
-              <p>
-                EzzyBiz offers complete assistance for Ajman Free Zone company setup including business activity selection, 
-                trade license registration, visa processing, office solutions, business banking support, and UAE corporate 
-                compliance services.
-              </p>
+
+            <div className={`rounded-2xl overflow-hidden shadow-xl h-[320px] transition-all duration-600 ${introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              <img
+                src="https://avatars.mds.yandex.net/i?id=d84319eef6ed359e356b2fd2c2b3ce27cbd408d0-13239233-images-thumbs&n=13"
+                alt="Ajman Free Zone"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </div>
         </div>
@@ -404,37 +425,8 @@ export default function AjmanFZ() {
         </div>
       </section>
 
-      {/* ========== PROCESS SECTION ========== */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[1000px] mx-auto px-5 md:px-8">
-          <div
-            ref={processRef}
-            className={`transition-all duration-600 ${
-              processVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-3 justify-center">
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">SETUP PROCESS</span>
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
-                Ajman Free Zone Company Setup Process
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-x-12 gap-y-2">
-              {PROCESS_STEPS.map((step, idx) => (
-                <ProcessStep key={idx} step={step} index={idx} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ========== WHY CHOOSE EZZYBIZ ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-slate-950 text-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={whyRef}
@@ -448,7 +440,7 @@ export default function AjmanFZ() {
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EZZYBIZ</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Why Choose EzzyBiz For Ajman Free Zone Setup
               </h2>
             </div>
@@ -457,13 +449,13 @@ export default function AjmanFZ() {
               {WHY_CHOOSE.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center gap-3 p-4 rounded-lg bg-gray-50/50 border border-gray-100 transition-all duration-300 hover:bg-white hover:border-[#d7193f]/20 hover:shadow-sm ${
+                  className={`flex items-center gap-3 p-5 rounded-3xl bg-slate-900/80 border border-white/10 transition-all duration-300 hover:bg-slate-900 hover:shadow-lg hover:shadow-[#d7193f]/20 ${
                     whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${idx * 60}ms` }}
                 >
                   <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <span className="text-sm text-slate-100">{item}</span>
                 </div>
               ))}
             </div>

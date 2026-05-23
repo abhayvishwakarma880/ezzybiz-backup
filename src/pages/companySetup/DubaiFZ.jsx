@@ -45,31 +45,37 @@ const BENEFITS = [
     icon: Globe,
     title: "100% Foreign Ownership",
     description: "Maintain complete ownership of your company without requiring a local sponsor or UAE national partner.",
+    image: "https://prodtfgstrg.blob.core.windows.net/media/5653408/corporate-internal-stock-team-having-meetings.jpg",
   },
   {
     icon: Shield,
     title: "Tax-Friendly Business Environment",
     description: "Dubai free zones offer investor-friendly tax structures and simplified business regulations for international companies.",
+    image: "https://pbs.twimg.com/profile_images/1849496692615249920/OxVdlUfc_400x400.jpg",
   },
   {
     icon: Zap,
     title: "Fast Company Registration",
     description: "Benefit from streamlined company formation procedures and efficient licensing approvals in Dubai free zones.",
+    image: "https://www.flyingcolour.net/static/assets/images/11.png",
   },
   {
     icon: MapPin,
     title: "Global Business Connectivity",
     description: "Operate from one of the world's leading international business hubs with access to global markets and logistics networks.",
+    image: "https://sponsorcontent.cnn.com/edition/2022/dubai/card34.jpg",
   },
   {
     icon: Building,
     title: "Flexible Office Solutions",
     description: "Choose from flexi desks, coworking spaces, private offices, warehouses, and commercial facilities based on your business requirements.",
+    image: "https://i.pinimg.com/736x/4f/5a/2a/4f5a2a27a6db6238806ba41f88ffb974.jpg",
   },
   {
     icon: Users,
     title: "Investor Visa Eligibility",
     description: "Apply for investor and employee visas with professional UAE immigration and corporate support services.",
+    image: "https://globalcanda.com/wp-content/uploads/2024/01/667.5.jpg",
   },
 ];
 
@@ -163,16 +169,24 @@ function BenefitCard({ benefit, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
+      className={`group relative rounded-xl overflow-hidden h-[220px] transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#d7193f]/15">
-        <Icon size={22} className="text-[#d7193f]" />
+      <img
+        src={benefit.image}
+        alt={benefit.title}
+        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+      <div className="absolute inset-0 flex flex-col justify-end p-5">
+        <div className="w-9 h-9 rounded-lg bg-[#d7193f]/80 flex items-center justify-center mb-3">
+          <Icon size={16} className="text-white" />
+        </div>
+        <h3 className="font-semibold text-white text-base mb-1">{benefit.title}</h3>
+        <p className="text-white/70 text-xs leading-relaxed">{benefit.description}</p>
       </div>
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{benefit.title}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{benefit.description}</p>
     </div>
   );
 }
@@ -184,15 +198,15 @@ function FreeZoneCard({ freeZone, index }) {
   return (
     <div
       ref={ref}
-      className={`group flex items-center gap-3 p-3 rounded-lg bg-gray-50/50 border border-gray-100 transition-all duration-300 hover:bg-white hover:border-[#d7193f]/20 hover:shadow-sm ${
+      className={`group flex items-center gap-3 p-3 rounded-lg border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-transparent transition-all duration-300 hover:border-[#d7193f]/40 hover:from-[#d7193f]/10 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
       style={{ transitionDelay: `${index * 40}ms` }}
     >
-      <div className="w-7 h-7 rounded-md bg-[#d7193f]/5 flex items-center justify-center group-hover:bg-[#d7193f]/10 transition-colors">
+      <div className="w-7 h-7 rounded-md bg-[#d7193f]/10 border border-[#d7193f]/20 flex items-center justify-center shrink-0 group-hover:bg-[#d7193f]/20 transition-colors">
         <Icon size={13} className="text-[#d7193f]" />
       </div>
-      <span className="text-sm text-gray-700 group-hover:text-[#d7193f] transition-colors">{freeZone.name}</span>
+      <span className="text-sm text-white/70 group-hover:text-white transition-colors">{freeZone.name}</span>
     </div>
   );
 }
@@ -291,25 +305,19 @@ export default function DubaiFZ() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(215,25,63,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(215,25,63,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
-        </div>
+      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+        <img
+          src="https://www.gbsei.com/wp-content/uploads/2025/02/Business-set-up-in-DAFZA.png"
+          alt="Dubai Free Zone"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
-            <Link
-              to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
-            >
-              Home
-            </Link>
-
-            <ChevronRight size={14} className="text-gray-400" />
-
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5 relative z-10">
+          <div className="text-sm text-white/60 flex items-center gap-2">
+            <Link to="/" className="hover:text-white transition-colors no-underline text-white/60">Home</Link>
+            <ChevronRight size={14} className="text-white/40" />
             <span className="text-[#d7193f] font-medium">Dubai Free Zone</span>
           </div>
         </div>
@@ -321,18 +329,14 @@ export default function DubaiFZ() {
               heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-[#d7193f]/5 backdrop-blur-sm border border-[#d7193f]/10 rounded-full px-4 py-1.5 mb-5">
-              <CheckCircle2 size={12} className="text-[#d7193f]" />
-              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-[#d7193f]">DUBAI FREE ZONE SETUP</span>
-            </div>
 
-            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-white leading-[1.2] mb-4">
               Dubai Free Zone
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">Company Formation Services</span>
+              <span className="text-white bg-clip-text">Company Formation Services</span>
             </h1>
 
-            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-white/80 mb-8">
               Establish your company in Dubai Free Zone with complete business setup support, investor-friendly regulations, 
               and flexible corporate solutions. EzzyBiz helps entrepreneurs, startups, and global investors launch and expand 
               their businesses across the UAE with smooth registration and compliance assistance.
@@ -355,33 +359,40 @@ export default function DubaiFZ() {
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={introRef}
-            className={`max-w-3xl mx-auto text-center transition-all duration-600 ${
+            className={`grid md:grid-cols-2 gap-10 md:gap-14 items-center transition-all duration-600 ${
               introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 mb-4 justify-center">
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">DUBAI FREE ZONE</span>
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+            {/* Left — Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">DUBAI FREE ZONE</span>
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+              </div>
+              <h2 className="font-sans text-[clamp(26px,3.5vw,36px)] font-bold text-[#0f0f1a] mb-4">
+                What Is Dubai Free Zone Company Formation?
+              </h2>
+              <div className="space-y-3 text-gray-600 text-[14px] leading-relaxed">
+                <p>
+                  Dubai Free Zone company formation allows entrepreneurs and international investors to establish businesses in specialized economic zones designed to support global trade, innovation, and investment.
+                </p>
+                <p>
+                  Dubai is home to several world-class free zones offering modern infrastructure, international connectivity, and business-friendly environments for startups, SMEs, and multinational companies.
+                </p>
+                <p>
+                  EzzyBiz provides complete support for Dubai free zone setup including business activity selection, trade license registration, visa processing, office solutions, and banking support.
+                </p>
+              </div>
             </div>
-            <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
-              What Is Dubai Free Zone Company Formation?
-            </h2>
-            <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed text-left">
-              <p>
-                Dubai Free Zone company formation allows entrepreneurs and international investors to establish businesses 
-                in specialized economic zones designed to support global trade, innovation, and investment. Free zones provide 
-                simplified regulations, tax-friendly policies, and flexible setup options for businesses across multiple industries.
-              </p>
-              <p>
-                Dubai is home to several world-class free zones offering modern infrastructure, international connectivity, 
-                and business-friendly environments for startups, SMEs, and multinational companies. Free zone companies benefit 
-                from efficient registration procedures and operational flexibility.
-              </p>
-              <p>
-                EzzyBiz provides complete support for Dubai free zone company setup including business activity selection, 
-                trade license registration, visa processing, office solutions, banking support, and corporate compliance services.
-              </p>
+
+            {/* Right — Image */}
+            <div className="rounded-2xl overflow-hidden shadow-xl h-[380px]">
+              <img
+                src="https://www.shuraa.in/wp-content/uploads/2025/10/dubai-free-zones.jpg"
+                alt="Dubai Free Zone Company Formation"
+                className="w-full h-full object-fill object-center"
+              />
             </div>
           </div>
         </div>
@@ -417,8 +428,9 @@ export default function DubaiFZ() {
       </section>
 
       {/* ========== POPULAR FREE ZONES SECTION ========== */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
+      <section className="py-16 md:py-20 bg-[#0a0a0a] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
           <div
             ref={freeZonesRef}
             className={`transition-all duration-600 ${
@@ -427,11 +439,11 @@ export default function DubaiFZ() {
           >
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-3 justify-center">
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                <div className="w-8 h-[2px] bg-[#d7193f]/60" />
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">POPULAR FREE ZONES</span>
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                <div className="w-8 h-[2px] bg-[#d7193f]/60" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Popular Dubai Free Zones
               </h2>
             </div>
@@ -474,35 +486,6 @@ export default function DubaiFZ() {
         </div>
       </section>
 
-      {/* ========== PROCESS SECTION ========== */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1000px] mx-auto px-5 md:px-8">
-          <div
-            ref={processRef}
-            className={`transition-all duration-600 ${
-              processVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-3 justify-center">
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">SETUP PROCESS</span>
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
-                Dubai Free Zone Company Setup Process
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-x-12 gap-y-2">
-              {PROCESS_STEPS.map((step, idx) => (
-                <ProcessStep key={idx} step={step} index={idx} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ========== WHY CHOOSE EZZYBIZ ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
@@ -512,30 +495,47 @@ export default function DubaiFZ() {
               whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-3 justify-center">
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EZZYBIZ</span>
-                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Left — Image */}
+              <div className={`rounded-2xl overflow-hidden shadow-xl h-[380px] transition-all duration-600 ${whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+                <img
+                  src="https://i.pinimg.com/736x/19/b9/98/19b998325eafccc83b225b0236221e9f.jpg"
+                  alt="Why EzzyBiz"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
-                Why Choose EzzyBiz For Dubai Free Zone Setup
-              </h2>
-            </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {WHY_CHOOSE.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={`flex items-center gap-3 p-4 rounded-lg bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#d7193f]/20 ${
-                    whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
-                  style={{ transitionDelay: `${idx * 60}ms` }}
-                >
-                  <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
-                  <span className="text-sm text-gray-700">{item}</span>
+              {/* Right — Content */}
+              <div>
+                <div className="mb-8">
+                  <div className="inline-flex items-center gap-2 mb-3">
+                    <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                    <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EZZYBIZ</span>
+                    <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                  </div>
+                  <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+                    Why Choose EzzyBiz For Dubai Free Zone Setup
+                  </h2>
+                  <p className="text-gray-600 text-sm mt-3 max-w-xl">
+                    Partner with EzzyBiz for fast, transparent, and end-to-end company formation services tailored for Dubai free zones.
+                  </p>
                 </div>
-              ))}
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {WHY_CHOOSE.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className={`flex items-center gap-3 p-4 rounded-lg bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#d7193f]/20 ${
+                        whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                      }`}
+                      style={{ transitionDelay: `${idx * 60}ms` }}
+                    >
+                      <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
+                      <span className="text-sm text-gray-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

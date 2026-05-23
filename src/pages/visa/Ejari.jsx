@@ -37,31 +37,37 @@ const EJARI_SERVICES = [
     icon: Stamp,
     title: "Ejari Registration",
     description: "Professional assistance for registering residential and commercial tenancy contracts through the Dubai Ejari system.",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Clock,
     title: "Ejari Renewal",
     description: "Smooth renewal services for existing Ejari contracts to maintain tenancy compliance in Dubai.",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Building,
     title: "Commercial Ejari Services",
     description: "Ejari registration support for offices, shops, warehouses, and commercial business properties in Dubai.",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Home,
     title: "Residential Ejari Services",
     description: "Complete tenancy registration services for apartments, villas, and residential properties across Dubai.",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: FaFileSignature,
     title: "Tenancy Contract Assistance",
     description: "Professional support for tenancy documentation, contract updates, amendments, and related rental procedures.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: FolderCheck,
     title: "Document Verification",
     description: "Review and verification of tenancy documents and supporting paperwork for successful Ejari processing.",
+    image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
@@ -160,16 +166,26 @@ function EjariServiceCard({ service, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
+      className={`group relative overflow-hidden rounded-xl border border-white/15 shadow-xl shadow-slate-950/10 transition-all duration-500 hover:shadow-2xl hover:shadow-[#d7193f]/15 hover:-translate-y-1 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
-      style={{ transitionDelay: `${index * 80}ms` }}
+      style={{
+        transitionDelay: `${index * 80}ms`,
+        backgroundImage: `url(${service.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#d7193f]/15">
-        <Icon size={22} className="text-[#d7193f]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-colors duration-300 group-hover:from-black/20 group-hover:via-black/10 group-hover:to-transparent" />
+      <div className="relative z-10 p-6 min-h-[340px] flex flex-col justify-between">
+        <div className="w-12 h-12 rounded-xl bg-white/15 backdrop-blur-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110">
+          <Icon size={22} className="text-white" />
+        </div>
+        <div>
+          <h3 className="font-semibold text-white text-lg mb-2">{service.title}</h3>
+          <p className="text-slate-200 text-sm leading-relaxed">{service.description}</p>
+        </div>
       </div>
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{service.title}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
     </div>
   );
 }
@@ -181,16 +197,15 @@ function BenefitCard({ benefit, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-5 rounded-xl bg-gradient-to-br from-[#fef8f9] to-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-md hover:border-[#d7193f]/10 ${
+      className={`group p-4 rounded-xl bg-black border border-white/10 shadow-lg transition-all duration-300 hover:border-[#d7193f]/50 hover:shadow-[0_8px_30px_rgba(215,25,63,0.2)] ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="w-10 h-10 rounded-lg bg-[#d7193f]/5 flex items-center justify-center mb-3">
-        <Icon size={18} className="text-[#d7193f]" />
+      <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#d7193f] to-[#b81236] flex items-center justify-center mb-2 shadow-md shadow-[#d7193f]/30">
+        <Icon size={16} className="text-white" />
       </div>
-      <h3 className="font-semibold text-gray-800 text-sm mb-1">{benefit.title}</h3>
-      <p className="text-gray-500 text-xs leading-relaxed">{benefit.description}</p>
+      <h3 className="font-semibold text-white text-sm">{benefit.title}</h3>
     </div>
   );
 }
@@ -268,7 +283,15 @@ export default function Ejari() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section
+        className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden"
+        style={{
+          backgroundImage: `url('https://yourdubaiguide.com/wp-content/uploads/2018/09/Al-Twar-Center-Ejari-Typing-Center.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -276,11 +299,11 @@ export default function Ejari() {
         </div>
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5 z-50">
           <div className="text-sm text-gray-500 flex items-center gap-2">
             <Link
               to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
+              className="hover:text-[#d7193f] transition-colors text-white no-underline"
             >
               Home
             </Link>
@@ -298,18 +321,14 @@ export default function Ejari() {
               heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-[#d7193f]/5 backdrop-blur-sm border border-[#d7193f]/10 rounded-full px-4 py-1.5 mb-5">
-              <ScrollText size={12} className="text-[#d7193f]" />
-              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-[#d7193f]">EJARI SERVICES</span>
-            </div>
 
-            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-white leading-[1.2] mb-4">
               Professional Ejari
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">Registration Services In Dubai</span>
+              <span className="text-white bg-clip-text">Registration Services In Dubai</span>
             </h1>
 
-            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-200 mb-8">
               EzzyBiz provides reliable Ejari registration and tenancy contract services for businesses and individuals 
               across Dubai. Our experts simplify the Ejari process with complete documentation support, contract 
               registration assistance, and professional guidance for smooth compliance with Dubai tenancy regulations.
@@ -329,40 +348,48 @@ export default function Ejari() {
 
       {/* ========== INTRODUCTION SECTION ========== */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
-          <div
-            ref={introRef}
-            className={`max-w-3xl mx-auto text-center transition-all duration-600 ${
-              introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="inline-flex items-center gap-2 mb-4 justify-center">
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHAT IS EJARI</span>
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-            </div>
-            <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
-              What Is Ejari Registration In Dubai?
-            </h2>
-            <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed text-left">
-              <p>
-                Ejari is an official tenancy contract registration system introduced by the Dubai Land Department (DLD) 
-                to regulate rental agreements in Dubai. The system ensures transparency between landlords and tenants 
-                while legally registering residential and commercial lease contracts.
-              </p>
-              <p>
-                Ejari registration is mandatory for many essential services in Dubai including residence visa applications, 
-                Emirates ID processing, utility connections, trade license activities, and business operations requiring 
-                a registered office address.
-              </p>
-              <p>
-                EzzyBiz provides complete Ejari assistance including tenancy contract registration, Ejari renewals, 
-                documentation support, tenancy updates, and professional consultation for businesses and residents across Dubai.
-              </p>
-            </div>
-          </div>
+  <div className="max-w-[1280px] mx-auto px-5 md:px-8">
+    <div
+      ref={introRef}
+      className={`grid items-center gap-10 md:grid-cols-2 transition-all duration-600 ${
+        introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {/* Left Side - Content */}
+      <div>
+        <div className="inline-flex items-center gap-2 mb-4">
+          <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+          <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHAT IS EJARI</span>
+          <div className="w-8 h-[2px] bg-[#d7193f]/40" />
         </div>
-      </section>
+        <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
+          What Is Ejari Registration In Dubai?
+        </h2>
+        <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
+          <p>
+            Ejari is an official tenancy contract registration system introduced by the Dubai Land Department (DLD) 
+            to regulate rental agreements in Dubai. The system ensures transparency between landlords and tenants 
+            while legally registering residential and commercial lease contracts.
+          </p>
+          <p>
+            Ejari registration is mandatory for many essential services in Dubai including residence visa applications, 
+            Emirates ID processing, utility connections, trade license activities, and business operations requiring 
+            a registered office address.
+          </p>
+        </div>
+      </div>
+
+      {/* Right Side - Image */}
+      <div className="rounded-3xl overflow-hidden shadow-xl">
+        <img
+          src="https://images.ctfassets.net/jodw319ozpg1/411LkccJJNroIPuQ4yDJHq/b7bf4c9016d411def5c0e179b1fb9ee1/Modern_Ejari_Certificate_Concept.webp"
+          alt="Ejari registration certificate Dubai"
+          className="w-full h-full min-h-[260px] object-cover object-center"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ========== OUR EJARI SERVICES SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
@@ -394,7 +421,7 @@ export default function Ejari() {
       </section>
 
       {/* ========== BENEFITS SECTION ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-black">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={benefitsRef}
@@ -408,15 +435,27 @@ export default function Ejari() {
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EJARI</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Benefits Of Ejari Registration In Dubai
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {BENEFITS.map((benefit, idx) => (
-                <BenefitCard key={idx} benefit={benefit} index={idx} />
-              ))}
+            <div className="flex flex-col md:flex-row gap-8 items-stretch">
+              {/* Left - 6 cards in 2 columns */}
+              <div className="grid grid-cols-2 gap-3" style={{ flex: "0 0 auto", width: "55%" }}>
+                {BENEFITS.map((benefit, idx) => (
+                  <BenefitCard key={idx} benefit={benefit} index={idx} />
+                ))}
+              </div>
+
+              {/* Right - Image same height as cards */}
+              <div className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img
+                  src="https://yourplace.ae/wp-content/uploads/2023/06/how-to-register-ejari-complete-guide.jpg"
+                  alt="Ejari registration guide Dubai"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -452,7 +491,7 @@ export default function Ejari() {
       </section>
 
       {/* ========== WHY CHOOSE EZZYBIZ ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-black">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={whyRef}
@@ -466,7 +505,7 @@ export default function Ejari() {
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EZZYBIZ</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Why Choose EzzyBiz For Ejari Services
               </h2>
             </div>
@@ -475,13 +514,13 @@ export default function Ejari() {
               {WHY_CHOOSE.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center gap-3 p-4 rounded-lg bg-gray-50/50 border border-gray-100 transition-all duration-300 hover:bg-white hover:border-[#d7193f]/20 hover:shadow-sm ${
+                  className={`flex items-center gap-3 p-4 rounded-lg bg-black border border-white/10 transition-all duration-300 hover:border-[#d7193f]/50 hover:shadow-[0_8px_30px_rgba(215,25,63,0.2)] ${
                     whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${idx * 60}ms` }}
                 >
                   <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <span className="text-sm text-slate-300">{item}</span>
                 </div>
               ))}
             </div>

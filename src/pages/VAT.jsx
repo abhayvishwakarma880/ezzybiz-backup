@@ -33,31 +33,37 @@ const VAT_SERVICES = [
     icon: FileCheck,
     title: "VAT Registration",
     description: "Professional VAT registration assistance for businesses required to register under UAE tax regulations.",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Receipt,
     title: "VAT Return Filing",
     description: "Accurate VAT return preparation and filing support to help businesses maintain smooth compliance procedures.",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: Building,
     title: "Corporate Tax Services",
     description: "Professional guidance for UAE corporate tax registration, compliance, and related financial procedures.",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: BookOpen,
     title: "Accounting & Bookkeeping",
     description: "Reliable accounting and bookkeeping solutions to help businesses maintain organized financial records.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: BiPieChart,
     title: "Tax Consultation",
     description: "Expert consultation services to help businesses understand UAE VAT regulations and compliance requirements.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
   },
   {
     icon: FileSpreadsheet,
     title: "Financial Documentation Support",
     description: "Professional assistance for invoices, financial reports, tax records, and supporting documentation management.",
+    image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
@@ -156,16 +162,26 @@ function VATServiceCard({ service, index }) {
   return (
     <div
       ref={ref}
-      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
+      className={`group relative overflow-hidden rounded-xl border border-white/15 shadow-xl shadow-slate-950/10 transition-all duration-500 hover:shadow-2xl hover:shadow-[#d7193f]/15 hover:-translate-y-1 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
-      style={{ transitionDelay: `${index * 80}ms` }}
+      style={{
+        transitionDelay: `${index * 80}ms`,
+        backgroundImage: `url(${service.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#d7193f]/15">
-        <Icon size={22} className="text-[#d7193f]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-colors duration-300 group-hover:from-black/20 group-hover:via-black/10 group-hover:to-transparent" />
+      <div className="relative z-10 p-6 min-h-[340px] flex flex-col justify-between">
+        <div className="w-12 h-12 rounded-xl bg-white/15 backdrop-blur-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110">
+          <Icon size={22} className="text-white" />
+        </div>
+        <div>
+          <h3 className="font-semibold text-white text-lg mb-2">{service.title}</h3>
+          <p className="text-slate-200 text-sm leading-relaxed">{service.description}</p>
+        </div>
       </div>
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{service.title}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
     </div>
   );
 }
@@ -264,7 +280,13 @@ export default function VAT() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative bg-gradient-to-br from-[#fef8f9] via-white to-[#fff5f6] pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+        <img
+          src="https://bcl.ae/wp-content/uploads/2024/06/corporate-tax-registration.webp"
+          alt="VAT Services Dubai background"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/50 pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-[10%] w-[300px] h-[300px] bg-[#d7193f]/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-[5%] w-[400px] h-[400px] bg-[#e8718a]/5 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -272,18 +294,13 @@ export default function VAT() {
         </div>
 
         {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
-            <Link
-              to="/"
-              className="hover:text-[#d7193f] transition-colors no-underline"
-            >
+        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
+          <div className="text-sm text-white flex items-center gap-2">
+            <Link to="/" className="hover:text-[#fca5a5] transition-colors no-underline text-white">
               Home
             </Link>
-
-            <ChevronRight size={14} className="text-gray-400" />
-
-            <span className="text-[#d7193f] font-medium">VAT Services</span>
+            <ChevronRight size={14} className="text-white/70" />
+            <span className="text-[#fca5a5] font-medium">VAT Services</span>
           </div>
         </div>
 
@@ -294,18 +311,14 @@ export default function VAT() {
               heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-2 bg-[#d7193f]/5 backdrop-blur-sm border border-[#d7193f]/10 rounded-full px-4 py-1.5 mb-5">
-              <Calculator size={12} className="text-[#d7193f]" />
-              <span className="text-[10px] font-semibold tracking-[1px] uppercase text-[#d7193f]">VAT SERVICES UAE</span>
-            </div>
 
-            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-[#0f0f1a] leading-[1.2] mb-4">
+            <h1 className="font-sans text-[clamp(34px,5vw,54px)] font-bold text-white leading-[1.2] mb-4">
               Professional VAT Registration
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d7193f] to-[#e8718a]">& Tax Services In Dubai</span>
+              <span className="text-white">& Tax Services In Dubai</span>
             </h1>
 
-            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-600 mb-8">
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-200 mb-8">
               EzzyBiz provides reliable VAT registration, tax compliance, and accounting support services for businesses 
               across Dubai and the UAE. Our experts help companies manage VAT obligations, maintain compliance, and 
               simplify financial processes with professional guidance and accurate documentation support.
@@ -315,7 +328,7 @@ export default function VAT() {
               <Link to="/contact" className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 no-underline">
                 Register For VAT <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/contact" className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-[#d7193f] hover:shadow-md no-underline">
+              <Link to="/contact" className="flex items-center justify-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm text-white px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-white/20 hover:border-white/50 no-underline">
                 <MessageCircle size={14} /> Book Free Consultation
               </Link>
             </div>
@@ -328,33 +341,43 @@ export default function VAT() {
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={introRef}
-            className={`max-w-3xl mx-auto text-center transition-all duration-600 ${
+            className={`flex flex-col md:flex-row items-start gap-10 transition-all duration-600 ${
               introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 mb-4 justify-center">
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
-              <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">VAT & TAX SERVICES</span>
-              <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+                <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">VAT & TAX SERVICES</span>
+                <div className="w-8 h-[2px] bg-[#d7193f]/40" />
+              </div>
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
+                Complete VAT & Corporate Tax Solutions In UAE
+              </h2>
+              <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
+                <p>
+                  VAT compliance is an important part of operating a business in the UAE. Businesses meeting the required 
+                  revenue thresholds must comply with UAE tax regulations, maintain proper financial records, and complete 
+                  VAT registration and filing procedures accurately.
+                </p>
+                <p>
+                  Managing VAT returns, bookkeeping, invoices, tax records, and compliance requirements can be complex for 
+                  growing businesses. Professional tax support helps companies reduce errors, avoid penalties, and maintain 
+                  smooth financial operations.
+                </p>
+                <p>
+                  EzzyBiz provides complete VAT and corporate tax services including VAT registration, VAT filing, bookkeeping, 
+                  tax consultation, accounting support, and UAE compliance assistance for startups, SMEs, and international companies.
+                </p>
+              </div>
             </div>
-            <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a] mb-5">
-              Complete VAT & Corporate Tax Solutions In UAE
-            </h2>
-            <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed text-left">
-              <p>
-                VAT compliance is an important part of operating a business in the UAE. Businesses meeting the required 
-                revenue thresholds must comply with UAE tax regulations, maintain proper financial records, and complete 
-                VAT registration and filing procedures accurately.
-              </p>
-              <p>
-                Managing VAT returns, bookkeeping, invoices, tax records, and compliance requirements can be complex for 
-                growing businesses. Professional tax support helps companies reduce errors, avoid penalties, and maintain 
-                smooth financial operations.
-              </p>
-              <p>
-                EzzyBiz provides complete VAT and corporate tax services including VAT registration, VAT filing, bookkeeping, 
-                tax consultation, accounting support, and UAE compliance assistance for startups, SMEs, and international companies.
-              </p>
+
+            <div className="w-full md:w-[420px] shrink-0 self-stretch rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+              <img
+                src="https://taxgian.ae/wp-content/uploads/2024/08/reconsideration.png"
+                alt="VAT services UAE"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </div>
         </div>
@@ -409,10 +432,22 @@ export default function VAT() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {BENEFITS.map((benefit, idx) => (
-                <BenefitCard key={idx} benefit={benefit} index={idx} />
-              ))}
+            <div className="flex flex-col md:flex-row gap-8 items-stretch">
+              {/* Left - 6 cards in 2 columns */}
+              <div className="grid grid-cols-2 gap-3" style={{ flex: "0 0 auto", width: "55%" }}>
+                {BENEFITS.map((benefit, idx) => (
+                  <BenefitCard key={idx} benefit={benefit} index={idx} />
+                ))}
+              </div>
+
+              {/* Right - Image */}
+              <div className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img
+                  src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80"
+                  alt="VAT compliance benefits"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -448,7 +483,7 @@ export default function VAT() {
       </section>
 
       {/* ========== WHY CHOOSE EZZYBIZ ========== */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-black">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={whyRef}
@@ -462,7 +497,7 @@ export default function VAT() {
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">WHY EZZYBIZ</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
               </div>
-              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-[#0f0f1a]">
+              <h2 className="font-sans text-[clamp(28px,3.5vw,38px)] font-bold text-white">
                 Why Choose EzzyBiz For VAT Services
               </h2>
             </div>
@@ -471,13 +506,13 @@ export default function VAT() {
               {WHY_CHOOSE.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center gap-3 p-4 rounded-lg bg-gray-50/50 border border-gray-100 transition-all duration-300 hover:bg-white hover:border-[#d7193f]/20 hover:shadow-sm ${
+                  className={`flex items-center gap-3 p-4 rounded-lg bg-black border border-white/10 transition-all duration-300 hover:border-[#d7193f]/50 hover:shadow-[0_8px_30px_rgba(215,25,63,0.2)] ${
                     whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${idx * 60}ms` }}
                 >
                   <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <span className="text-sm text-slate-300">{item}</span>
                 </div>
               ))}
             </div>
