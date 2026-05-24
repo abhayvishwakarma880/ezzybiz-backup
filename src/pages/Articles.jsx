@@ -316,10 +316,11 @@ const articles = [
 function ArticleCard({ art, i, inView }) {
   const [hovered, setHovered] = useState(false);
   return (
-    <div
+    <Link
+      to={`/articles/${art.id}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative rounded-2xl overflow-hidden cursor-pointer h-[320px]"
+      className="group relative rounded-2xl overflow-hidden cursor-pointer h-[320px] block no-underline"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(24px)",
@@ -371,7 +372,7 @@ function ArticleCard({ art, i, inView }) {
           {art.desc}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 

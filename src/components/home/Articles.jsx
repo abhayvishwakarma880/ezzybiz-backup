@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function useInView() {
   const ref = useRef(null);
@@ -157,11 +157,12 @@ export default function Articles() {
         {/* Articles Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {articles.map((art, i) => (
-            <div
+            <Link
               key={art.id}
+              to={`/articles/${art.id}`}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
-              className="group relative rounded-2xl overflow-hidden cursor-pointer h-[320px]"
+              className="group relative rounded-2xl overflow-hidden cursor-pointer h-[320px] block no-underline"
               style={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translateY(0)' : 'translateY(24px)',
@@ -219,7 +220,7 @@ export default function Articles() {
                   {art.desc}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

@@ -1,5 +1,6 @@
 import About from "./pages/About";
 import Articles from "./pages/Articles";
+import ArticleDetails from "./pages/ArticleDetails";
 import Banking from "./pages/Banking";
 import AjmanFZ from "./pages/companySetup/AjmanFZ";
 import DubaiFZ from "./pages/companySetup/DubaiFZ";
@@ -19,6 +20,7 @@ import CookiePolicy from "./pages/CookiePolicy";
 const appRoute = [
   { path: "/", element: Home },
   { path: "/articles", element: Articles },
+  { path: "/articles/:id", element: ArticleDetails },
   { path: "/about", element: About },
   { path: "/dubaimainland", element: DubaiMainland },
   { path: "/sharjahfreezone", element: SharjahFZ },
