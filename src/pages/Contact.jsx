@@ -403,19 +403,37 @@ export default function Contact() {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                  <div className="relative">
-                    <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                    <input
-                      type="text"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors"
-                      placeholder="John Smith"
-                    />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                    <div className="relative">
+                      <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        required
+                        className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors"
+                        placeholder="John Smith"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                    <div className="relative">
+                      <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors"
+                        placeholder="+971 XX XXX XXXX"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -431,22 +449,6 @@ export default function Contact() {
                       required
                       className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors"
                       placeholder="john@company.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                  <div className="relative">
-                    <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors"
-                      placeholder="+971 XX XXX XXXX"
                     />
                   </div>
                 </div>
