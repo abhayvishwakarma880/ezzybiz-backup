@@ -39,12 +39,12 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     title: "Phone Number",
-    description: "+971 52 706 9469\n+971 4 569 9557",
+    description: "+971 52 317 7073",
   },
   {
     icon: Mail,
     title: "Email Address",
-    description: "info@ezzybiz.ae\nsupport@ezzybiz.ae",
+    description: "info@www.ezzy.biz",
   },
   {
     icon: Clock,
@@ -542,10 +542,10 @@ export default function Contact() {
                     <span className="text-xs text-gray-400">OR REACH US DIRECTLY</span>
                   </div>
                   <div className="flex gap-3">
-                    <a href="tel:+971527069469" className="flex items-center gap-2 text-gray-600 hover:text-[#d7193f] transition-colors text-sm">
+                    <a href="tel:+971 52 317 7073" className="flex items-center gap-2 text-gray-600 hover:text-[#d7193f] transition-colors text-sm">
                       <Phone size={14} /> Call Us
                     </a>
-                    <a href="https://wa.me/971527069469" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#25D366] transition-colors text-sm">
+                    <a href="https://wa.me/971523177073" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#25D366] transition-colors text-sm">
                       <MessageCircle size={14} /> WhatsApp
                     </a>
                   </div>
@@ -582,7 +582,7 @@ export default function Contact() {
 
             <div className="rounded-2xl overflow-hidden shadow-md border border-gray-100">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1x3610.579!2x55.265!3x25.204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682b3b0f1b7b%3A0x2b0f1b7b3b0f1b7b!2sBusiness%20Bay%2C%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14787937.446974266!2d36.82744334999998!3d25.191879200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f696cdee84a1b%3A0x26ed328c5411e285!2sOffice!5e0!3m2!1sen!2sin!4v1779632908718!5m2!1sen!2sin"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}
