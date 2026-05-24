@@ -143,11 +143,11 @@ export default function Navbar() {
               {/* Divider */}
               <div className="w-px h-4 bg-white/10 hidden sm:block" />
               <a
-                href="mailto:info@ezzybiz.ae"
+                href="mailto:info@ezzy.biz"
                 className="md:flex hidden items-center gap-[6px] text-[#d0d8e8] text-[12.5px] no-underline transition-colors duration-200 hover:text-[#f8a0b0]"
               >
                 <span className="text-[#C8102E]"><MailIcon /></span>
-                info@www.ezzy.biz
+                info@ezzy.biz
               </a>
             </div>
 

@@ -647,7 +647,7 @@ function FinalCTASection() {
               <FaRocket /> Get Free Consultation
             </Link>
             <a
-              href="tel:+971527069469"
+              href="https://wa.me/971523177073" target="_blank" rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-gray-200 text-[#0f0f1a] font-sans font-semibold text-[15px] flex items-center justify-center gap-3 hover:bg-[#d7193f]/5 hover:border-[#d7193f]/30 hover:text-[#d7193f] transition-all duration-300 no-underline cursor-pointer"
             >
               <FaHandshake /> Talk To Our Experts

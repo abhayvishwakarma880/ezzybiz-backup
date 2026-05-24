@@ -247,7 +247,7 @@ export default function Articles() {
               <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-[#d7193f] to-[#e8718a] text-white text-sm font-semibold px-7 py-3 rounded-xl shadow-lg hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap">
                 Book a Consultation
               </button>
-              <button className="bg-white border border-gray-200 text-[#0f0f1a] text-sm font-semibold px-7 py-3 rounded-xl hover:border-[rgba(215,25,63,0.4)] hover:shadow-md transition-all duration-200 whitespace-nowrap">
+              <button onClick={()=>navigate('/articles')} className="bg-white border border-gray-200 text-[#0f0f1a] text-sm font-semibold px-7 py-3 rounded-xl hover:border-[rgba(215,25,63,0.4)] hover:shadow-md transition-all duration-200 whitespace-nowrap">
                 View All Articles
               </button>
             </div>

@@ -23,7 +23,7 @@ const serviceLinks = [
   { label: "RAK Free Zone", to: "/rakfreezone" },
   { label: "All visa service", to: "/allvisa" },
   { label: "Golden visa", to: "/goldenvisa" },
-  { label: "ejari", to: "/ejari" }
+  { label: "Ejari", to: "/ejari" }
 ];
 
 const socialLinks = [
@@ -163,9 +163,9 @@ export default function Footer() {
                 <div className="w-[34px] h-[34px] flex-shrink-0 border border-white/[0.08] rounded-[9px] flex items-center justify-center mt-0.5">
                   <MdOutlineMailOutline className="text-red-500 text-[15px]" />
                 </div>
-                <a href="mailto:info@www.ezzy.biz"
+                <a href="mailto:info@ezzy.biz"
                   className="text-white/40 text-[13px] pt-1 hover:text-white transition-colors duration-300">
-                  info@www.ezzy.biz
+                  info@ezzy.biz
                 </a>
               </div>
 

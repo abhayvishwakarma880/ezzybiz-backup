@@ -163,14 +163,14 @@ export default function HeroSection() {
                 Get Free Consultation
               </Link>
 
-              <Link
-                to="/vat"
+              <a
+                href="https://wa.me/971523177073" target="_blank" rel="noopener noreferrer"
                 className="btn-outline flex items-center gap-[5px] h-[20px] md:h-[58px] px-2   md:px-8 bg-black text-white font-semibold text-[5px] md:text-[15px] tracking-[0.07em] uppercase rounded-sm cursor-pointer border-1 border-white"
                 // style={{ border: "1px solid rgba(255,255,255,0.9)" }}
               >
                 < FaWhatsapp className="h-5" />
                 WhatsApp Now
-              </Link>
+              </a>
             </div>
           </div>
         </div>
