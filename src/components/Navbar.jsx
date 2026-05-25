@@ -285,7 +285,16 @@ export default function Navbar() {
           <div className="min-h-0">
             <div className="bg-white border-t-[3px] border-[#C8102E] shadow-[0_8px_30px_rgba(0,0,0,0.12)] max-h-[80vh] overflow-y-auto flex flex-col">
               {NAV_ITEMS.map((item, idx) => (
-                <div key={idx} className="border-b border-[#f0f0f0]">
+                
+                <Link to={item.href || "#"}
+                      className="no-underline text-inherit"
+                      onClick={(e) => {
+                        if (item.dropdown) {
+                          e.preventDefault();
+                        } else {
+                          setMobileOpen(false);
+                        }
+                      }} key={idx} className="border-b border-[#f0f0f0]">
                   <div
                     className="flex items-center justify-between px-6 py-[14px] cursor-pointer text-[#1a1a2e] text-sm font-semibold"
                     onClick={() =>
@@ -294,7 +303,7 @@ export default function Navbar() {
                         : null
                     }
                   >
-                    <Link
+                    {/* <Link
                       to={item.href || "#"}
                       className="no-underline text-inherit"
                       onClick={(e) => {
@@ -306,7 +315,8 @@ export default function Navbar() {
                       }}
                     >
                       {item.label}
-                    </Link>
+                      </Link> */}
+                      {item.label}
                     {item.dropdown && (
                       <span
                         className={`text-[#C8102E] flex transition-transform duration-200 ${
@@ -340,7 +350,7 @@ export default function Navbar() {
                       <div className="h-1.5" />
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
 
               <div className="px-6 py-4">

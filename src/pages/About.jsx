@@ -519,11 +519,11 @@ export default function About() {
             </div>
 
             {/* Right — Image */}
-            <div className="relative rounded-2xl overflow-hidden h-[340px]">
+            <div className="relative rounded-2xl overflow-hidden md:h-[240px]">
               <img
                 src={he}
                 alt="EzzyBiz Business Setup Services Dubai"
-                className="w-full h-full object-fill object-center"
+                className="w-full h-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
