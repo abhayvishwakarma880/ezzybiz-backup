@@ -124,21 +124,37 @@ const WHY_CHOOSE = [
 
 const FAQS = [
   {
-    question: "What types of UAE visas does EzzyBiz provide?",
-    answer: "We provide investor visas, employment visas, family visas, Golden Visa assistance, freelance visas, and partner visa services across the UAE.",
+    question: "What residency visas are available in the UAE?",
+    answer: "The UAE offers investor visas, employment visas, green visas, golden visas, retirement visas, and dependent visas for family members."
   },
   {
-    question: "Can I sponsor my family with a UAE residence visa?",
-    answer: "Yes, eligible UAE residents can sponsor spouses, children, and dependent family members according to UAE immigration regulations.",
+    question: "What is the validity period of an investor visa in the UAE?",
+    answer: "Standard free zone or mainland investor visas are typically valid for 2 years, while Golden Visas grant residency for 10 years."
   },
   {
-    question: "How long does UAE visa processing take?",
-    answer: "Visa processing timelines depend on the visa category and approvals required, but many applications are completed within a few working days.",
+    question: "Can I sponsor my family under my UAE residency visa?",
+    answer: "Yes, residency holders can sponsor spouses, children, and parents, provided they meet the minimum monthly salary and accommodation requirements."
   },
   {
-    question: "Does EzzyBiz assist with Emirates ID and medical testing?",
-    answer: "Yes, we provide complete coordination for medical testing, biometrics, Emirates ID registration, and immigration procedures.",
+    question: "What is the medical test requirement for a UAE visa?",
+    answer: "All applicants aged 18 and above must undergo a standard blood test and chest X-ray for infectious diseases at an approved center."
   },
+  {
+    question: "How long does the visa application process take?",
+    answer: "Standard visa processing (from entry permit to medical test, Emirates ID biometrics, and stamping) takes approximately 7 to 10 working days."
+  },
+  {
+    question: "Do I need to stay in the UAE to keep my residency active?",
+    answer: "Standard residency visa holders must enter the UAE at least once every 180 days to keep their visa active. Golden Visa holders are exempt."
+  },
+  {
+    question: "What is the process for obtaining an Emirates ID?",
+    answer: "The Emirates ID is applied for during the visa medical phase, requiring biometrics (fingerprints and photo) at an official ICP registration center."
+  },
+  {
+    question: "Can EzzyBiz assist with corporate employee visa processing?",
+    answer: "Yes, we provide complete corporate PRO services, handling labor quotas, offer letters, work permits, medicals, and Emirates IDs for your staff."
+  }
 ];
 
 function useIntersectionObserver(options = {}) {
@@ -533,7 +549,7 @@ export default function AllVisa() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -551,10 +567,19 @@ export default function AllVisa() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

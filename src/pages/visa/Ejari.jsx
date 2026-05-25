@@ -124,20 +124,36 @@ const WHY_CHOOSE = [
 const FAQS = [
   {
     question: "What is Ejari in Dubai?",
-    answer: "Ejari is the official tenancy contract registration system regulated by the Dubai Land Department for residential and commercial rental agreements.",
+    answer: "Ejari (which means 'My Rent' in Arabic) is a government-mandated registration system that legally records and certifies all rental contracts in Dubai."
   },
   {
-    question: "Is Ejari mandatory in Dubai?",
-    answer: "Yes, Ejari registration is required for many visa, tenancy, utility, and business-related services in Dubai.",
+    question: "Why is Ejari registration mandatory?",
+    answer: "It protects the rights of landlords and tenants, and is legally required to set up business licenses, activate DEWA utilities, and sponsor family visas."
   },
   {
-    question: "Can EzzyBiz assist with commercial Ejari registration?",
-    answer: "Yes, we provide complete Ejari support for offices, shops, warehouses, and commercial business properties in Dubai.",
+    question: "Who is responsible for registering the Ejari?",
+    answer: "Typically, the tenant or the business setup consultant registers the Ejari, although the landlord can also handle it. Both parties' details are verified."
   },
   {
-    question: "Does Ejari need renewal?",
-    answer: "Yes, Ejari registration is generally renewed along with tenancy contract renewals to maintain compliance.",
+    question: "What documents are required for Ejari registration?",
+    answer: "We require the original signed tenancy contract, title deed of the property, landlord's passport copy/Emirates ID, and tenant's passport/Emirates ID copy."
   },
+  {
+    question: "How fast can Ejari registration be completed?",
+    answer: "Once all documents are submitted, EzzyBiz can register and issue your official Ejari certificate within 24 hours."
+  },
+  {
+    question: "What is a commercial Ejari?",
+    answer: "A commercial Ejari is a registered lease for a business premises (office, warehouse, retail shop) required to register or renew a DET mainland license."
+  },
+  {
+    question: "Can I get an Ejari for a virtual office or shared desk?",
+    answer: "Yes, we provide official government-approved flexi-desk and virtual office Ejari certificates to satisfy business licensing parameters."
+  },
+  {
+    question: "How long is an Ejari certificate valid?",
+    answer: "An Ejari is valid for the duration of the corresponding tenancy contract, typically 1 year, and must be renewed annually with the lease renewal."
+  }
 ];
 
 function useIntersectionObserver(options = {}) {
@@ -530,7 +546,7 @@ export default function Ejari() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -548,10 +564,19 @@ export default function Ejari() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

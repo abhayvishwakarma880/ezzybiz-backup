@@ -106,21 +106,37 @@ const WHY_CHOOSE = [
 
 const FAQS = [
   {
-    question: "Can foreigners fully own a Sharjah free zone company?",
-    answer: "Yes, Sharjah free zone companies allow 100% foreign ownership without the need for a local sponsor.",
+    question: "What are the benefits of setting up in a Sharjah Free Zone?",
+    answer: "Sharjah free zones (like SPC, SHAMS, and SAIF Zone) offer highly cost-effective setup costs, fast processing, and excellent access to sea and airports."
   },
   {
-    question: "Is Sharjah free zone setup affordable?",
-    answer: "Yes, Sharjah free zones are considered among the most cost-effective business setup options in the UAE.",
+    question: "How fast can a company be formed in SPC Free Zone?",
+    answer: "Sharjah Publishing City (SPC) Free Zone is one of the fastest in the UAE, often issuing business licenses in less than 45 minutes."
   },
   {
-    question: "Can I get a UAE residence visa through free zone setup?",
-    answer: "Yes, investors and eligible employees can apply for UAE residence visas through Sharjah free zone companies.",
+    question: "Do Sharjah Free Zones allow 100% capital repatriation?",
+    answer: "Yes, like all UAE free zones, you enjoy 100% foreign ownership, 100% import/export tax exemptions, and full capital repatriation rights."
   },
   {
-    question: "Can free zone companies trade in the UAE mainland?",
-    answer: "Free zone companies can trade internationally directly, while mainland trading may require a local distributor or branch depending on the business activity.",
+    question: "Can a Sharjah Free Zone company apply for Dubai residency visas?",
+    answer: "Visas are issued under the Sharjah immigration authority, but they grant you full residency rights to live and work anywhere in the UAE (including Dubai)."
   },
+  {
+    question: "Do I need to physically visit Sharjah to complete my setup?",
+    answer: "No, the entire Sharjah company setup, document signing, and license issuance can be managed completely online."
+  },
+  {
+    question: "Can a Sharjah company hold multiple business activities?",
+    answer: "Yes, zones like SHAMS and SPC allow combining multiple commercial, service, and e-commerce activities under a single license."
+  },
+  {
+    question: "Are physical offices required in Sharjah Free Zones?",
+    answer: "No, they offer flexible shared desks, dedicated desks, and virtual office packages designed specifically for cost savings."
+  },
+  {
+    question: "What is the visa validity for investors in Sharjah free zones?",
+    answer: "Investor and employee residency visas in Sharjah free zones are typically issued for 2 years and are fully renewable."
+  }
 ];
 
 function useIntersectionObserver(options = {}) {
@@ -469,7 +485,7 @@ export default function SharjahFZ() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -487,10 +503,19 @@ export default function SharjahFZ() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -119,21 +119,37 @@ const WHY_CHOOSE = [
 
 const FAQS = [
   {
-    question: "What is VAT in the UAE?",
-    answer: "VAT is a value-added tax applied to eligible goods and services in the UAE under government tax regulations.",
+    question: "What is the standard VAT rate in the UAE?",
+    answer: "The standard Value Added Tax (VAT) rate in the UAE is 5%, which applies to most goods, services, and imports."
   },
   {
-    question: "Who needs VAT registration in the UAE?",
-    answer: "Businesses meeting the required taxable revenue thresholds may be required to register for VAT under UAE regulations.",
+    question: "When is VAT registration mandatory for UAE businesses?",
+    answer: "VAT registration is mandatory if your business's taxable turnover exceeds AED 375,000 in the previous 12 months or expects to exceed it in the next 30 days."
   },
   {
-    question: "Does EzzyBiz provide VAT return filing services?",
-    answer: "Yes, we provide VAT return filing, bookkeeping, tax consultation, and financial compliance support services.",
+    question: "What is voluntary VAT registration?",
+    answer: "A business can register voluntarily if its taxable supplies/expenses exceed AED 187,500, enabling it to claim back input VAT on business setup expenses."
   },
   {
-    question: "Can EzzyBiz assist with corporate tax services?",
-    answer: "Yes, we provide professional corporate tax registration, consultation, and compliance assistance for businesses in the UAE.",
+    question: "How often do UAE businesses need to file VAT returns?",
+    answer: "Most businesses file VAT returns quarterly (every 3 months), but the Federal Tax Authority (FTA) may assign monthly filing for larger firms."
   },
+  {
+    question: "What is corporate tax in the UAE?",
+    answer: "The UAE has introduced a 9% corporate tax on business net profits exceeding AED 375,000. Profits below this threshold are taxed at 0%."
+  },
+  {
+    question: "Are free zone companies exempt from corporate tax?",
+    answer: "Free zone companies can benefit from a 0% corporate tax rate on 'qualifying income' if they meet strict regulatory and compliance conditions."
+  },
+  {
+    question: "What are the penalties for late VAT filing in the UAE?",
+    answer: "Late filing or failure to submit VAT returns within the FTA timeline results in strict administrative penalties starting from AED 1,000 up to much higher amounts."
+  },
+  {
+    question: "Can EzzyBiz manage my ongoing VAT bookkeeping and filing?",
+    answer: "Yes, we provide full accounting, corporate tax compliance, bookkeeping, and quarterly VAT return filing managed by certified tax experts."
+  }
 ];
 
 function useIntersectionObserver(options = {}) {
@@ -524,7 +540,7 @@ export default function VAT() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -542,10 +558,19 @@ export default function VAT() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

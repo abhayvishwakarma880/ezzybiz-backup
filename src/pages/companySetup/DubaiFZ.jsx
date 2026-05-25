@@ -126,20 +126,36 @@ const WHY_CHOOSE = [
 
 const FAQS = [
   {
-    question: "Can foreigners fully own a Dubai free zone company?",
-    answer: "Yes, Dubai free zone companies allow 100% foreign ownership without requiring a local sponsor.",
+    question: "What is a Dubai Free Zone company?",
+    answer: "A free zone company is registered within a designated economic zone, offering 100% import/export tax exemptions and full capital repatriation.",
   },
   {
-    question: "Can I get a UAE residence visa through free zone setup?",
-    answer: "Yes, investors and eligible employees can apply for UAE residence visas through Dubai free zone companies.",
+    question: "Can a free zone company trade directly in the local UAE mainland market?",
+    answer: "Free zone companies can trade within their zone and internationally, but trading directly in the local UAE mainland requires a local distributor or mainland branch.",
   },
   {
-    question: "Which Dubai free zone is best for startups?",
-    answer: "The ideal free zone depends on your business activity, budget, visa requirements, and operational goals. Our consultants help you choose the best option.",
+    question: "Do I need a physical office to setup a Dubai Free Zone company?",
+    answer: "No, most Dubai free zones offer flexible desk packages, virtual offices, or co-working spaces that don't require renting physical offices.",
   },
   {
-    question: "Can Dubai free zone companies trade in mainland UAE?",
-    answer: "Free zone companies can trade internationally directly, while mainland trading may require additional approvals or local distribution arrangements.",
+    question: "Which is the best free zone in Dubai for my business?",
+    answer: "The choice depends on your activity. E.g., Meydan or IFZA are great for e-commerce, DTEC is excellent for tech, and DAFZA is ideal for logistics.",
+  },
+  {
+    question: "Can I get residency visas with a free zone company?",
+    answer: "Yes, free zone packages include visa allocations (ranging from 1 to multiple visas) depending on the package and office type selected.",
+  },
+  {
+    question: "Is auditing mandatory for Dubai Free Zone companies?",
+    answer: "Auditing rules vary by free zone. Some zones (like DMCC) require annual audited accounts, while others (like IFZA or Meydan) do not.",
+  },
+  {
+    question: "Can I open a corporate bank account for a free zone company?",
+    answer: "Yes, free zone companies are fully eligible to open corporate bank accounts, and our team provides dedicated bank intro services.",
+  },
+  {
+    question: "What are the renewal costs for a free zone license?",
+    answer: "Renewal costs are paid annually to the free zone authority and cover the license and virtual office fee, usually slightly lower than setup.",
   },
 ];
 
@@ -541,7 +557,7 @@ export default function DubaiFZ() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -559,10 +575,19 @@ export default function DubaiFZ() {
               </h2>
             </div>
 
-            <div className="bg-gradient-to-br from-[#fef8f9] to-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

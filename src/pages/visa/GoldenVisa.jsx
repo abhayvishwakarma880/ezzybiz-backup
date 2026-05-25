@@ -129,20 +129,36 @@ const WHY_CHOOSE = [
 const FAQS = [
   {
     question: "What is the UAE Golden Visa?",
-    answer: "The UAE Golden Visa is a long-term residency program for eligible investors, entrepreneurs, professionals, students, and talented individuals.",
+    answer: "The Golden Visa is a premium 10-year residency visa program designed for long-term stability, foreign ownership, and tax-free residency in the UAE."
   },
   {
-    question: "Can Golden Visa holders sponsor family members?",
-    answer: "Yes, eligible Golden Visa holders can sponsor spouses, children, and dependent family members under UAE immigration regulations.",
+    question: "Who is eligible for the 10-year UAE Golden Visa?",
+    answer: "Eligibility applies to real estate investors, business owners, exceptional talents, scientists, outstanding students, and skilled professionals."
   },
   {
-    question: "Who is eligible for the UAE Golden Visa?",
-    answer: "Eligibility depends on investment value, professional qualifications, business ownership, academic achievements, or specialized talent categories.",
+    question: "What is the property investment threshold for a Golden Visa?",
+    answer: "Real estate investors can get a 10-year Golden Visa by purchasing property in the UAE worth AED 2,000,000 (2 million) or more."
   },
   {
-    question: "Does EzzyBiz assist with the full Golden Visa process?",
-    answer: "Yes, we provide complete Golden Visa support including consultation, documentation, application processing, Emirates ID coordination, and immigration assistance.",
+    question: "Can I sponsor my family and dependents on a Golden Visa?",
+    answer: "Yes, Golden Visa holders can sponsor their spouses, children (of any age), and parents, and the visa remains active for family even if the main holder passes."
   },
+  {
+    question: "Is there a minimum stay requirement for Golden Visa holders?",
+    answer: "No, Golden Visa holders can stay outside the UAE for any period without losing their residency status, offering absolute travel freedom."
+  },
+  {
+    question: "Can skilled professionals apply for the Golden Visa?",
+    answer: "Yes, professionals with a valid UAE employment contract, a monthly salary of AED 30,000 or more, and a bachelor's degree can apply."
+  },
+  {
+    question: "What are the main benefits of a UAE Golden Visa?",
+    answer: "Key benefits include long-term 10-year security, sponsoring unlimited domestic help, no sponsor requirement, and full travel flexibility."
+  },
+  {
+    question: "Can EzzyBiz handle the entire Golden Visa application process?",
+    answer: "Yes, we manage everything from initial eligibility screening, document clearance, equivalent degree approvals, medicals, to final visa stamping."
+  }
 ];
 
 const ELIGIBILITY_BG = "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1OAtMl.img?w=1200&h=900&m=4&q=65";
@@ -529,7 +545,7 @@ export default function GoldenVisa() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -547,10 +563,19 @@ export default function GoldenVisa() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

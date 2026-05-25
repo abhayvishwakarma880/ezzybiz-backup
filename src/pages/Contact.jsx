@@ -92,20 +92,36 @@ const WHY_CHOOSE = [
 
 const FAQS = [
   {
-    question: "How can I contact EzzyBiz consultants?",
-    answer: "You can contact our team through phone, email, WhatsApp, or the consultation form available on our website.",
+    question: "How can I schedule a consultation with EzzyBiz?",
+    answer: "You can schedule a free consultation via phone, email, WhatsApp, or by filling out the contact form on our website.",
   },
   {
-    question: "Do you provide free business consultation?",
-    answer: "Yes, EzzyBiz provides professional consultation to help clients understand UAE business setup and corporate service requirements.",
+    question: "Do you offer remote consultations for international investors?",
+    answer: "Yes, we provide full support for overseas investors through virtual meetings (Zoom/Teams) and remote document submission.",
   },
   {
-    question: "Can international investors contact EzzyBiz remotely?",
-    answer: "Yes, we assist local and international clients through online consultation and remote business setup support services.",
+    question: "Where is the EzzyBiz office located?",
+    answer: "Our office is located at 1603, The Citadel Tower, Business Bay, Dubai, UAE.",
   },
   {
-    question: "What services does EzzyBiz provide?",
-    answer: "We provide mainland and free zone company formation, visa services, VAT support, business banking assistance, Ejari services, and complete UAE corporate solutions.",
+    question: "What are your operational working hours?",
+    answer: "We are open Monday to Saturday from 9:00 AM to 6:30 PM.",
+  },
+  {
+    question: "Is there a fee for the initial business setup consultation?",
+    answer: "No, our initial consultation is completely free of charge to help you understand your business setup options.",
+  },
+  {
+    question: "Can you help with opening a corporate bank account after company setup?",
+    answer: "Yes, we provide complete corporate banking assistance and introduce you to top local and international banks in the UAE.",
+  },
+  {
+    question: "How long does the typical company formation process take?",
+    answer: "It varies by jurisdiction, but free zone setups can take 3-5 days, while mainland setups can be completed in 2-3 working days.",
+  },
+  {
+    question: "What documents are required for the initial business registration?",
+    answer: "Typically, we only require passport copies, passport-size photographs, and visa pages (tourist or entry stamp) of the partners.",
   },
 ];
 
@@ -650,7 +666,7 @@ export default function Contact() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -668,10 +684,19 @@ export default function Contact() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

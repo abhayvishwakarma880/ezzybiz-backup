@@ -109,20 +109,36 @@ const WHY_CHOOSE = [
 
 const FAQS = [
   {
-    question: "Can foreigners own 100% of a mainland company in Dubai?",
-    answer: "Yes, many mainland business activities now allow 100% foreign ownership depending on the selected business activity and legal structure.",
+    question: "What is a Dubai Mainland company setup?",
+    answer: "A mainland company is registered under the Dubai Department of Economy and Tourism (DET), allowing you to trade freely anywhere in the UAE and internationally.",
   },
   {
-    question: "How long does mainland company setup take?",
-    answer: "The timeline depends on the business activity and approvals required, but many mainland companies can be established within a few working days.",
+    question: "Is 100% foreign ownership allowed for mainland companies?",
+    answer: "Yes, under recent commercial law amendments, foreign investors can own 100% of their mainland UAE companies for most commercial and industrial activities.",
   },
   {
-    question: "Do I need office space for mainland company formation?",
-    answer: "Yes, mainland companies generally require a registered office address or workspace as part of the licensing process.",
+    question: "Do I need a local UAE sponsor to start a mainland company?",
+    answer: "No, for most standard commercial and professional activities, a local sponsor is no longer required. You can maintain 100% ownership.",
   },
   {
-    question: "Can mainland companies trade across the UAE?",
-    answer: "Yes, mainland businesses can operate freely throughout the UAE and work with both government and private organizations.",
+    question: "What is the minimum office space requirement for a mainland company?",
+    answer: "A physical office space or Ejari is mandatory for mainland licenses, but smart desk and virtual office options are available for start-ups.",
+  },
+  {
+    question: "How long does DET mainland licensing take?",
+    answer: "A mainland business license in Dubai can be issued within 2 to 3 working days once all documentation is approved.",
+  },
+  {
+    question: "What are the main advantages of a mainland company over a free zone?",
+    answer: "Mainland companies have no geographical limits on trading inside the UAE, can bid for government contracts, and can open physical shops easily.",
+  },
+  {
+    question: "Can a Dubai Mainland company hire unlimited staff?",
+    answer: "Yes, the visa quota is based on the size of your physical office space (typically 80-100 sq ft per visa), allowing unlimited hiring scope.",
+  },
+  {
+    question: "Are mainland companies subject to corporate tax in the UAE?",
+    answer: "Yes, UAE mainland companies are subject to the standard 9% corporate tax on taxable profits exceeding AED 375,000.",
   },
 ];
 
@@ -471,7 +487,7 @@ export default function DubaiMainland() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -489,10 +505,19 @@ export default function DubaiMainland() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

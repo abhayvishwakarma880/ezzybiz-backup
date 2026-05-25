@@ -105,21 +105,37 @@ const WHY_CHOOSE = [
 
 const FAQS = [
   {
-    question: "Can foreigners fully own a RAK Free Zone company?",
-    answer: "Yes, RAK Free Zone companies allow 100% foreign ownership without requiring a local sponsor.",
+    question: "What makes RAKEZ (Ras Al Khaimah Economic Zone) unique?",
+    answer: "RAKEZ offers highly customizable business packages, state-of-the-art warehouses, industrial zones, and exceptionally competitive setup fees."
   },
   {
-    question: "Is RAK Free Zone suitable for international businesses?",
-    answer: "Yes, RAK Free Zone is a popular choice for international trading, manufacturing, logistics, and service-based companies due to its strategic location and affordable setup options.",
+    question: "Is RAK setup suitable for industrial and warehousing businesses?",
+    answer: "Yes, RAKEZ is one of the premier hubs in the UAE for manufacturing, industrial logistics, and warehouse-based trading companies."
   },
   {
-    question: "Can I apply for UAE residence visas through RAK Free Zone?",
-    answer: "Yes, investors and eligible employees can apply for UAE residence visas through RAK Free Zone companies.",
+    question: "Can RAK Free Zone companies obtain UAE residency visas?",
+    answer: "Yes, RAKEZ packages come with flexible visa quotas, and you can sponsor dependents (family, domestic staff) easily under RAK residency."
   },
   {
-    question: "Can RAK Free Zone companies conduct international business?",
-    answer: "Yes, RAK Free Zone companies can operate internationally and conduct global trading and commercial activities efficiently.",
+    question: "Is auditing compulsory for RAKEZ companies?",
+    answer: "RAKEZ requires companies to maintain accounting records, but submitting audited financials is optional for most standard setups."
   },
+  {
+    question: "How long does the RAK company setup take?",
+    answer: "Standard commercial licenses are processed and issued within 3 to 4 working days after application approval."
+  },
+  {
+    question: "Can a RAK Free Zone company open a corporate bank account in Dubai?",
+    answer: "Yes, RAKEZ companies can open corporate bank accounts with any bank across the UAE, including top-tier Dubai banks."
+  },
+  {
+    question: "Does RAKEZ allow freelance licenses?",
+    answer: "Yes, RAKEZ offers highly cost-effective freelance permits and media packages for creative professionals and consultants."
+  },
+  {
+    question: "What are the foreign ownership regulations in RAKEZ?",
+    answer: "Investors enjoy 100% foreign ownership, 100% profit repatriation, and 0% personal tax within the economic zone."
+  }
 ];
 
 function useIntersectionObserver(options = {}) {
@@ -466,7 +482,7 @@ export default function RAKFZ() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -484,10 +500,19 @@ export default function RAKFZ() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

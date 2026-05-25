@@ -105,21 +105,37 @@ const WHY_CHOOSE = [
 
 const FAQS = [
   {
-    question: "Can foreigners fully own an Ajman Free Zone company?",
-    answer: "Yes, Ajman Free Zone companies allow 100% foreign ownership without requiring a local sponsor.",
+    question: "Why should I choose Ajman Free Zone (AFZ) for company setup?",
+    answer: "Ajman Free Zone is highly popular for its extremely low setup costs, easy monthly installment plans, and strategic proximity to Dubai."
   },
   {
-    question: "Is Ajman Free Zone suitable for startups?",
-    answer: "Yes, Ajman Free Zone is considered one of the most affordable and startup-friendly business setup options in the UAE.",
+    question: "What business activities are allowed in Ajman Free Zone?",
+    answer: "AFZ allows a wide range of activities including trading, professional services, manufacturing, e-commerce, and freelancer licenses."
   },
   {
-    question: "Can I apply for a UAE residence visa through Ajman Free Zone?",
-    answer: "Yes, investors and eligible employees can apply for UAE residence visas through Ajman Free Zone companies.",
+    question: "Does Ajman Free Zone offer cheap visa packages?",
+    answer: "Yes, Ajman offers very affordable packages for entrepreneurs, starting from zero-visa packages up to multiple visa options with shared offices."
   },
   {
-    question: "Can Ajman Free Zone companies trade internationally?",
-    answer: "Yes, Ajman Free Zone companies can conduct international business operations and global trading activities efficiently.",
+    question: "Can I open a corporate bank account with an Ajman license?",
+    answer: "Yes, Ajman registered companies are recognized by all major UAE corporate banks, and we assist in preparing your banking profile."
   },
+  {
+    question: "How long does Ajman company registration take?",
+    answer: "The license is typically issued within 2 to 3 working days once the passport copy and business name approval are submitted."
+  },
+  {
+    question: "Do I need a local UAE partner in Ajman Free Zone?",
+    answer: "No, you retain 100% company ownership and full operational control of your Ajman Free Zone business."
+  },
+  {
+    question: "Are Ajman Free Zone companies subject to custom duties?",
+    answer: "No, companies registered in AFZ enjoy 100% exemption from all customs duties on import and export of goods within the free zone."
+  },
+  {
+    question: "Is an Ajman residency visa renewable?",
+    answer: "Yes, all investor and employee visas are issued for 2 years and can be renewed indefinitely as long as the business license remains active."
+  }
 ];
 
 function useIntersectionObserver(options = {}) {
@@ -465,7 +481,7 @@ export default function AjmanFZ() {
 
       {/* ========== FAQ SECTION ========== */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#fef8f9] to-white">
-        <div className="max-w-[900px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <div
             ref={faqRef}
             className={`transition-all duration-600 ${
@@ -483,10 +499,19 @@ export default function AjmanFZ() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-              {FAQS.map((faq, idx) => (
-                <FAQItem key={idx} faq={faq} index={idx} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Column 1 */}
+              <div className="space-y-4">
+                {FAQS.slice(0, 4).map((faq, idx) => (
+                  <FAQItem key={idx} faq={faq} index={idx} />
+                ))}
+              </div>
+              {/* Column 2 */}
+              <div className="space-y-4">
+                {FAQS.slice(4, 8).map((faq, idx) => (
+                  <FAQItem key={idx + 4} faq={faq} index={idx + 4} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
