@@ -596,16 +596,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="text-center mt-6">
-              <a
-                href="https://maps.google.com/?q=Business+Bay+Dubai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[#d7193f] text-sm font-semibold hover:gap-3 transition-all"
-              >
-                Get Directions <ArrowRight size={14} />
-              </a>
-            </div>
+            
           </div>
         </div>
       </section>
