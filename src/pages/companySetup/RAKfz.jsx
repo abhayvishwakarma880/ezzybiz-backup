@@ -263,7 +263,7 @@ export default function RAKFZ() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
           src="https://www.gbsei.com/wp-content/uploads/2025/02/Business-set-up-in-DAFZA.png"
           alt="Ras Al Khaimah Free Zone business setup"
@@ -277,21 +277,7 @@ export default function RAKFZ() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(215,25,63,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(215,25,63,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
         </div>
 
-        {/* ========== BREADCRUMBS ========== */}
-        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-white flex items-center gap-2">
-            <Link
-              to="/"
-              className="hover:text-[#fca5a5] transition-colors no-underline"
-            >
-              Home
-            </Link>
 
-            <ChevronRight size={14} className="text-white/70" />
-
-            <span className="text-[#fca5a5] font-medium">RAK Free Zone</span>
-          </div>
-        </div>
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-8">
           <div
@@ -322,6 +308,20 @@ export default function RAKFZ() {
                 <MessageCircle size={14} /> Book Free Consultation
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* ========== BREADCRUMBS ========== */}
+        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8">
+          <div className="text-sm text-white flex items-center gap-2">
+            <Link
+              to="/"
+              className="hover:text-[#fca5a5] transition-colors no-underline text-white"
+            >
+              Home
+            </Link>
+            <ChevronRight size={14} className="text-white/70" />
+            <span className="text-[#fca5a5] font-medium">RAK Free Zone</span>
           </div>
         </div>
       </section>

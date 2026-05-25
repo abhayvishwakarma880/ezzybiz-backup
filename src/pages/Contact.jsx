@@ -286,7 +286,7 @@ export default function Contact() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-6 md:pt-8 md:pb-10 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80"
           alt="Dubai business contact background"
@@ -299,16 +299,7 @@ export default function Contact() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(215,25,63,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(215,25,63,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
         </div>
 
-        {/* ========== BREADCRUMBS ========== */}
-        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5">
-          <div className="text-sm text-white flex items-center gap-2">
-            <Link to="/" className="hover:text-[#fca5a5] transition-colors no-underline text-white">
-              Home
-            </Link>
-            <ChevronRight size={14} className="text-white/70" />
-            <span className="text-[#fca5a5] font-medium">Contact Us</span>
-          </div>
-        </div>
+
 
         <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
           <div
@@ -333,6 +324,17 @@ export default function Contact() {
               and corporate solutions across Dubai and the UAE. Our consultants are ready to guide you through every 
               step of your business journey.
             </p>
+          </div>
+        </div>
+
+        {/* ========== BREADCRUMBS ========== */}
+        <div className="relative z-20 max-w-[1280px] mx-auto px-5 md:px-8">
+          <div className="text-sm text-white flex items-center gap-2">
+            <Link to="/" className="hover:text-[#fca5a5] transition-colors no-underline text-white">
+              Home
+            </Link>
+            <ChevronRight size={14} className="text-white/70" />
+            <span className="text-[#fca5a5] font-medium">Contact Us</span>
           </div>
         </div>
       </section>

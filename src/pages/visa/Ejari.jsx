@@ -284,7 +284,7 @@ export default function Ejari() {
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
       <section
-        className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden"
+        className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden"
         style={{
           backgroundImage: `url('https://yourdubaiguide.com/wp-content/uploads/2018/09/Al-Twar-Center-Ejari-Typing-Center.jpg')`,
           backgroundSize: 'cover',
@@ -298,21 +298,7 @@ export default function Ejari() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(215,25,63,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(215,25,63,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
         </div>
 
-        {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5 z-50">
-          <div className="text-sm text-gray-500 flex items-center gap-2">
-            <Link
-              to="/"
-              className="hover:text-[#d7193f] transition-colors text-white no-underline"
-            >
-              Home
-            </Link>
 
-            <ChevronRight size={14} className="text-gray-400" />
-
-            <span className="text-[#d7193f] font-medium">Ejari</span>
-          </div>
-        </div>
 
         <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
           <div
@@ -342,6 +328,20 @@ export default function Ejari() {
                 <MessageCircle size={14} /> Book Free Consultation
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* ========== BREADCRUMBS ========== */}
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
+          <div className="text-sm text-gray-500 flex items-center gap-2">
+            <Link
+              to="/"
+              className="hover:text-[#d7193f] transition-colors text-white no-underline"
+            >
+              Home
+            </Link>
+            <ChevronRight size={14} className="text-gray-400" />
+            <span className="text-[#d7193f] font-medium">Ejari</span>
           </div>
         </div>
       </section>

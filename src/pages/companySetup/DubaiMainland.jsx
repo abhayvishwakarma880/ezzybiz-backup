@@ -270,7 +270,7 @@ export default function DubaiMainland() {
   return (
     <div className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative pt-6 pb-20 md:pt-8 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
           src="https://i.dailymail.co.uk/1s/2024/01/08/16/79752811-0-image-m-31_1704730329350.jpg"
           alt="Dubai Mainland"
@@ -278,14 +278,7 @@ export default function DubaiMainland() {
         />
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
 
-        {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5 relative z-10">
-          <div className="text-sm text-white/60 flex items-center gap-2">
-            <Link to="/" className="hover:text-white transition-colors no-underline text-white/60">Home</Link>
-            <ChevronRight size={14} className="text-white/40" />
-            <span className="text-[#d7193f] font-medium">Dubai Mainland</span>
-          </div>
-        </div>
+        
 
         <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
           <div
@@ -317,6 +310,16 @@ export default function DubaiMainland() {
             </div>
           </div>
         </div>
+
+        {/* ========== BREADCRUMBS ========== */}
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
+          <div className="text-sm text-white/60 flex items-center gap-2">
+            <Link to="/" className="hover:text-white transition-colors no-underline text-white">Home</Link>
+            <ChevronRight size={14} className="text-white/40" />
+            <span className="text-[#ff0033] font-medium">Dubai Mainland</span>
+          </div>
+        </div>
+        
       </section>
 
       {/* ========== INTRODUCTION SECTION ========== */}

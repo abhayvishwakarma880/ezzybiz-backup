@@ -151,21 +151,6 @@ export default function ArticleDetails() {
 
         {/* Hero content container */}
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
-          {/* Breadcrumb path */}
-          <nav className="text-sm text-white/60 flex items-center gap-2 mb-8 -mt-2">
-            <Link to="/" className="hover:text-white transition-colors no-underline text-white/60">
-              Home
-            </Link>
-            <ChevronRight size={13} className="text-white/40" />
-            <Link to="/articles" className="hover:text-white transition-colors no-underline text-white/60">
-              Articles
-            </Link>
-            <ChevronRight size={13} className="text-white/40" />
-            <span className="text-[#e8718a] font-medium max-w-[200px] sm:max-w-xs md:max-w-md truncate">
-              {article.title}
-            </span>
-          </nav>
-
           {/* Title block */}
           <div className="max-w-4xl">
             {/* Category tag */}
@@ -203,6 +188,23 @@ export default function ArticleDetails() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* ========== BREADCRUMBS ========== */}
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+          <nav className="text-sm text-white/60 flex items-center gap-2">
+            <Link to="/" className="hover:text-white transition-colors no-underline text-white/60">
+              Home
+            </Link>
+            <ChevronRight size={13} className="text-white/40" />
+            <Link to="/articles" className="hover:text-white transition-colors no-underline text-white/60">
+              Articles
+            </Link>
+            <ChevronRight size={13} className="text-white/40" />
+            <span className="text-[#e8718a] font-medium max-w-[200px] sm:max-w-xs md:max-w-md truncate">
+              {article.title}
+            </span>
+          </nav>
         </div>
       </section>
 

@@ -145,7 +145,7 @@ export default function AboutSection() {
 
             {/* Description */}
             <p
-              className={`text-[15px] text-gray-600 leading-relaxed mb-6 transition-all duration-700 ${
+              className={`text-[15px] text-gray-600 text-justify leading-relaxed mb-6 transition-all duration-700 ${
                 sectionInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: "0.3s", fontFamily: "'Lexend', sans-serif", fontWeight: 500 }}

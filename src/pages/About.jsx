@@ -297,7 +297,7 @@ export default function About() {
   return (
     <section className="bg-white font-sans">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative pt-6 pb-16 md:pt-8 md:pb-10 overflow-hidden">
+      <section className="relative pt-6 pb-16 md:pt-8 md:pb-5 overflow-hidden">
         {/* Background Image */}
         <img
           src={aboutUs}
@@ -307,19 +307,7 @@ export default function About() {
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
-        {/* ========== BREADCRUMBS ========== */}
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 mb-6 -mt-5 relative z-10">
-          <div className="text-sm text-white/60 flex items-center gap-2">
-            <Link
-              to="/"
-              className="hover:text-white transition-colors no-underline text-white/60"
-            >
-              Home
-            </Link>
-            <ChevronRight size={14} className="text-white/40" />
-            <span className="text-red-500 font-medium">About</span>
-          </div>
-        </div>
+        
 
         <div className="max-w-7xl  mx-auto px-5 md:px-8 relative z-10">
           <div
@@ -353,6 +341,20 @@ export default function About() {
               corporate compliance with professional guidance and reliable
               support.
             </p>
+          </div>
+        </div>
+
+        {/* ========== BREADCRUMBS ========== */}
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 relative z-10">
+          <div className="text-sm text-white/60 flex items-center gap-2">
+            <Link
+              to="/"
+              className="hover:text-white transition-colors no-underline text-white/60"
+            >
+              Home
+            </Link>
+            <ChevronRight size={14} className="text-white/40" />
+            <span className="text-red-500 font-medium">About</span>
           </div>
         </div>
       </section>
