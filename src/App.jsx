@@ -38,6 +38,24 @@ const App = () => {
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
+  const closeModal = () => {
+    setShowModal(false);
+    
+    // Clear any active 3-second auto-close timer
+    if (autoCloseTimerRef.current) {
+      clearTimeout(autoCloseTimerRef.current);
+      autoCloseTimerRef.current = null;
+    }
+    
+    // Schedule auto-reopen after 10 seconds of being closed
+    if (reopenTimerRef.current) {
+      clearTimeout(reopenTimerRef.current);
+    }
+    reopenTimerRef.current = setTimeout(() => {
+      setShowModal(true);
+    }, 10000);
+  };
+
   // Handle 3-second auto-close when modal opens (unless user interacts)
   useEffect(() => {
     if (showModal) {
@@ -49,12 +67,7 @@ const App = () => {
 
       // Start 3-second timer to auto-close if there is no interaction
       autoCloseTimerRef.current = setTimeout(() => {
-        setShowModal(false);
-        
-        // Schedule auto-reopen after 10 seconds of being closed
-        reopenTimerRef.current = setTimeout(() => {
-          setShowModal(true);
-        }, 10000);
+        closeModal();
       }, 3000);
     }
 
@@ -125,7 +138,7 @@ const App = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
               className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
-              onClick={() => setShowModal(false)}
+              onClick={closeModal}
             />
             
             {/* Reusable LeadForm Card Wrapper */}
@@ -142,7 +155,7 @@ const App = () => {
             >
               {/* Close Floating Button */}
               <button
-                onClick={() => setShowModal(false)}
+                onClick={closeModal}
                 className="absolute top-4 right-4 p-1.5 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition-colors z-20 cursor-pointer shadow-sm"
                 aria-label="Close modal"
               >

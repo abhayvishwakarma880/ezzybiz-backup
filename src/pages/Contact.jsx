@@ -132,20 +132,44 @@ function ContactInfoCard({ info, index }) {
   const [ref, visible] = useIntersectionObserver();
   const Icon = info.icon;
 
+  let clickableProps = {};
+  if (info.title === "Office Address") {
+    clickableProps = {
+      as: "a",
+      href: "https://www.google.com/maps?cid=11157636549639522199&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed",
+      target: "_blank",
+      rel: "noopener noreferrer",
+    };
+  } else if (info.title === "Phone Number") {
+    clickableProps = {
+      as: "a",
+      href: "tel:+971523177073",
+    };
+  } else if (info.title === "Email Address") {
+    clickableProps = {
+      as: "a",
+      href: "mailto:info@ezzy.biz",
+    };
+  }
+
+  const CardWrapper = clickableProps.as || "div";
+  const isClickable = !!clickableProps.as;
+
   return (
-    <div
+    <CardWrapper
       ref={ref}
-      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 ${
+      {...(isClickable ? { href: clickableProps.href, target: clickableProps.target, rel: clickableProps.rel } : {})}
+      className={`group p-6 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#d7193f]/5 hover:-translate-y-1 block no-underline text-inherit ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      } ${isClickable ? "cursor-pointer" : ""}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d7193f]/10 to-[#d7193f]/5 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#d7193f]/15">
         <Icon size={22} className="text-[#d7193f]" />
       </div>
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{info.title}</h3>
+      <h3 className="font-semibold text-gray-900 text-lg mb-2 group-hover:text-[#d7193f] transition-colors">{info.title}</h3>
       <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{info.description}</p>
-    </div>
+    </CardWrapper>
   );
 }
 
@@ -561,9 +585,9 @@ export default function Contact() {
                 </div>
 
                 {/* Quick Contact */}
-                <div className="mt-6 pt-6 border-t border-gray-100">
+                <div className="mt-6 pt-6 border-t border-gray-100 justify-items-center">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-12 h-[1px] bg-gray-200" />
+                    {/* <div className="w-12 h-[1px] bg-gray-200" /> */}
                     <span className="text-xs text-gray-400">OR REACH US DIRECTLY</span>
                   </div>
                   <div className="flex gap-3">
