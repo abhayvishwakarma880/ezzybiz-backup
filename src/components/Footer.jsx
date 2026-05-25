@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/f
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlinePhone, MdOutlineMailOutline } from "react-icons/md";
 import { FiClock } from "react-icons/fi";
+import { FaXTwitter } from "react-icons/fa6";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -27,10 +28,10 @@ const serviceLinks = [
 ];
 
 const socialLinks = [
-  { icon: <FaFacebookF />, label: "Facebook", href: "#" },
-  { icon: <FaInstagram />, label: "Instagram", href: "#" },
-  { icon: <FaLinkedinIn />, label: "LinkedIn", href: "#" },
-  { icon: <FaYoutube />, label: "YouTube", href: "#" },
+  { icon: <FaFacebookF />, label: "Facebook", href: "https://www.facebook.com/EzzyBizOfficial" },
+  { icon: <FaInstagram />, label: "Instagram", href: "https://www.instagram.com/ezzybiz?igsh=MWdjcHhsdGdkbHl6bQ==" },
+  { icon: <FaLinkedinIn />, label: "LinkedIn", href: "https://www.linkedin.com/company/ezzybiz/" },
+  { icon: <FaXTwitter />, label: "X", href: "https://x.com/Ezzy_bizdubai" },
 ];
 
 const bottomLinks = [
@@ -101,7 +102,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-2">
               {socialLinks.map((s, i) => (
-                <a key={i} href={s.href} aria-label={s.label}
+                <a key={i} href={s.href} aria-label={s.label} target="_blank" 
                   className="w-9 h-9 border border-white/[0.08] rounded-[9px] flex items-center justify-center text-white/40 text-[13px] hover:border-red-600 hover:text-white hover:bg-red-600/15 hover:-translate-y-0.5 transition-all duration-300">
                   {s.icon}
                 </a>

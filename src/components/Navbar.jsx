@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiClock, FiPhone, FiMail, FiChevronDown, FiMenu, FiX, FiMessageSquare } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
@@ -168,12 +169,13 @@ export default function Navbar() {
               {/* Social Icons */}
               <div className="flex items-center gap-[15px] sm:gap-[10px]">
                 {[
-                  { icon: <FacebookIcon />, label: "Facebook", href: "#" },
-                  { icon: <InstagramIcon />, label: "Instagram", href: "#" },
-                  { icon: <LinkedInIcon />, label: "LinkedIn", href: "#" },
-                  { icon: <YouTubeIcon />, label: "YouTube", href: "#" },
+                  { icon: <FacebookIcon />, label: "Facebook", href: "https://www.facebook.com/EzzyBizOfficial" },
+                  { icon: <InstagramIcon />, label: "Instagram", href: "https://www.instagram.com/ezzybiz?igsh=MWdjcHhsdGdkbHl6bQ==" },
+                  { icon: <LinkedInIcon />, label: "LinkedIn", href: "https://www.linkedin.com/company/ezzybiz/" },
+                  { icon: <FaXTwitter />, label: "X", href: "https://x.com/Ezzy_bizdubai" },
                 ].map(({ icon, label, href }) => (
                   <a
+                  target="_blank"
                     key={label}
                     href={href}
                     aria-label={label}

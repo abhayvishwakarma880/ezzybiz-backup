@@ -202,19 +202,19 @@ export default function WhyChooseUs() {
           }}
         />
 
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10">
           {/* ── TWO-COLUMN LAYOUT ── */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-14 items-stretch">
             {/* ─── LEFT COLUMN ─── */}
             <div className="flex flex-col h-full">
               {/* Badge */}
-              <div className="inline-flex items-center gap-3 mb-4">
+              {/* <div className="inline-flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-[#d7193f]" />
                 <span className="text-[#d7193f] text-[11px] font-bold tracking-[3.5px] uppercase">
                   Why Choose Us
                 </span>
                 <span className="h-px w-8 bg-[#d7193f]" />
-              </div>
+              </div> */}
 
               {/* Heading */}
               <h2
