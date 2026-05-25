@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { label: "About Us", href: "/about" },
   {
     label: "Company Setup",
+    href: "/companysetup",
     dropdown: [
       { label: "Dubai Mainland", href: "/dubaimainland" },
       { label: "Dubai Free Zone", href: "/dubaifreezone" },
@@ -230,12 +231,10 @@ export default function Navbar() {
                   <Link
                     to={item.href || "#"}
                     className={`flex items-center gap-1 px-3 py-2 no-underline text-[13.5px] font-semibold tracking-[0.02em] whitespace-nowrap transition-colors duration-200 hover:text-[#C8102E] ${
-                      !item.dropdown ? "nav-underline" : ""
+                      !item.dropdown || pathname === item.href ? "nav-underline" : ""
                     } ${
-                      !item.dropdown && pathname === item.href
+                      pathname === item.href || (item.dropdown && item.dropdown.some(d => d.href === pathname))
                         ? "text-[#C8102E] nav-active"
-                        : item.dropdown && item.dropdown.some(d => d.href === pathname)
-                        ? "text-[#C8102E]"
                         : "text-[#1a1a2e]"
                     }`}
                   >

@@ -7,6 +7,7 @@ import DubaiFZ from "./pages/companySetup/DubaiFZ";
 import DubaiMainland from "./pages/companySetup/DubaiMainland";
 import RAKFZ from "./pages/companySetup/RAKfz";
 import SharjahFZ from "./pages/companySetup/SharjahFZ";
+import CompanySetup from "./pages/companySetup/CompanySetup";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import VAT from "./pages/VAT";
@@ -27,6 +28,7 @@ const appRoute = [
   { path: "/dubaifreezone", element: DubaiFZ },
   { path: "/ajmanfreezone", element: AjmanFZ },
   { path: "/rakfreezone", element: RAKFZ },
+  { path: "/companysetup", element: CompanySetup },
   { path: "/allvisa", element: AllVisa },
   { path: "/goldenvisa", element: GoldenVisa },
   { path: "/ejari", element: Ejari },
