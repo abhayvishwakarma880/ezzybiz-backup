@@ -16,14 +16,17 @@ const SERVICE_OPTIONS = [
   "Sharjah Free Zone Company Setup",
   "Ajman Free Zone Company Setup",
   "Ras Al Khaimah Free Zone Company Setup",
+  "Apply for Visa",
+  "All Visa",
   "UAE Residence Visa Services",
+  "Apply For Golden Visa",
   "UAE Golden Visa Services",
   "Ejari Registration Services",
   "VAT & Tax Services",
   "Corporate Banking Services",
 ];
 
-export default function LeadForm() {
+export default function LeadForm({ initialService = "" }) {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -34,6 +37,11 @@ export default function LeadForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  // Sync initialService prop to state dynamically (e.g. from CTA button click details)
+  useEffect(() => {
+    setFormData(prev => ({ ...prev, service: initialService }));
+  }, [initialService]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -155,13 +155,13 @@ export default function HeroSection() {
 
             {/* Buttons */}
             <div className="flex sm:flex-row gap-2 md:gap-4 sm:full sm:w-auto">
-              <Link
-                to="/contact"
+              <button
+                onClick={() => window.dispatchEvent(new Event("open-lead-modal"))}
                 className="btn-primary flex items-center justify-center gap-[5px] h-[20px] md:h-[58px] px-2 md:px-8 bg-[#D60922] text-white font-bold text-[5px] md:text-[15px] tracking-[0.07em] uppercase rounded-sm cursor-pointer border-none no-underline"
               >
                 <HiOutlineChatBubbleLeftRight className="text-[7px] md:text-xl" />
                 Get Free Consultation
-              </Link>
+              </button>
 
               <a
                 href="https://wa.me/971523177073" target="_blank" rel="noopener noreferrer"

@@ -302,9 +302,9 @@ export default function AjmanFZ() {
               <Link to="/contact" className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 no-underline">
                 Start Your Company <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/contact" className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-[#d7193f] hover:shadow-md no-underline">
+              <button onClick={() => window.dispatchEvent(new CustomEvent("open-lead-modal", { detail: { service: "Ajman Free Zone Company Setup" } }))} className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 px-7 py-3 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 hover:border-[#d7193f] hover:text-[#d7193f] hover:shadow-md no-underline">
                 <MessageCircle size={14} /> Book Free Consultation
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -514,9 +514,9 @@ export default function AjmanFZ() {
                 solutions for your Ajman Free Zone business setup.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact" className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 no-underline">
+                <button onClick={() => window.dispatchEvent(new CustomEvent("open-lead-modal", { detail: { service: "Ajman Free Zone Company Setup" } }))} className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 no-underline">
                   Get Free Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </button>
                 <a href="https://wa.me/971523177073" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white/50 no-underline cursor-pointer">
                   <Phone size={14} /> Talk To Expert
                 </a>

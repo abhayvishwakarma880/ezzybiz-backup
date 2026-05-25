@@ -617,8 +617,8 @@ export default function About() {
                 UAE.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/contact"
+                <button
+                  onClick={() => window.dispatchEvent(new Event("open-lead-modal"))}
                   className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 no-underline"
                 >
                   Get Free Consultation{" "}
@@ -626,7 +626,7 @@ export default function About() {
                     size={14}
                     className="group-hover:translate-x-1 transition-transform"
                   />
-                </Link>
+                </button>
                 <Link
                   to="/contact"
                   className="flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white/50 no-underline"

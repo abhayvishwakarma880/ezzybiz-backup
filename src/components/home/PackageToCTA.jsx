@@ -640,12 +640,12 @@ function FinalCTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white font-sans font-bold text-[15px] flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(215,25,63,0.3)] hover:shadow-[0_15px_40px_rgba(215,25,63,0.45)] hover:-translate-y-1 transition-all duration-300 no-underline"
+            <button
+              onClick={() => window.dispatchEvent(new Event("open-lead-modal"))}
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white font-sans font-bold text-[15px] flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(215,25,63,0.3)] hover:shadow-[0_15px_40px_rgba(215,25,63,0.45)] hover:-translate-y-1 transition-all duration-300 no-underline cursor-pointer border-none"
             >
               <FaRocket /> Get Free Consultation
-            </Link>
+            </button>
             <a
               href="https://wa.me/971523177073" target="_blank" rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-gray-200 text-[#0f0f1a] font-sans font-semibold text-[15px] flex items-center justify-center gap-3 hover:bg-[#d7193f]/5 hover:border-[#d7193f]/30 hover:text-[#d7193f] transition-all duration-300 no-underline cursor-pointer"
