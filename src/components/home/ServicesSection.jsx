@@ -11,53 +11,62 @@ import {
   MdAccountBalance as Landmark,
 } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SERVICES = [
   {
     icon: Building2,
     title: "Mainland Company Formation",
     description: "Trade licenses, approvals, and government registration for your Dubai mainland business.",
+    url: "/dubaimainland"
   },
   {
     icon: BriefcaseBusiness,
     title: "Free Zone Company Setup",
     description: "100% foreign ownership, tax-efficient solutions, and streamlined free zone registration.",
+    url: ""
   },
   {
     icon: Globe,
     title: "Offshore Company Formation",
     description: "Secure offshore structures for international operations, asset protection, and global expansion.",
+    url: ""
   },
   {
     icon: FileCheck,
     title: "Business License Services",
     description: "Expert help for obtaining, renewing, and modifying UAE business licenses across all jurisdictions.",
+    url: ""
   },
   {
     icon: ShieldCheck,
-    title: "PRO & Government Services",
+    title: "RAK Free Zone",
     description: "Document clearing, Emirates ID, labor cards, and immigration processing handled professionally.",
+    url: "/rakfreezone"
   },
   {
     icon: Landmark,
-    title: "Investor & Employment Visa",
+    title: "Visa Services",
     description: "Complete visa processing for investors, employees, and family sponsorship in the UAE.",
+    url: "/allvisa"
   },
   {
     icon: BadgeDollarSign,
     title: "VAT Registration & Corporate Tax",
     description: "VAT registration, tax filing, corporate tax advisory, and financial reporting services.",
+    url: "/vat"
   },
   {
     icon: ReceiptText,
-    title: "Trademark Registration",
+    title: "Ejari Services",
     description: "Protect your brand with complete UAE trademark registration and IP documentation support.",
+    url: "/ejari"
   },
 ];
 
-function ServiceCard({ icon: Icon, title, description, index }) {
+function ServiceCard({ icon: Icon, title, description, index, url }) {
   return (
-    <div
+    <Link to={url}
       className="group relative bg-white rounded-[18px] p-6 border border-[#ebebeb] transition-all duration-300 ease-out hover:-translate-y-[6px] hover:border-transparent hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] overflow-hidden"
       style={{ animationDelay: `${index * 80}ms` }}
     >
@@ -99,7 +108,7 @@ function ServiceCard({ icon: Icon, title, description, index }) {
           WhatsApp Us
         </a>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -186,66 +195,6 @@ export default function ServicesSection() {
               <ServiceCard key={idx} {...service} index={idx} />
             ))}
           </div>
-
-          {/* ── BOTTOM CTA BANNER ── */}
-          {/* <div
-            className="relative rounded-2xl overflow-hidden px-10 py-14 md:px-16 md:py-16"
-            style={{
-              background:
-                "linear-gradient(135deg, #0f0f1a 0%, #1e0c10 50%, #2a0a14 100%)",
-            }}
-          >
-            <div
-              className="absolute inset-0 opacity-[0.06]"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle, #d7193f 1px, transparent 1px)",
-                backgroundSize: "32px 32px",
-              }}
-            />
-            <div
-              className="absolute -bottom-20 -right-20 w-[400px] h-[400px] rounded-full pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(215,25,63,0.18), transparent 70%)",
-              }}
-            />
-
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="text-center md:text-left max-w-[560px]">
-                <h3
-                  className="text-white font-bold leading-[1.2] mb-3 font-serif"
-                  style={{
-                    fontSize: "clamp(26px, 3.5vw, 38px)",
-                  }}
-                >
-                  Start Your Business Journey
-                  <span className="italic text-[#e8718a]"> In Dubai </span>
-                  Today
-                </h3>
-                <p className="text-[15px] leading-[1.8]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                  Our experienced consultants are ready to help you establish and grow
-                  your business in the UAE with complete end-to-end corporate solutions.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <button
-                  className="flex items-center justify-center gap-[10px] h-[56px] px-8 bg-[#d7193f] text-white font-bold text-[13px] tracking-[0.07em] uppercase rounded-sm transition-all duration-300 hover:-translate-y-[3px] hover:shadow-[0_12px_36px_rgba(215,25,63,0.4)] border-none cursor-pointer"
-                >
-                  <MessageCircle size={16} />
-                  Talk To Expert
-                </button>
-                <button
-                  className="flex items-center justify-center gap-[10px] h-[56px] px-8 bg-transparent text-white font-semibold text-[13px] tracking-[0.07em] uppercase rounded-sm transition-all duration-300 hover:-translate-y-[3px] hover:bg-white/10 cursor-pointer"
-                  style={{ border: "1px solid rgba(255,255,255,0.25)" }}
-                >
-                  <ArrowRight size={16} />
-                  View All Services
-                </button>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
     </>

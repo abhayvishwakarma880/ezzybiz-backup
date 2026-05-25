@@ -5,6 +5,7 @@ import {
   LuArrowRight as ArrowRight,
   LuCheck as Check,
   LuCompass as Compass,
+  LuPhone as Phone,
 } from "react-icons/lu";
 
 function useIntersectionObserver(options = {}) {
@@ -97,6 +98,7 @@ const JURISDICTIONS = [
 export default function CompanySetup() {
   const [heroRef, heroVisible] = useIntersectionObserver({ threshold: 0.1 });
   const [contentRef, contentVisible] = useIntersectionObserver({ threshold: 0.05 });
+  const [ctaRef, ctaVisible] = useIntersectionObserver({ threshold: 0.1 });
 
   return (
     <div className="bg-[#f9fafb] font-sans">
@@ -294,6 +296,39 @@ export default function CompanySetup() {
     </div>
   ))}
 </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== FINAL CTA SECTION ========== */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
+          <div
+            ref={ctaRef}
+            className={`bg-gradient-to-r from-[#0f0f1a] to-[#1a1a2e] rounded-2xl p-8 md:p-12 relative overflow-hidden transition-all duration-600 ${
+              ctaVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#d7193f]/10 to-transparent" />
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#d7193f]/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#e8718a]/10 rounded-full blur-3xl" />
+
+            <div className="relative z-10 text-center">
+              <h2 className="font-sans text-[clamp(24px,4vw,34px)] font-bold text-white mb-3">
+                Start Your UAE Business Setup Journey Today
+              </h2>
+              <p className="text-white/70 text-sm mb-8 max-w-lg mx-auto">
+                Partner with EzzyBiz for hassle-free company formation, professional licensing, and complete corporate solutions across the UAE.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/contact" className="group flex items-center justify-center gap-2 bg-gradient-to-r from-[#d7193f] to-[#b81236] text-white px-7 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#d7193f]/30 hover:scale-105 no-underline">
+                  Get Free Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <a href="https://wa.me/971523177073" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white/50 no-underline cursor-pointer">
+                  <Phone size={14} /> Talk To Expert
+                </a>
+              </div>
             </div>
           </div>
         </div>
