@@ -6,6 +6,7 @@ import {
   LuMail as Mail,
   LuClock as Clock,
   LuChevronRight as ChevronRight,
+  LuChevronDown as ChevronDown,
   LuMessageCircle as MessageCircle,
   LuArrowRight as ArrowRight,
   // LuCheckCircle2 as CheckCircle2,
@@ -54,18 +55,16 @@ const CONTACT_INFO = [
 ];
 
 const SERVICE_OPTIONS = [
-  "Mainland Company Formation",
-  "Dubai Free Zone Setup",
-  "Sharjah Free Zone Setup",
-  "Ajman Free Zone Setup",
-  "RAK Free Zone Setup",
-  "Visa Services",
-  "Golden Visa",
-  "Ejari Services",
-  "VAT Services",
-  "Business Banking",
-  "PRO Services",
-  "Other Corporate Services",
+  "Dubai Mainland Company Setup",
+  "Dubai Free Zone Company Setup",
+  "Sharjah Free Zone Company Setup",
+  "Ajman Free Zone Company Setup",
+  "Ras Al Khaimah Free Zone Company Setup",
+  "UAE Residence Visa Services",
+  "UAE Golden Visa Services",
+  "Ejari Registration Services",
+  "VAT & Tax Services",
+  "Corporate Banking Services",
 ];
 
 const WHY_CHOOSE = [
@@ -246,6 +245,7 @@ export default function Contact() {
       name: formData.fullName,
       email: formData.email,
       phone: formData.phone,
+      service: formData.service,
       message: formData.message,
     };
 
@@ -439,19 +439,40 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                  <div className="relative">
-                    <AtSign size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors"
-                      placeholder="john@company.com"
-                    />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                    <div className="relative">
+                      <AtSign size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors"
+                        placeholder="john@company.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Select Service *</label>
+                    <div className="relative">
+                      <select
+                        name="service"
+                        value={formData.service}
+                        onChange={handleChange}
+                        required
+                        className="w-full pl-4 pr-10 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors bg-white appearance-none cursor-pointer text-gray-700 text-sm"
+                      >
+                        <option value="">Select a service</option>
+                        {SERVICE_OPTIONS.map((option, idx) => (
+                          <option key={idx} value={option}>{option}</option>
+                        ))}
+                      </select>
+                      <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                    </div>
                   </div>
                 </div>
 
