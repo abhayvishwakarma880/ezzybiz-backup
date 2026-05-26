@@ -128,7 +128,7 @@ const App = () => {
             
             {/* Pulsing centered Brand Logo Icon */}
             <div className="relative w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md p-2">
-              <img src="/logoIcon.png" alt="EzzyBiz Loading" className="w-10 h-10 object-contain animate-pulse" />
+              <img src="/logoIcon.webp" alt="EzzyBiz Loading" className="w-10 h-10 object-contain animate-pulse" />
             </div>
           </div>
           

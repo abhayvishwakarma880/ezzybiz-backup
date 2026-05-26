@@ -204,7 +204,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link to="/" className="no-underline flex items-center gap-2 leading-[1.1]">
-              <img src="/logoIcon.png" alt="EzzyBiz Logo" className="h-10 w-auto object-contain" />
+              <img src="/logoIcon.webp" alt="EzzyBiz Logo" className="h-10 w-auto object-contain" />
               <div className="flex items-baseline gap-0.5">
                 <span
                   className="font-bold text-[28px] text-[#0f0f1a] tracking-[-0.5px] font-serif"
@@ -288,14 +288,14 @@ export default function Navbar() {
               {NAV_ITEMS.map((item, idx) => (
                 
                 <Link to={item.href || "#"}
-                      className="no-underline text-inherit"
+                      className="no-underline text-inherit border-b border-[#f0f0f0]"
                       onClick={(e) => {
                         if (item.dropdown) {
                           e.preventDefault();
                         } else {
                           setMobileOpen(false);
                         }
-                      }} key={idx} className="border-b border-[#f0f0f0]">
+                      }} key={idx}>
                   <div
                     className="flex items-center justify-between px-6 py-[14px] cursor-pointer text-[#1a1a2e] text-sm font-semibold"
                     onClick={() =>

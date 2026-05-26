@@ -87,7 +87,7 @@ export default function Footer() {
           {/* ── COL 1: Brand ── */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-5 no-underline group select-none">
-              <img src="/logoIcon.png" alt="EzzyBiz Logo" className="h-11 w-auto object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105" />
+              <img src="/logoIcon.webp" alt="EzzyBiz Logo" className="h-11 w-auto object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105" />
               <span className="font-serif text-[27px] font-bold text-white transition-colors duration-300 group-hover:text-red-500">
                 EzzyBiz
               </span>

@@ -7,7 +7,7 @@ import {
   LuHeadphones as Headphones,
   LuGlobe as Globe,
 } from "react-icons/lu";
-import whyChoose from '../../assets/whyChoose.png'
+import whyChoose from '../../assets/whyChoose.webp'
 
 const FEATURES = [
   {

@@ -22,9 +22,9 @@ import {
 
 import { FiCheckCircle as CheckCircle2 } from "react-icons/fi";
 
-import aboutUs from '../assets/aboutUs.png';
-import whyChoose from '../assets/whyChoose.png';
-import he from '../assets/he.png';
+import aboutUs from '../assets/aboutUs.webp';
+import whyChoose from '../assets/whyChoose.webp';
+import he from '../assets/he.webp';
 
 const STATS = [
   { number: "500+", label: "Businesses Successfully Setup", icon: Briefcase },
