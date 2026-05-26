@@ -97,10 +97,10 @@ export default function LeadForm({ initialService = "" }) {
     <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm max-w-xl mx-auto">
       {/* Form Header */}
       <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-gray-950 tracking-tight">
+        <h3 className="text-xl font-bold text-gray-950 tracking-tight">
           Start Your Business in Dubai
         </h3>
-        <p className="text-sm text-gray-500 mt-2 max-w-md mx-auto leading-relaxed">
+        <p className="text-xs text-gray-500 mt-2 max-w-md mx-auto leading-relaxed">
           Get a <span className="text-[#d7193f] font-semibold">Free Expert Consultation</span> today. Fill out the form below and our team will get in touch with you shortly.
         </p>
       </div>
@@ -199,7 +199,7 @@ export default function LeadForm({ initialService = "" }) {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            rows={4}
+            rows={2}
             className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#d7193f] focus:ring-1 focus:ring-[#d7193f] transition-colors resize-none text-sm"
             placeholder="Please describe your business requirements and goals..."
           />

@@ -240,27 +240,36 @@ function FAQItem({ faq, index }) {
   return (
     <div
       ref={ref}
-      className={`border-b border-gray-100 transition-all duration-400 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }`}
+      className={`overflow-hidden rounded-xl border transition-all duration-300 ${
+        isOpen
+          ? "border-[#d7193f]/20 bg-gradient-to-br from-white to-[#fef8f9]/20 shadow-lg shadow-[#d7193f]/5"
+          : "border-gray-100 bg-white hover:border-gray-200 hover:shadow-md hover:shadow-gray-100/50"
+      } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center py-5 text-left"
+        className="w-full flex justify-between items-center p-5 text-left group gap-4 cursor-pointer"
       >
-        <span className="font-semibold text-gray-800 text-sm md:text-base">{faq.question}</span>
-        <ChevronRight
-          size={18}
-          className={`text-[#d7193f] transition-transform duration-300 ${isOpen ? "rotate-90" : ""}`}
-        />
+        <span className={`font-semibold text-sm md:text-base transition-colors duration-250 ${
+          isOpen ? "text-[#d7193f]" : "text-gray-800 group-hover:text-[#d7193f]"
+        }`}>
+          {faq.question}
+        </span>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+          isOpen ? "bg-[#d7193f] text-white rotate-90 shadow-md shadow-[#d7193f]/20" : "bg-gray-50 text-gray-500 group-hover:bg-[#d7193f]/10 group-hover:text-[#d7193f]"
+        }`}>
+          <ChevronRight size={16} />
+        </div>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-40 pb-5" : "max-h-0"
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[300px] opacity-100 pb-5 px-5 pt-1" : "max-h-0 opacity-0 px-5"
         }`}
       >
-        <p className="text-gray-500 text-sm leading-relaxed">{faq.answer}</p>
+        <div className="pt-3 border-t border-gray-100 text-gray-500 text-sm leading-relaxed">
+          {faq.answer}
+        </div>
       </div>
     </div>
   );

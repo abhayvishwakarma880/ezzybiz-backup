@@ -112,14 +112,31 @@ const PROCESS_STEPS = [
   { step: "04", title: "Medical & Emirates ID", description: "Coordinate medical testing, biometrics, and Emirates ID registration as part of the UAE residency process." },
   { step: "05", title: "Visa Approval & Stamping", description: "Receive your approved UAE residence visa and complete the final immigration formalities successfully." },
 ];
-
 const WHY_CHOOSE = [
-  "Professional immigration consultants",
-  "Fast and reliable visa processing",
-  "Complete documentation support",
-  "Transparent and professional guidance",
-  "Investor and family visa expertise",
-  "End-to-end UAE immigration assistance",
+  {
+    title: "Professional Consultants",
+    description: "Expert team guiding you through complex UAE rules seamlessly."
+  },
+  {
+    title: "Fast Visa Processing",
+    description: "Efficient handling of documents for quick approvals."
+  },
+  {
+    title: "Complete Documentation",
+    description: "End-to-end assistance with legal forms and paperwork."
+  },
+  {
+    title: "Transparent Guidance",
+    description: "No hidden charges, clear updates at every stage."
+  },
+  {
+    title: "Expertise in Visas",
+    description: "Specialized in long-term residency and dependents."
+  },
+  {
+    title: "End-to-End Assistance",
+    description: "Comprehensive services covering all your residency needs."
+  }
 ];
 
 const FAQS = [
@@ -266,27 +283,36 @@ function FAQItem({ faq, index }) {
   return (
     <div
       ref={ref}
-      className={`border-b border-gray-100 transition-all duration-400 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }`}
+      className={`overflow-hidden rounded-xl border transition-all duration-300 ${
+        isOpen
+          ? "border-[#d7193f]/20 bg-gradient-to-br from-white to-[#fef8f9]/20 shadow-lg shadow-[#d7193f]/5"
+          : "border-gray-100 bg-white hover:border-gray-200 hover:shadow-md hover:shadow-gray-100/50"
+      } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center py-5 text-left"
+        className="w-full flex justify-between items-center p-5 text-left group gap-4 cursor-pointer"
       >
-        <span className="font-semibold text-gray-800 text-sm md:text-base">{faq.question}</span>
-        <ChevronRight
-          size={18}
-          className={`text-[#d7193f] transition-transform duration-300 ${isOpen ? "rotate-90" : ""}`}
-        />
+        <span className={`font-semibold text-sm md:text-base transition-colors duration-250 ${
+          isOpen ? "text-[#d7193f]" : "text-gray-800 group-hover:text-[#d7193f]"
+        }`}>
+          {faq.question}
+        </span>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+          isOpen ? "bg-[#d7193f] text-white rotate-90 shadow-md shadow-[#d7193f]/20" : "bg-gray-50 text-gray-500 group-hover:bg-[#d7193f]/10 group-hover:text-[#d7193f]"
+        }`}>
+          <ChevronRight size={16} />
+        </div>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-40 pb-5" : "max-h-0"
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[300px] opacity-100 pb-5 px-5 pt-1" : "max-h-0 opacity-0 px-5"
         }`}
       >
-        <p className="text-gray-500 text-sm leading-relaxed">{faq.answer}</p>
+        <div className="pt-3 border-t border-gray-100 text-gray-500 text-sm leading-relaxed">
+          {faq.answer}
+        </div>
       </div>
     </div>
   );
@@ -376,7 +402,7 @@ export default function AllVisa() {
             }`}
           >
             <div>
-              <div className="inline-flex items-center gap-2 mb-4">
+              <div className="inline-flex items-center gap-2 ">
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">ALL VISA SERVICES</span>
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
@@ -391,17 +417,13 @@ export default function AllVisa() {
                   category and completing the required procedures correctly is essential for smooth approval and compliance.
                 </p>
                 <p>
-                  EzzyBiz provides end-to-end visa assistance including investor visas, employment visas, family sponsorship, 
+                  EzzyBiz provides end-to-end visa assistance including investor visas, family sponsorship, 
                   Golden Visa support, Emirates ID processing, medical testing coordination, and immigration documentation services.
-                </p>
-                <p>
-                  Our experienced consultants guide clients through every stage of the UAE visa process with professional support, 
-                  transparent communication, and reliable corporate assistance.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-3xl overflow-hidden shadow-xl">
+            <div className="rounded-3xl overflow-hidden shadow-xl md:mt-10">
               <img
                 src="https://abrc.ae/assets/galleries/261/uae-visa-garant.jpg"
                 alt="UAE visa services in Dubai"
@@ -520,22 +542,25 @@ export default function AllVisa() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 items-start">
-              <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
+              <div className="grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-rows-3 md:h-[440px]">
                 {WHY_CHOOSE.map((item, idx) => (
                   <div
                     key={idx}
-                    className={`flex items-center gap-3 p-4 rounded-xl bg-slate-900/90 border border-slate-700 transition-all duration-300 hover:bg-slate-800 hover:border-[#d7193f]/20 hover:shadow-lg hover:shadow-slate-950/30 ${
+                    className={`flex items-start gap-3 p-4 rounded-xl bg-slate-900/90 border border-slate-700 transition-all duration-300 hover:bg-slate-800 hover:border-[#d7193f]/20 hover:shadow-lg hover:shadow-slate-950/30 ${
                       whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                     }`}
                     style={{ transitionDelay: `${idx * 60}ms` }}
                   >
-                    <CheckCircle2 size={16} className="text-[#d7193f] shrink-0" />
-                    <span className="text-sm text-slate-200">{item}</span>
+                    <CheckCircle2 size={16} className="text-[#d7193f] shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-sm text-white mb-1">{item.title}</h4>
+                      <p className="text-xs text-slate-400 leading-relaxed">{item.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>
 
-              <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-800 h-[220px] md:h-[240px]">
+              <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-800 h-[220px] md:h-[440px]">
                 <img
                   src="https://mindmineglobal.com/wp-content/uploads/2023/12/documents-required-for-canada-visitor-visa-Canada-tourist-visa-refusal-rate-is-on-the-rise.jpg"
                   alt="Visa documents overview"

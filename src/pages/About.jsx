@@ -371,7 +371,7 @@ export default function About() {
             }`}
           >
             <div>
-              <div className="inline-flex items-center gap-2 mb-4">
+              <div className="inline-flex items-center gap-2">
                 <div className="w-8 h-[2px] bg-[#d7193f]/40" />
                 <span className="text-[10px] font-semibold tracking-[2px] uppercase text-[#d7193f]">
                   WHO WE ARE
@@ -400,7 +400,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden shadow-xl md:mt-3">
               <img
                 src="https://www.pwc.com/m1/en/publications/images-new/creating-an-institution-fit-for-your-esg-aspirations-hero.png"
                 alt="EzzyBiz Corporate Services"

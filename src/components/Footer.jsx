@@ -143,9 +143,9 @@ export default function Footer() {
                 <div className="w-[34px] h-[34px] flex-shrink-0 border border-white/[0.08] rounded-[9px] flex items-center justify-center mt-0.5">
                   <IoLocationOutline className="text-red-500 text-[15px]" />
                 </div>
-                <span className="text-white/40 text-[13px] leading-relaxed pt-1">
+                <a href="https://www.google.com/maps?cid=11157636549639522199&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer" className="text-white/40 text-[13px] leading-relaxed pt-1 hover:text-white transition-colors duration-300">
                   1603 The Citadel Tower,<br />Business Bay, Dubai
-                </span>
+                </a>
               </div>
 
               {/* Phone */}
