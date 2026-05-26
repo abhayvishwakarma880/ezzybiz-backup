@@ -158,7 +158,7 @@ const articles = [
     title: "How to Start a Business in Dubai as a Foreign Investor",
     desc: "A step-by-step guide on company formation, licensing, and investor visas for foreign entrepreneurs in Dubai.",
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
+      "/assets/images/photo-1512453979798-5ea266f888.webp",
     Icon: IconBusinessSetup,
   },
   {
@@ -168,7 +168,7 @@ const articles = [
     title: "Mainland vs Free Zone Company Setup — Which is Right for You?",
     desc: "Compare mainland and free zone structures across ownership rights, setup costs, and operational flexibility.",
     image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+      "/assets/images/photo-1486325212027-8081e48525.webp",
     Icon: IconCompanyFormation,
   },
   {
@@ -178,7 +178,7 @@ const articles = [
     title: "Understanding VAT Registration Requirements in the UAE",
     desc: "Understand VAT thresholds, required documents, and how to keep your UAE business fully tax compliant.",
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+      "/assets/images/photo-1554224155-6726b3ff858f.webp",
     Icon: IconCompliance,
   },
   {
@@ -188,7 +188,7 @@ const articles = [
     title: "Everything You Need to Know About UAE Investor Visas",
     desc: "Explore eligibility criteria, processing steps, and key documents needed to secure your UAE investor visa.",
     image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+      "/assets/images/photo-1436491865332-7a61a109cc.webp",
     Icon: IconInvestorVisa,
   },
   {
@@ -198,7 +198,7 @@ const articles = [
     title: "Top Business Opportunities in Dubai for 2026",
     desc: "Discover the most profitable and fast-growing business sectors for entrepreneurs entering the UAE market in 2026.",
     image:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+      "/assets/images/photo-1507679799987-c73779587c.webp",
     Icon: IconEntrepreneurship,
   },
   {
@@ -208,7 +208,7 @@ const articles = [
     title: "How to Open a Corporate Bank Account in Dubai",
     desc: "A practical guide to required documents, bank selection, and common challenges in opening a UAE corporate account.",
     image:
-      "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&q=80",
+      "/assets/images/photo-1541354329998-f4d9a9f929.webp",
     Icon: IconBanking,
   },
   {
@@ -218,7 +218,7 @@ const articles = [
     title: "Corporate Tax in UAE: What Every Business Owner Must Know",
     desc: "A complete overview of UAE corporate tax rates, exemptions, and filing requirements for businesses in 2024.",
     image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+      "/assets/images/photo-1450101499163-c8848c66ca_1.webp",
     Icon: IconVAT,
   },
   {
@@ -228,7 +228,7 @@ const articles = [
     title: "How to Choose the Right Business Activity for Your UAE License",
     desc: "Understanding business activity categories and how the right selection impacts your license, visa quota, and operations.",
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      "/assets/images/photo-1497366216548-3752607029_1.webp",
     Icon: IconBusinessSetup,
   },
   {
@@ -238,7 +238,7 @@ const articles = [
     title: "Top 5 Free Zones in Dubai for Business Setup in 2026",
     desc: "A comparison of the most popular UAE free zones based on cost, benefits, visa quotas, and business activities.",
     image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+      "/assets/images/photo-1486325212027-8081e48525.webp",
     Icon: IconCompanyFormation,
   },
   {
@@ -248,7 +248,7 @@ const articles = [
     title: "UAE Golden Visa: Eligibility, Benefits & How to Apply",
     desc: "Everything you need to know about the UAE Golden Visa — who qualifies, what benefits it offers, and the application process.",
     image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+      "/assets/images/photo-1436491865332-7a61a109cc.webp",
     Icon: IconInvestorVisa,
   },
   {
@@ -258,7 +258,7 @@ const articles = [
     title: "Best Banks for Business Accounts in Dubai 2026",
     desc: "A detailed comparison of top UAE banks for corporate accounts, including fees, requirements, and digital banking features.",
     image:
-      "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&q=80",
+      "/assets/images/photo-1541354329998-f4d9a9f929.webp",
     Icon: IconBanking,
   },
   {
@@ -268,7 +268,7 @@ const articles = [
     title: "PRO Services in Dubai: What They Are and Why You Need Them",
     desc: "Learn how PRO services simplify government paperwork, visa processing, and document attestation for businesses in the UAE.",
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
+      "/assets/images/photo-1512453979798-5ea266f888.webp",
     Icon: IconBusinessSetup,
   },
   {
@@ -278,7 +278,7 @@ const articles = [
     title: "How to Scale Your Business in Dubai After Initial Setup",
     desc: "Practical strategies for growing your UAE business — from hiring and expansion to new licenses and market entry.",
     image:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+      "/assets/images/photo-1507679799987-c73779587c.webp",
     Icon: IconEntrepreneurship,
   },
   {
@@ -288,7 +288,7 @@ const articles = [
     title: "Ejari Registration in Dubai: A Complete Guide for Businesses",
     desc: "What is Ejari, why it is mandatory, and how to register your tenancy contract for business premises in Dubai.",
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+      "/assets/images/photo-1554224155-6726b3ff858f.webp",
     Icon: IconCompliance,
   },
   {
@@ -298,7 +298,7 @@ const articles = [
     title: "Offshore Company Formation in UAE: Benefits and Process",
     desc: "How offshore companies work in the UAE, their key advantages for international investors, and the registration process.",
     image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+      "/assets/images/photo-1486325212027-8081e48525.webp",
     Icon: IconCompanyFormation,
   },
   {
@@ -308,7 +308,7 @@ const articles = [
     title: "Trademark Registration in UAE: Protect Your Brand Identity",
     desc: "Step-by-step process for registering your trademark in the UAE, including costs, timelines, and legal protection benefits.",
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      "/assets/images/photo-1497366216548-3752607029_1.webp",
     Icon: IconTrademark,
   },
 ];
@@ -384,7 +384,7 @@ export default function ArticlesPage() {
       {/* ── HERO ── */}
       <section className="relative pt-6 pb-16 md:pt-8 md:pb-14 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80"
+          src="/assets/images/photo-1512453979798-5ea266f888_2.webp"
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-center"
           aria-hidden="true"

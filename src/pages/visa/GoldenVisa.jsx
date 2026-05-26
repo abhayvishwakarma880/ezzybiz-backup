@@ -42,37 +42,37 @@ const ELIGIBILITY_CATEGORIES = [
     icon: Crown,
     title: "Investors",
     description: "Real estate investors and business investors meeting UAE investment requirements may qualify for long-term Golden Visa residency.",
-    image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1494526585095-c417462481.webp",
   },
   {
     icon: Briefcase,
     title: "Entrepreneurs",
     description: "Startup founders, business owners, and innovative entrepreneurs with successful projects may be eligible for the Golden Visa program.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1521737604893-d14cc237f1.webp",
   },
   {
     icon: Users,
     title: "Skilled Professionals",
     description: "Highly qualified professionals in healthcare, engineering, technology, education, finance, and other specialized sectors can apply under eligible categories.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1504384308090-c894fdcc53.webp",
   },
   {
     icon: Microscope,
     title: "Scientists & Researchers",
     description: "Researchers and scientists contributing to innovation and advanced sectors may qualify for UAE Golden Visa residency.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1551434678-e076c223a692.webp",
   },
   {
     icon: GraduationCap,
     title: "Outstanding Students",
     description: "High-achieving students and graduates from recognized institutions may qualify under academic excellence categories.",
-    image: "https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1496317899792-9d7dbcd928.webp",
   },
   {
     icon: Palette,
     title: "Creative Talent & Specialists",
     description: "Creative professionals, innovators, digital creators, and individuals with exceptional talents may be eligible for long-term residency.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1519389950473-47ba027778.webp",
   },
 ];
 
@@ -161,7 +161,7 @@ const FAQS = [
   }
 ];
 
-const ELIGIBILITY_BG = "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1OAtMl.img?w=1200&h=900&m=4&q=65";
+const ELIGIBILITY_BG = "/assets/images/aa1oatml.webp";
 
 function useIntersectionObserver(options = {}) {
   const ref = useRef(null);
@@ -318,7 +318,7 @@ export default function GoldenVisa() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://www.satgurutravel.ae/wp-content/uploads/2023/11/rgJkzKRk-dubai-uae-636x426.jpg"
+          src="/assets/images/rgjkzkrk-dubai-uae-636x426.webp"
           alt="Dubai UAE Golden Visa background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -418,7 +418,7 @@ export default function GoldenVisa() {
 
             <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100">
               <img
-                src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1OAtMl.img?w=1200&h=900&m=4&q=65"
+                src="/assets/images/aa1oatml.webp"
                 alt="Golden Visa UAE introduction"
                 className="w-full h-full min-h-[280px] object-cover object-center"
               />

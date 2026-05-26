@@ -337,7 +337,7 @@ export default function Contact() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-6 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80"
+          src="/assets/images/photo-1512453979798-5ea266f888_3.webp"
           alt="Dubai business contact background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

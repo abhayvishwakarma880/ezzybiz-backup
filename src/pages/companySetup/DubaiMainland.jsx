@@ -41,37 +41,37 @@ const BENEFITS = [
     icon: BiMapPin,
     title: "Access To UAE Market",
     description: "Operate your business anywhere across the UAE without restrictions and work with both government and private sectors.",
-    image: "https://www.flyingcolour.net/static/assets/images/11.png",
+    image: "/assets/images/img_35.webp",
   },
   {
     icon: BiGlobe,
     title: "100% Foreign Ownership",
     description: "Many mainland business activities now allow full foreign ownership, providing greater operational control for investors.",
-    image: "https://prodtfgstrg.blob.core.windows.net/media/5653408/corporate-internal-stock-team-having-meetings.jpg",
+    image: "/assets/images/corporate-internal-stock-team-.webp",
   },
   {
     icon: Settings,
     title: "Flexible Business Activities",
     description: "Choose from a wide range of commercial, professional, industrial, and consultancy activities based on your business goals.",
-    image: "https://i.pinimg.com/736x/4f/5a/2a/4f5a2a27a6db6238806ba41f88ffb974.jpg",
+    image: "/assets/images/4f5a2a27a6db6238806ba41f88ffb9.webp",
   },
   {
     icon: DollarSign,
     title: "No Currency Restrictions",
     description: "Enjoy complete flexibility for international transactions and global business operations without currency limitations.",
-    image: "https://pbs.twimg.com/profile_images/1849496692615249920/OxVdlUfc_400x400.jpg",
+    image: "/assets/images/oxvdlufc_400x400.webp",
   },
   {
     icon: TrendingUpIcon,
     title: "Unlimited Growth Opportunities",
     description: "Expand your operations freely across Dubai and the UAE with scalable business opportunities and market access.",
-    image: "https://sponsorcontent.cnn.com/edition/2022/dubai/card34.jpg",
+    image: "/assets/images/card34.webp",
   },
   {
     icon: Users,
     title: "Investor & Employee Visas",
     description: "Apply for investor, partner, and employee visas with complete immigration and visa processing support.",
-    image: "https://globalcanda.com/wp-content/uploads/2024/01/667.5.jpg",
+    image: "/assets/images/667_5.webp",
   },
 ];
 
@@ -297,7 +297,7 @@ export default function DubaiMainland() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://i.dailymail.co.uk/1s/2024/01/08/16/79752811-0-image-m-31_1704730329350.jpg"
+          src="/assets/images/79752811-0-image-m-31_17047303.webp"
           alt="Dubai Mainland"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -388,7 +388,7 @@ export default function DubaiMainland() {
             {/* Right — Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl h-[380px]">
               <img
-                src="https://mala.ae/wp-content/uploads/2023/05/start-a-business-in-the-mainland-Dubai.jpg"
+                src="/assets/images/start-a-business-in-the-mainla.webp"
                 alt="Dubai Mainland Company Formation"
                 className="w-full h-full object-cover object-center"
               />

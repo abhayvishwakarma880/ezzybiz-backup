@@ -45,37 +45,37 @@ const BENEFITS = [
     icon: Globe,
     title: "100% Foreign Ownership",
     description: "Maintain complete ownership of your company without requiring a local sponsor or UAE national partner.",
-    image: "https://prodtfgstrg.blob.core.windows.net/media/5653408/corporate-internal-stock-team-having-meetings.jpg",
+    image: "/assets/images/corporate-internal-stock-team-.webp",
   },
   {
     icon: Shield,
     title: "Tax-Friendly Business Environment",
     description: "Dubai free zones offer investor-friendly tax structures and simplified business regulations for international companies.",
-    image: "https://pbs.twimg.com/profile_images/1849496692615249920/OxVdlUfc_400x400.jpg",
+    image: "/assets/images/oxvdlufc_400x400.webp",
   },
   {
     icon: Zap,
     title: "Fast Company Registration",
     description: "Benefit from streamlined company formation procedures and efficient licensing approvals in Dubai free zones.",
-    image: "https://www.flyingcolour.net/static/assets/images/11.png",
+    image: "/assets/images/img_35.webp",
   },
   {
     icon: MapPin,
     title: "Global Business Connectivity",
     description: "Operate from one of the world's leading international business hubs with access to global markets and logistics networks.",
-    image: "https://sponsorcontent.cnn.com/edition/2022/dubai/card34.jpg",
+    image: "/assets/images/card34.webp",
   },
   {
     icon: Building,
     title: "Flexible Office Solutions",
     description: "Choose from flexi desks, coworking spaces, private offices, warehouses, and commercial facilities based on your business requirements.",
-    image: "https://i.pinimg.com/736x/4f/5a/2a/4f5a2a27a6db6238806ba41f88ffb974.jpg",
+    image: "/assets/images/4f5a2a27a6db6238806ba41f88ffb9.webp",
   },
   {
     icon: Users,
     title: "Investor Visa Eligibility",
     description: "Apply for investor and employee visas with professional UAE immigration and corporate support services.",
-    image: "https://globalcanda.com/wp-content/uploads/2024/01/667.5.jpg",
+    image: "/assets/images/667_5.webp",
   },
 ];
 
@@ -332,7 +332,7 @@ export default function DubaiFZ() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://www.gbsei.com/wp-content/uploads/2025/02/Business-set-up-in-DAFZA.png"
+          src="/assets/images/business-set-up-in-dafza.webp"
           alt="Dubai Free Zone"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -412,7 +412,7 @@ export default function DubaiFZ() {
             {/* Right — Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl h-[380px]">
               <img
-                src="https://www.shuraa.in/wp-content/uploads/2025/10/dubai-free-zones.jpg"
+                src="/assets/images/dubai-free-zones.webp"
                 alt="Dubai Free Zone Company Formation"
                 className="w-full h-full object-fill object-center"
               />
@@ -522,7 +522,7 @@ export default function DubaiFZ() {
               {/* Left — Image */}
               <div className={`rounded-2xl overflow-hidden shadow-xl h-[380px] transition-all duration-600 ${whyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
                 <img
-                  src="https://i.pinimg.com/736x/19/b9/98/19b998325eafccc83b225b0236221e9f.jpg"
+                  src="/assets/images/19b998325eafccc83b225b0236221e.webp"
                   alt="Why EzzyBiz"
                   className="w-full h-full object-cover object-center"
                 />

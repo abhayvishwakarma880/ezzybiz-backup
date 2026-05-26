@@ -39,7 +39,7 @@ const JURISDICTIONS = [
       "Operate Anywhere in UAE",
       "Unlimited Visa Allocation"
     ],
-    bgImage: "https://persianhorizon.com/wp-content/uploads/2025/05/Free-Zone-vs.jpg",
+    bgImage: "/assets/images/free-zone-vs.webp",
   },
   {
     title: "Dubai Free Zone",
@@ -52,7 +52,7 @@ const JURISDICTIONS = [
       "Fast Track Visa & Setup",
       "First-Class Logistics"
     ],
-    bgImage: "https://www.gbsei.com/wp-content/uploads/2025/02/Business-set-up-in-DAFZA.png",
+    bgImage: "/assets/images/business-set-up-in-dafza.webp",
   },
   {
     title: "Sharjah Free Zone",
@@ -65,7 +65,7 @@ const JURISDICTIONS = [
       "24/7 Licensing Procedures",
       "Quick Corporate Banking"
     ],
-    bgImage: "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?auto=format&fit=crop&w=800&q=80",
+    bgImage: "/assets/images/photo-1578894381163-e72c17f2d4.webp",
   },
   {
     title: "Ajman Free Zone",
@@ -78,7 +78,7 @@ const JURISDICTIONS = [
       "100% Foreign Ownership",
       "Excellent Startup Hub"
     ],
-    bgImage: "https://relocate-uae.com/wp-content/uploads/2022/07/ajman-media-city-free-zone-3.jpg",
+    bgImage: "/assets/images/ajman-media-city-free-zone-3.webp",
   },
   {
     title: "Ras Al Khaimah Free Zone",
@@ -91,7 +91,7 @@ const JURISDICTIONS = [
       "Customized Office Spaces",
       "Global Trade Access"
     ],
-    bgImage: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&w=800&q=80",
+    bgImage: "/assets/images/photo-1541963463532-d68292c34b.webp",
   },
 ];
 
@@ -106,7 +106,7 @@ export default function CompanySetup() {
       <section className="relative pt-6 pb-16 md:pt-8 md:pb-14 overflow-hidden">
         {/* Background Image */}
         <img
-          src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80"
+          src="/assets/images/photo-1512453979798-5ea266f888_3.webp"
           alt="Dubai business skyscrapers skyline"
           className="absolute inset-0 w-full h-full object-cover object-center"
           aria-hidden="true"

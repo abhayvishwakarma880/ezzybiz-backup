@@ -110,7 +110,7 @@ export default function AboutSection() {
               }}
             >
               <img
-                src="https://i.pinimg.com/736x/bb/19/dc/bb19dc3b56d00260b01578863be70788.jpg"
+                src="/assets/images/bb19dc3b56d00260b01578863be707.webp"
                 alt="Dubai skyline — EzzyBiz"
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"

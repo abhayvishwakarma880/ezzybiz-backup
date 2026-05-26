@@ -33,37 +33,37 @@ const VAT_SERVICES = [
     icon: FileCheck,
     title: "VAT Registration",
     description: "Professional VAT registration assistance for businesses required to register under UAE tax regulations.",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1554224155-6726b3ff858f_2.webp",
   },
   {
     icon: Receipt,
     title: "VAT Return Filing",
     description: "Accurate VAT return preparation and filing support to help businesses maintain smooth compliance procedures.",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1450101499163-c8848c66ca_2.webp",
   },
   {
     icon: Building,
     title: "Corporate Tax Services",
     description: "Professional guidance for UAE corporate tax registration, compliance, and related financial procedures.",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1486325212027-8081e48525_2.webp",
   },
   {
     icon: BookOpen,
     title: "Accounting & Bookkeeping",
     description: "Reliable accounting and bookkeeping solutions to help businesses maintain organized financial records.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1460925895917-afdab827c5.webp",
   },
   {
     icon: BiPieChart,
     title: "Tax Consultation",
     description: "Expert consultation services to help businesses understand UAE VAT regulations and compliance requirements.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1521737604893-d14cc237f1.webp",
   },
   {
     icon: FileSpreadsheet,
     title: "Financial Documentation Support",
     description: "Professional assistance for invoices, financial reports, tax records, and supporting documentation management.",
-    image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1568992687947-868a62a9f5.webp",
   },
 ];
 
@@ -307,7 +307,7 @@ export default function VAT() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://bcl.ae/wp-content/uploads/2024/06/corporate-tax-registration.webp"
+          src="/assets/images/corporate-tax-registration.webp"
           alt="VAT Services Dubai background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -401,7 +401,7 @@ export default function VAT() {
 
             <div className="w-full md:w-[420px] shrink-0 self-stretch rounded-3xl overflow-hidden shadow-xl border border-gray-100">
               <img
-                src="https://taxgian.ae/wp-content/uploads/2024/08/reconsideration.png"
+                src="/assets/images/reconsideration.webp"
                 alt="VAT services UAE"
                 className="w-full h-full object-cover object-center"
               />
@@ -470,7 +470,7 @@ export default function VAT() {
               {/* Right - Image */}
               <div className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80"
+                  src="/assets/images/photo-1554224154-26032ffc0d07.webp"
                   alt="VAT compliance benefits"
                   className="w-full h-full object-cover object-center"
                 />

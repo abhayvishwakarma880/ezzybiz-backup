@@ -39,37 +39,37 @@ const BENEFITS = [
     icon: Globe,
     title: "100% Foreign Ownership",
     description: "Maintain complete ownership of your business without requiring a local sponsor or UAE national partner.",
-    image: "https://prodtfgstrg.blob.core.windows.net/media/5653408/corporate-internal-stock-team-having-meetings.jpg",
+    image: "/assets/images/corporate-internal-stock-team-.webp",
   },
   {
     icon: DollarSign,
     title: "Affordable Business Setup",
     description: "Ajman Free Zone offers cost-effective company formation packages suitable for startups and growing businesses.",
-    image: "https://pbs.twimg.com/profile_images/1849496692615249920/OxVdlUfc_400x400.jpg",
+    image: "/assets/images/oxvdlufc_400x400.webp",
   },
   {
     icon: Zap,
     title: "Fast Company Registration",
     description: "Benefit from simplified registration procedures and quick trade license approvals for smooth business setup.",
-    image: "https://www.flyingcolour.net/static/assets/images/11.png",
+    image: "/assets/images/img_35.webp",
   },
   {
     icon: MapPin,
     title: "Strategic UAE Location",
     description: "Ajman provides easy connectivity to Dubai, Sharjah, seaports, airports, and regional business markets.",
-    image: "https://sponsorcontent.cnn.com/edition/2022/dubai/card34.jpg",
+    image: "/assets/images/card34.webp",
   },
   {
     icon: Building,
     title: "Flexible Office Solutions",
     description: "Choose from flexi desks, shared offices, warehouses, and commercial workspaces based on your business needs.",
-    image: "https://i.pinimg.com/736x/4f/5a/2a/4f5a2a27a6db6238806ba41f88ffb974.jpg",
+    image: "/assets/images/4f5a2a27a6db6238806ba41f88ffb9.webp",
   },
   {
     icon: Users,
     title: "Investor Visa Eligibility",
     description: "Apply for investor and employee visas with complete immigration and visa processing support services.",
-    image: "https://globalcanda.com/wp-content/uploads/2024/01/667.5.jpg",
+    image: "/assets/images/667_5.webp",
   },
 ];
 
@@ -290,7 +290,7 @@ export default function AjmanFZ() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://relocate-uae.com/wp-content/uploads/2022/07/ajman-media-city-free-zone-3.jpg"
+          src="/assets/images/ajman-media-city-free-zone-3.webp"
           alt="Ajman Free Zone"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -383,7 +383,7 @@ export default function AjmanFZ() {
 
             <div className={`rounded-2xl overflow-hidden shadow-xl h-[320px] transition-all duration-600 ${introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <img
-                src="https://avatars.mds.yandex.net/i?id=d84319eef6ed359e356b2fd2c2b3ce27cbd408d0-13239233-images-thumbs&n=13"
+                src="/assets/images/img_40.webp"
                 alt="Ajman Free Zone"
                 className="w-full h-full object-cover object-center"
               />

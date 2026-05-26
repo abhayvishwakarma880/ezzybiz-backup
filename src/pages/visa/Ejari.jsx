@@ -37,37 +37,37 @@ const EJARI_SERVICES = [
     icon: Stamp,
     title: "Ejari Registration",
     description: "Professional assistance for registering residential and commercial tenancy contracts through the Dubai Ejari system.",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1554224155-6726b3ff858f_2.webp",
   },
   {
     icon: Clock,
     title: "Ejari Renewal",
     description: "Smooth renewal services for existing Ejari contracts to maintain tenancy compliance in Dubai.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1506905925346-21bda4d32d.webp",
   },
   {
     icon: Building,
     title: "Commercial Ejari Services",
     description: "Ejari registration support for offices, shops, warehouses, and commercial business properties in Dubai.",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1486325212027-8081e48525_2.webp",
   },
   {
     icon: Home,
     title: "Residential Ejari Services",
     description: "Complete tenancy registration services for apartments, villas, and residential properties across Dubai.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1512917774080-9991f1c4c7.webp",
   },
   {
     icon: FaFileSignature,
     title: "Tenancy Contract Assistance",
     description: "Professional support for tenancy documentation, contract updates, amendments, and related rental procedures.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1521737604893-d14cc237f1.webp",
   },
   {
     icon: FolderCheck,
     title: "Document Verification",
     description: "Review and verification of tenancy documents and supporting paperwork for successful Ejari processing.",
-    image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/images/photo-1568992687947-868a62a9f5.webp",
   },
 ];
 
@@ -311,7 +311,7 @@ export default function Ejari() {
       <section
         className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden"
         style={{
-          backgroundImage: `url('https://yourdubaiguide.com/wp-content/uploads/2018/09/Al-Twar-Center-Ejari-Typing-Center.jpg')`,
+          backgroundImage: `url('/assets/images/al-twar-center-ejari-typing-ce.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -407,7 +407,7 @@ export default function Ejari() {
       {/* Right Side - Image */}
       <div className="rounded-3xl overflow-hidden shadow-xl">
         <img
-          src="https://images.ctfassets.net/jodw319ozpg1/411LkccJJNroIPuQ4yDJHq/b7bf4c9016d411def5c0e179b1fb9ee1/Modern_Ejari_Certificate_Concept.webp"
+          src="/assets/images/modern_ejari_certificate_conce.webp"
           alt="Ejari registration certificate Dubai"
           className="w-full h-full min-h-[260px] object-cover object-center"
         />
@@ -476,7 +476,7 @@ export default function Ejari() {
               {/* Right - Image same height as cards */}
               <div className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
                 <img
-                  src="https://yourplace.ae/wp-content/uploads/2023/06/how-to-register-ejari-complete-guide.jpg"
+                  src="/assets/images/how-to-register-ejari-complete.webp"
                   alt="Ejari registration guide Dubai"
                   className="w-full h-full object-cover object-center"
                 />

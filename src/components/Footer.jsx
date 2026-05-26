@@ -205,7 +205,7 @@ export default function Footer() {
           </div>
           <div>
             <span className=" text-white/15 tracking-[0.04em] flex items-center gap-2">
-              Design & Developed By: <a href="https://codecrafter.co.in/" target="_blank"><img className="h-8" src="https://kashtkart.netlify.app/assets/ccws-l-lAMUu5.png" /></a>
+              Design & Developed By: <a href="https://codecrafter.co.in/" target="_blank"><img className="h-8" src="/assets/images/ccws-l-lamuu5.webp" /></a>
             </span>
           </div>
 

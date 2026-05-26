@@ -38,37 +38,37 @@ const VISA_TYPES = [
     icon: Briefcase,
     title: "Investor Visa",
     description: "Investor visas for entrepreneurs and business owners establishing companies in mainland and free zone jurisdictions across the UAE.",
-    image: "https://dynasty-uae.com/wp-content/uploads/2024/06/investorskaya-viza-v-oae.webp",
+    image: "/assets/images/investorskaya-viza-v-oae.webp",
   },
   {
     icon: Users,
     title: "Employment Visa",
     description: "Professional employment visa processing services for companies hiring employees and skilled professionals in the UAE.",
-    image: "https://avatars.mds.yandex.net/i?id=eff3e6e24f3a54e8c07631504b7e42ddfb253319-5859525-images-thumbs&n=13",
+    image: "/assets/images/img_62.webp",
   },
   {
     icon: Home,
     title: "Family Visa",
     description: "Family sponsorship and residence visa assistance for spouses, children, and dependent family members in the UAE.",
-    image: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1PC0Jd.img?w=1200&h=675&m=4&q=60",
+    image: "/assets/images/aa1pc0jd.webp",
   },
   {
     icon: Award,
     title: "Golden Visa",
     description: "Long-term UAE Golden Visa assistance for eligible investors, entrepreneurs, professionals, and skilled individuals.",
-    image: "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202507/686f30d9978db-uae-has-denied-claims-that-it-is-offering-golden-visa-for-lifetime-101737536-16x9.jpeg",
+    image: "/assets/images/686f30d9978db-uae-has-denied-c.webp",
   },
   {
     icon: Globe,
     title: "Freelance Visa",
     description: "Freelance visa solutions for independent professionals, digital creators, consultants, and remote workers in Dubai.",
-    image: "https://www.smartadvisorsgroup.com/wp-content/uploads/%D0%A4%D1%80%D0%B8%D0%BB%D0%B0%D0%BD%D1%81.png",
+    image: "/assets/images/d0_a4_d1_80_d0_b8_d0_bb_d0_b0.webp",
   },
   {
     icon: HandShake,
     title: "Partner Visa",
     description: "Partner visa processing services for shareholders and partners involved in UAE business operations and company ownership.",
-    image: "https://grindtime.space/media/5ngartbm/work-visa.png?anchor=center&mode=crop&width=860&height=785&rnd=133860841739500000",
+    image: "/assets/images/work-visa.webp",
   },
 ];
 
@@ -333,7 +333,7 @@ export default function AllVisa() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://www.khaleejfeed.com/wp-content/uploads/2023/12/How-to-check-visit-visa-status-Dubai.jpg"
+          src="/assets/images/how-to-check-visit-visa-status.webp"
           alt="UAE visa services"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -425,7 +425,7 @@ export default function AllVisa() {
 
             <div className="rounded-3xl overflow-hidden shadow-xl md:mt-10">
               <img
-                src="https://abrc.ae/assets/galleries/261/uae-visa-garant.jpg"
+                src="/assets/images/uae-visa-garant.webp"
                 alt="UAE visa services in Dubai"
                 className="w-full h-full min-h-[260px] object-fill object-center"
               />
@@ -562,7 +562,7 @@ export default function AllVisa() {
 
               <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-800 h-[220px] md:h-[440px]">
                 <img
-                  src="https://mindmineglobal.com/wp-content/uploads/2023/12/documents-required-for-canada-visitor-visa-Canada-tourist-visa-refusal-rate-is-on-the-rise.jpg"
+                  src="/assets/images/documents-required-for-canada-.webp"
                   alt="Visa documents overview"
                   className="w-full h-full object-fill object-center"
                 />

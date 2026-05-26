@@ -40,37 +40,37 @@ const BENEFITS = [
     icon: Globe,
     title: "100% Foreign Ownership",
     description: "Maintain full ownership of your business without the need for a local sponsor or UAE national partner.",
-    image: "https://prodtfgstrg.blob.core.windows.net/media/5653408/corporate-internal-stock-team-having-meetings.jpg",
+    image: "/assets/images/corporate-internal-stock-team-.webp",
   },
   {
     icon: DollarSign,
     title: "Affordable Business Setup",
     description: "Sharjah free zones provide cost-effective company formation packages suitable for startups and SMEs.",
-    image: "https://pbs.twimg.com/profile_images/1849496692615249920/OxVdlUfc_400x400.jpg",
+    image: "/assets/images/oxvdlufc_400x400.webp",
   },
   {
     icon: Shield,
     title: "Tax-Friendly Environment",
     description: "Benefit from a business-friendly tax structure and simplified corporate regulations in the UAE.",
-    image: "https://www.flyingcolour.net/static/assets/images/11.png",
+    image: "/assets/images/img_35.webp",
   },
   {
     icon: MapPin,
     title: "Strategic UAE Location",
     description: "Sharjah offers easy access to Dubai, UAE seaports, airports, and regional trading markets.",
-    image: "https://sponsorcontent.cnn.com/edition/2022/dubai/card34.jpg",
+    image: "/assets/images/card34.webp",
   },
   {
     icon: Building,
     title: "Flexible Office Solutions",
     description: "Choose from flexi desks, shared offices, warehouses, and commercial workspaces based on your business needs.",
-    image: "https://i.pinimg.com/736x/4f/5a/2a/4f5a2a27a6db6238806ba41f88ffb974.jpg",
+    image: "/assets/images/4f5a2a27a6db6238806ba41f88ffb9.webp",
   },
   {
     icon: Users,
     title: "Investor Visa Eligibility",
     description: "Apply for investor and employee visas with professional immigration and visa processing support.",
-    image: "https://globalcanda.com/wp-content/uploads/2024/01/667.5.jpg",
+    image: "/assets/images/667_5.webp",
   },
 ];
 
@@ -291,7 +291,7 @@ export default function SharjahFZ() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://www.gbsei.com/wp-content/uploads/2025/02/Business-set-up-in-DAFZA.png"
+          src="/assets/images/business-set-up-in-dafza.webp"
           alt="Sharjah Free Zone"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -386,7 +386,7 @@ export default function SharjahFZ() {
             {/* Right — Image */}
             <div className={`rounded-2xl overflow-hidden shadow-xl h-[320px] transition-all duration-600 ${introVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <img
-                src="https://avatars.mds.yandex.net/get-altay/4547379/2a00000188a90bbcafdd7ae7638be24b2439/orig"
+                src="/assets/images/orig.webp"
                 alt="Sharjah Free Zone"
                 className="w-full h-full object-cover object-center"
               />

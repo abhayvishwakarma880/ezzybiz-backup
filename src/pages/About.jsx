@@ -402,7 +402,7 @@ export default function About() {
 
             <div className="rounded-2xl overflow-hidden shadow-xl md:mt-3">
               <img
-                src="https://www.pwc.com/m1/en/publications/images-new/creating-an-institution-fit-for-your-esg-aspirations-hero.png"
+                src="/assets/images/creating-an-institution-fit-fo.webp"
                 alt="EzzyBiz Corporate Services"
                 className="w-full h-full object-cover"
               />
@@ -473,7 +473,7 @@ export default function About() {
             {/* Left — Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src='https://rakez.com/Upload/BlogManager/638502684896596537.jpg'
+                src='/assets/images/638502684896596537.webp'
                 alt="Why Choose EzzyBiz"
                 className="w-full h-full object-cover"
               />

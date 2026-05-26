@@ -77,7 +77,7 @@ const articles = [
     gradient: 'from-blue-500 to-cyan-500',
     title: 'How to Start a Business in Dubai as a Foreign Investor',
     desc: 'A step-by-step guide on company formation, licensing, and investor visas for foreign entrepreneurs in Dubai.',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
+    image: '/assets/images/photo-1512453979798-5ea266f888.webp',
     Icon: IconBusinessSetup,
   },
   {
@@ -86,7 +86,7 @@ const articles = [
     gradient: 'from-purple-500 to-pink-500',
     title: 'Mainland vs Free Zone Company Setup — Which is Right for You?',
     desc: 'Compare mainland and free zone structures across ownership rights, setup costs, and operational flexibility.',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+    image: '/assets/images/photo-1486325212027-8081e48525.webp',
     Icon: IconCompanyFormation,
   },
   {
@@ -95,7 +95,7 @@ const articles = [
     gradient: 'from-emerald-500 to-teal-500',
     title: 'Understanding VAT Registration Requirements in the UAE',
     desc: 'Understand VAT thresholds, required documents, and how to keep your UAE business fully tax compliant.',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
+    image: '/assets/images/photo-1554224155-6726b3ff858f.webp',
     Icon: IconCompliance,
   },
   {
@@ -104,7 +104,7 @@ const articles = [
     gradient: 'from-orange-500 to-red-500',
     title: 'Everything You Need to Know About UAE Investor Visas',
     desc: 'Explore eligibility criteria, processing steps, and key documents needed to secure your UAE investor visa.',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
+    image: '/assets/images/photo-1436491865332-7a61a109cc.webp',
     Icon: IconInvestorVisa,
   },
   {
@@ -113,7 +113,7 @@ const articles = [
     gradient: 'from-indigo-500 to-purple-500',
     title: 'Top Business Opportunities in Dubai for 2026',
     desc: 'Discover the most profitable and fast-growing business sectors for entrepreneurs entering the UAE market in 2026.',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80',
+    image: '/assets/images/photo-1507679799987-c73779587c.webp',
     Icon: IconEntrepreneurship,
   },
   {
@@ -122,7 +122,7 @@ const articles = [
     gradient: 'from-rose-500 to-red-500',
     title: 'How to Open a Corporate Bank Account in Dubai',
     desc: 'A practical guide to required documents, bank selection, and common challenges in opening a UAE corporate account.',
-    image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&q=80',
+    image: '/assets/images/photo-1541354329998-f4d9a9f929.webp',
     Icon: IconBanking,
   },
 ];

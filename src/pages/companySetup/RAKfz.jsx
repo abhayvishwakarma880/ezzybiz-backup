@@ -39,37 +39,37 @@ const BENEFITS = [
     icon: Globe,
     title: "100% Foreign Ownership",
     description: "Maintain complete ownership of your company without requiring a local sponsor or UAE national partner.",
-    image: "https://prodtfgstrg.blob.core.windows.net/media/5653408/corporate-internal-stock-team-having-meetings.jpg",
+    image: "/assets/images/corporate-internal-stock-team-.webp",
   },
   {
     icon: DollarSign,
     title: "Affordable Business Setup",
     description: "RAK Free Zone offers cost-effective business setup solutions suitable for startups, SMEs, and international investors.",
-    image: "https://pbs.twimg.com/profile_images/1849496692615249920/OxVdlUfc_400x400.jpg",
+    image: "/assets/images/oxvdlufc_400x400.webp",
   },
   {
     icon: MapPin,
     title: "Strategic Business Location",
     description: "Benefit from excellent connectivity to UAE ports, airports, regional markets, and international trade routes.",
-    image: "https://www.flyingcolour.net/static/assets/images/11.png",
+    image: "/assets/images/img_35.webp",
   },
   {
     icon: Zap,
     title: "Fast Company Registration",
     description: "Enjoy simplified company formation procedures and efficient trade license approvals for smooth business setup.",
-    image: "https://sponsorcontent.cnn.com/edition/2022/dubai/card34.jpg",
+    image: "/assets/images/card34.webp",
   },
   {
     icon: Building,
     title: "Flexible Office Solutions",
     description: "Choose from flexi desks, offices, warehouses, and industrial facilities based on your business requirements.",
-    image: "https://i.pinimg.com/736x/4f/5a/2a/4f5a2a27a6db6238806ba41f88ffb974.jpg",
+    image: "/assets/images/4f5a2a27a6db6238806ba41f88ffb9.webp",
   },
   {
     icon: Users,
     title: "Investor Visa Eligibility",
     description: "Apply for investor and employee visas with complete UAE immigration and visa processing support services.",
-    image: "https://globalcanda.com/wp-content/uploads/2024/01/667.5.jpg",
+    image: "/assets/images/667_5.webp",
   },
 ];
 
@@ -290,7 +290,7 @@ export default function RAKFZ() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative pt-6 pb-8 md:pt-8 md:pb-10 overflow-hidden">
         <img
-          src="https://www.gbsei.com/wp-content/uploads/2025/02/Business-set-up-in-DAFZA.png"
+          src="/assets/images/business-set-up-in-dafza.webp"
           alt="Ras Al Khaimah Free Zone business setup"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -384,7 +384,7 @@ export default function RAKFZ() {
 
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <img
-                src="https://www.creativezone.ae/wp-content/uploads/rak-free-zone-company-setup-guide-5c175fc4c95d4.jpg"
+                src="/assets/images/rak-free-zone-company-setup-gu.webp"
                 alt="RAK Free Zone company setup guide"
                 className="w-full h-full min-h-[360px] object-fill object-center"
               />
