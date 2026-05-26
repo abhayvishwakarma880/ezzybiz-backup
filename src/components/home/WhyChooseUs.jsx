@@ -276,6 +276,7 @@ export default function WhyChooseUs() {
                 <img
                   src={whyChoose}
                   alt="Why Choose EzzyBiz"
+                  loading="lazy"
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>

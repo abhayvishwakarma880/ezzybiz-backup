@@ -173,6 +173,7 @@ export default function Articles() {
               <img
                 src={art.image}
                 alt={art.title}
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 

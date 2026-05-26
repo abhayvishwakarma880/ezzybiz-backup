@@ -1,22 +1,24 @@
-import About from "./pages/About";
-import Articles from "./pages/Articles";
-import ArticleDetails from "./pages/ArticleDetails";
-import Banking from "./pages/Banking";
-import AjmanFZ from "./pages/companySetup/AjmanFZ";
-import DubaiFZ from "./pages/companySetup/DubaiFZ";
-import DubaiMainland from "./pages/companySetup/DubaiMainland";
-import RAKFZ from "./pages/companySetup/RAKfz";
-import SharjahFZ from "./pages/companySetup/SharjahFZ";
-import CompanySetup from "./pages/companySetup/CompanySetup";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import VAT from "./pages/VAT";
-import AllVisa from "./pages/visa/AllVisa";
-import Ejari from "./pages/visa/Ejari";
-import GoldenVisa from "./pages/visa/GoldenVisa";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsConditions from "./pages/TermsConditions";
-import CookiePolicy from "./pages/CookiePolicy";
+import { lazy } from "react";
+
+const About = lazy(() => import("./pages/About"));
+const Articles = lazy(() => import("./pages/Articles"));
+const ArticleDetails = lazy(() => import("./pages/ArticleDetails"));
+const Banking = lazy(() => import("./pages/Banking"));
+const AjmanFZ = lazy(() => import("./pages/companySetup/AjmanFZ"));
+const DubaiFZ = lazy(() => import("./pages/companySetup/DubaiFZ"));
+const DubaiMainland = lazy(() => import("./pages/companySetup/DubaiMainland"));
+const RAKFZ = lazy(() => import("./pages/companySetup/RAKfz"));
+const SharjahFZ = lazy(() => import("./pages/companySetup/SharjahFZ"));
+const CompanySetup = lazy(() => import("./pages/companySetup/CompanySetup"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Home = lazy(() => import("./pages/Home"));
+const VAT = lazy(() => import("./pages/VAT"));
+const AllVisa = lazy(() => import("./pages/visa/AllVisa"));
+const Ejari = lazy(() => import("./pages/visa/Ejari"));
+const GoldenVisa = lazy(() => import("./pages/visa/GoldenVisa"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsConditions = lazy(() => import("./pages/TermsConditions"));
+const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
 
 const appRoute = [
   { path: "/", element: Home },

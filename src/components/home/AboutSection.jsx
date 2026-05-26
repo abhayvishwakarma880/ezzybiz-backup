@@ -112,6 +112,7 @@ export default function AboutSection() {
               <img
                 src="https://i.pinimg.com/736x/bb/19/dc/bb19dc3b56d00260b01578863be70788.jpg"
                 alt="Dubai skyline — EzzyBiz"
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#0f0f1a]/20 via-[#d7193f]/10 to-[#0f0f1a]/60" />

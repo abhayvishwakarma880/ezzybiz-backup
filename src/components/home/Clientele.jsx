@@ -115,7 +115,7 @@ export default function Clientele() {
                     : `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`,
                 }}
               >
-                <img src={`https://flagcdn.com/w80/${c.code}.png`} alt={c.country} className="w-12 h-8 object-cover rounded mb-2 mx-auto group-hover:scale-110 transition-transform duration-300" />
+                <img src={`https://flagcdn.com/w80/${c.code}.png`} alt={c.country} loading="lazy" className="w-12 h-8 object-cover rounded mb-2 mx-auto group-hover:scale-110 transition-transform duration-300" />
                 <p className="text-[#0f0f1a] font-semibold text-sm group-hover:text-[#d7193f] transition-colors">{c.country}</p>
                 <p className="text-gray-400 text-xs mt-0.5">{c.count} Clients</p>
                 <div className={`absolute bottom-0 left-0 h-[2px] bg-gradient-to-r ${c.color} w-0 group-hover:w-full transition-all duration-300`} />

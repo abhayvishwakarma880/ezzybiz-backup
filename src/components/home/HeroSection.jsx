@@ -91,7 +91,7 @@ export default function HeroSection() {
       <section className="relative h-56 md:h-[calc(100vh+30px)] w-full overflow-hidden flex flex-col justify-end md:justify-center font-sans pt-8 md:pt-12 pb-6 md:pb-10">
         {/* ── BACKGROUND IMAGE ── */}
         <img
-          src="/baner.png"
+          src="/baner.webp"
           alt="Hero Banner"
           className="hero-img absolute inset-0 w-full h-full object-cover md:object-fill object-center z-[-2]"
         />

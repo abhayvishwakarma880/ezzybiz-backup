@@ -76,7 +76,7 @@ export default function Projects() {
                 transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s, border-color 0.3s`,
               }}
             >
-              <img src={s.image} alt={s.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src={s.image} alt={s.title} loading="lazy" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
               <div className="absolute top-3 left-3">
                 <span className={`px-3 py-1 rounded-full text-[11px] font-semibold text-white bg-gradient-to-r ${s.badge}`}>
